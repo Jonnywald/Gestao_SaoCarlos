@@ -55,7 +55,12 @@ public class LoginView extends javax.swing.JFrame {
 
         btn_entrar.setText("Entrar");
 
-        btn_sair.setText("Sair");
+        btn_sair.setText("fugir");
+        btn_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +113,10 @@ public class LoginView extends javax.swing.JFrame {
 
     private void txt_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_userActionPerformed
     }//GEN-LAST:event_txt_userActionPerformed
+
+    private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_sairActionPerformed
 
     /**
      * @param args the command line arguments

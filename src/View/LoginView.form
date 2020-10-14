@@ -117,8 +117,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="btn_sair">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sair"/>
+        <Property name="text" type="java.lang.String" value="fugir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_sairActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
