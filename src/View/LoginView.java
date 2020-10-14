@@ -55,7 +55,7 @@ public class LoginView extends javax.swing.JFrame {
 
         btn_entrar.setText("Entrar");
 
-        btn_sair.setText("fugir");
+        btn_sair.setText("Sair");
         btn_sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_sairActionPerformed(evt);
