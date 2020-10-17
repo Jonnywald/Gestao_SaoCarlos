@@ -1,4 +1,5 @@
 package Model.Bean;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -118,5 +119,22 @@ public class Barril {
     // retorna true caso consiga e retorna false caso ultrapasse o total
     public boolean checkVolume(double v){
         return !(v + this.volumeAtual > this.volumeTotal);
+    }
+    // calculo das datas dos diversos tipos
+    public void calcDtTipos(){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(this.dtCheio);
+        cal.add(Calendar.MONTH,4); // adicao de 4 meses para a data de barril cheio
+        this.dtTipoArmazenado = cal.getTime();
+        cal.setTime(this.dtCheio);
+        cal.add(Calendar.YEAR,1); // adicao de 12 meses para a data de barril cheio
+        this.dtTipoEnvelhecido = cal.getTime();
+        cal.setTime(this.dtCheio);
+        cal.add(Calendar.YEAR,1); // adicao de 12 meses para a data de barril cheio
+        this.dtTipoPremium = cal.getTime();
+        cal.setTime(this.dtCheio);
+        cal.add(Calendar.YEAR,3); // adicao de 3 anos para a data de barril cheio
+        this.dtTipoExtraPremium = cal.getTime();
+        
     }
 }

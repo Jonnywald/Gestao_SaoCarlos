@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/delri/Desktop/Gestao_SaoCarlos/src/Model/Bean/Rapadura.java</file>
             <file>file:/C:/Users/delri/Desktop/Gestao_SaoCarlos/src/Model/Bean/Users.java</file>
-            <file>file:/C:/Users/delri/Desktop/Gestao_SaoCarlos/src/Model/Bean/Barril.java</file>
-            <file>file:/C:/Users/delri/Desktop/Gestao_SaoCarlos/src/Model/Bean/Melado.java</file>
+            <file>file:/C:/Users/delri/Desktop/Gestao_SaoCarlos/src/Model/Bean/ProducaoMelado.java</file>
+            <file>file:/C:/Users/delri/Desktop/Gestao_SaoCarlos/src/Model/Bean/BebidaMista.java</file>
         </group>
     </open-files>
 </project-private>
