@@ -36,6 +36,7 @@ public class LoginView extends javax.swing.JFrame {
         btn_sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Gestão São Carlos");
 
         Lbl_Titulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         Lbl_Titulo.setText("SISTEMA DE GESTÃO SÃO CARLOS");
@@ -116,6 +117,7 @@ public class LoginView extends javax.swing.JFrame {
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
         // TODO add your handling code here:
+        System.exit(0); // Sair do sistema fechando o programa
     }//GEN-LAST:event_btn_sairActionPerformed
 
     /**
