@@ -2,7 +2,7 @@ package Model.Bean;
 
 /**
  *
- * @author guilherme.bertola
+ * @author Guilherme Bertola
  */
 public class Users {
     private String login; //Login do usuario
