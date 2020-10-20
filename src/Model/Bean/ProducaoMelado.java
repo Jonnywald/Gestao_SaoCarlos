@@ -94,9 +94,9 @@ public class ProducaoMelado {
     // calculo do peso total dos melados
     public void calcPesoTotal(){
         this.pesoTotal = 0;
-        for (Melado m : this.melados){
+        this.melados.forEach(m -> {
             this.pesoTotal += m.getPeso();
-        }
+        });
     }
     // calculo da quantidade de melados produzidos
     public void calcQtdMelado(){
