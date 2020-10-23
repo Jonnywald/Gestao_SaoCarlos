@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="Abas" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="Abas" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="Abas">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="painelRapadura">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Rapadura">
+                <Property name="tabTitle" type="java.lang.String" value="Rapadura"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnSalvarRapadura" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnRapaduraVoltar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblAddRapadura" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="lblPesoRapadura" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtPesoRapadura" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnAddRapadura" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblQtdRapadura" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txtQtdRapadura" pref="87" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblDtProdRapadura" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="ftxtDtProdRapadura" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblQtdCaldoRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblLoteRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="txtLoteRapadura" pref="118" max="32767" attributes="0"/>
+                                                  <Component id="txtQtdCaldoRapadura" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblPesoTotalRapadura" max="32767" attributes="0"/>
+                                          <Component id="txtPesoTotalRapadura" max="32767" attributes="0"/>
+                                          <Component id="lblRendimentoRapadura" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtRendimentoRapadura" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblLoteRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLoteRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPesoTotalRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblQtdCaldoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtQtdCaldoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtPesoTotalRapadura" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblDtProdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ftxtDtProdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRendimentoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblQtdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtQtdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRendimentoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblAddRapadura" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPesoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPesoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAddRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnRapaduraVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSalvarRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="btnRapaduraVoltar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Voltar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator1">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAddRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Adi&#xe7;&#xe3;o de Rapadura"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnAddRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Adicionar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPesoRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Peso (g):"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPesoRapadura">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblLoteRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lote:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtLoteRapadura">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0001"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblQtdCaldoRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quantidade de Caldo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtQtdCaldoRapadura">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDtProdRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Data de Produ&#xe7;&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="ftxtDtProdRapadura">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="d/M/yy" subtype="-1" type="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblQtdRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quantidade de Rapaduras:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtQtdRapadura">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPesoTotalRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Peso Total (g)"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPesoTotalRapadura">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblRendimentoRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Rendimento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRendimentoRapadura">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSalvarRapadura">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salvar Lote"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="painelMelado">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Melado">
+                <Property name="tabTitle" type="java.lang.String" value="Melado"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnSalvarMelado" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnMeladoVoltar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblAddMelado" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="lblPesoMelado" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtPesoMelado" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnAddMelado" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lblQtdMelado" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txtQtdMelado" pref="100" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lblDtProdMelado" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="ftxtDtProdMelado" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblQtdCaldoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblLoteMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="txtLoteMelado" alignment="1" pref="118" max="32767" attributes="0"/>
+                                                  <Component id="txtQtdCaldoMelado" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblPesoTotalMelado" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtPesoTotalMelado" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lblRendimentoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtRendimentoMelado" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblLoteMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLoteMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPesoTotalMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="lblQtdCaldoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtQtdCaldoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtPesoTotalMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblDtProdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ftxtDtProdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRendimentoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblQtdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtQtdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRendimentoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblAddMelado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPesoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPesoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAddMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnMeladoVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSalvarMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblLoteMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lote:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtLoteMelado">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0001"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPesoTotalMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Peso Total (g)"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPesoTotalMelado">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtQtdCaldoMelado">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblQtdCaldoMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quantidade de Caldo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDtProdMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Data de Produ&#xe7;&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="ftxtDtProdMelado">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="d/M/yy" subtype="-1" type="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblRendimentoMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Rendimento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRendimentoMelado">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtQtdMelado">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblQtdMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quantidade de Melados:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator2">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAddMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Adi&#xe7;&#xe3;o de Melado"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPesoMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Peso (g):"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPesoMelado">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnAddMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Adicionar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSalvarMelado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salvar Lote"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnMeladoVoltar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Voltar"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
