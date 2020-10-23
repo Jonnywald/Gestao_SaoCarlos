@@ -1,5 +1,6 @@
 package Model.Bean;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -151,6 +152,23 @@ public class ProducaoCachaca {
         calcAgua = (brix.intValue()*qtdCaldo/15) - qtdCaldo;
         return calcAgua;
     }
-    
-    
+    // calculo do total de caldo na dorna
+    public Integer calcTotalCaldo(Integer qtdCaldo, Integer qtdAgua){
+        return qtdCaldo + qtdAgua;
+    }
+    // calculo da data maxima de fermentacao
+    public Date calcDtAlarmFerment(Date dtInicioFerment){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dtInicioFerment);
+        cal.add(Calendar.HOUR,48);
+        return cal.getTime();
+    }
+    // calculo de rendimento da destilacao
+    public Double calcRendimento(Integer totalCaldo, Double qtdCoracao){
+        return (qtdCoracao/totalCaldo * 100);
+    }
+    // retorna true caso esse lote ja esteja pronto
+    public Boolean isDone(){
+        return (this.dtAlambicagem == null);
+    }
 }
