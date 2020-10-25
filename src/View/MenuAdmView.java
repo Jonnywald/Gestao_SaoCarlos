@@ -5,6 +5,12 @@
  */
 package View;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+
+
 /**
  *
  * @author Débora
@@ -14,6 +20,14 @@ public class MenuAdmView extends javax.swing.JFrame {
     /**
      * Creates new form MenuAdmView
      */
+    private static MenuAdmView myInstance;
+
+    public static MenuAdmView getInstance() {
+        if (myInstance == null) {
+            myInstance = new MenuAdmView();
+        }
+        return myInstance;
+    }
     public MenuAdmView() {
         initComponents();
     }
@@ -42,6 +56,11 @@ public class MenuAdmView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         btnVenda.setFont(new java.awt.Font("Lucida Sans", 0, 11)); // NOI18N
         btnVenda.setText("VENDAS");
@@ -127,6 +146,11 @@ public class MenuAdmView extends javax.swing.JFrame {
         lblBemVindo.setText("Bem Vindo! ");
 
         btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,6 +222,9 @@ public class MenuAdmView extends javax.swing.JFrame {
 
     private void btnEngarrafamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEngarrafamentoActionPerformed
         // TODO add your handling code here:
+          EngarrafamentoView tela = new EngarrafamentoView(null, true);
+            tela.setVisible(true);
+        
     }//GEN-LAST:event_btnEngarrafamentoActionPerformed
 
     private void btnRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosActionPerformed
@@ -231,6 +258,26 @@ public class MenuAdmView extends javax.swing.JFrame {
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUsuariosActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+
+        WindowEvent event = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(event);
+
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+
+        if (JOptionPane.showConfirmDialog(this, "Deseja sair do programa?", "Atenção",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        }
+
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

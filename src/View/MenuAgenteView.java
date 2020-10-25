@@ -14,6 +14,16 @@ public class MenuAgenteView extends javax.swing.JFrame {
     /**
      * Creates new form MenuAdmView
      */
+    
+    private static MenuAgenteView myInstance;
+
+    public static MenuAgenteView getInstance() {
+        if (myInstance == null) {
+            myInstance = new MenuAgenteView();
+        }
+        return myInstance;
+    }
+    
     public MenuAgenteView() {
         initComponents();
     }
@@ -121,10 +131,11 @@ public class MenuAgenteView extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(lblBemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMelado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCachaça, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRapadura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRapadura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnMelado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCachaça, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,6 +154,10 @@ public class MenuAgenteView extends javax.swing.JFrame {
 
     private void btnEngarrafamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEngarrafamentoActionPerformed
         // TODO add your handling code here:
+        
+        EngarrafamentoView tela = new EngarrafamentoView (null, true);
+        tela.setVisible(true);
+        
     }//GEN-LAST:event_btnEngarrafamentoActionPerformed
 
     private void btnMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeladoActionPerformed

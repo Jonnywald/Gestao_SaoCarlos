@@ -5,15 +5,21 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author guilherme.bertola
  */
 public class LoginView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuView
-     */
+    
+    private String usuario = "";
+    
+    public String getUsuario() {
+        return usuario;
+    }
+    
     public LoginView() {
         initComponents();
     }
@@ -28,10 +34,10 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         Lbl_Titulo = new javax.swing.JLabel();
-        txt_user = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         lbl_user = new javax.swing.JLabel();
         lbl_pass = new javax.swing.JLabel();
-        txt_pass = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
         btn_entrar = new javax.swing.JButton();
         btn_sair = new javax.swing.JButton();
 
@@ -41,10 +47,9 @@ public class LoginView extends javax.swing.JFrame {
         Lbl_Titulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         Lbl_Titulo.setText("SISTEMA DE GESTÃO SÃO CARLOS");
 
-        txt_user.setText("User");
-        txt_user.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_userActionPerformed(evt);
+                txtUsuarioActionPerformed(evt);
             }
         });
 
@@ -52,9 +57,18 @@ public class LoginView extends javax.swing.JFrame {
 
         lbl_pass.setText("Senha:");
 
-        txt_pass.setText("Senha");
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         btn_entrar.setText("Entrar");
+        btn_entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_entrarActionPerformed(evt);
+            }
+        });
 
         btn_sair.setText("Sair");
         btn_sair.addActionListener(new java.awt.event.ActionListener() {
@@ -67,58 +81,75 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(Lbl_Titulo)
+                .addGap(34, 34, 34))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Lbl_Titulo)
-                        .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_user, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lbl_pass, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_user)
-                            .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
-                        .addGap(134, 134, 134))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(btn_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtUsuario)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(btn_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(53, 53, 53)
                 .addComponent(Lbl_Titulo)
-                .addGap(63, 63, 63)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_user))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_pass)
-                    .addComponent(txt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(83, 83, 83)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_entrar)
                     .addComponent(btn_sair))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_userActionPerformed
-    }//GEN-LAST:event_txt_userActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
         // TODO add your handling code here:
         System.exit(0); // Sair do sistema fechando o programa
     }//GEN-LAST:event_btn_sairActionPerformed
+
+    private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
+        // TODO add your handling code here:
+        if (txtUsuario.getText().equals("guilherme") && txtSenha.getText().equals("123")) {
+            usuario = txtUsuario.getText();
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuário ou Senha Inválida", "Atenção", JOptionPane.ERROR_MESSAGE);
+            usuario = "";
+        }
+        
+        
+    }//GEN-LAST:event_btn_entrarActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +193,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JButton btn_sair;
     private javax.swing.JLabel lbl_pass;
     private javax.swing.JLabel lbl_user;
-    private javax.swing.JPasswordField txt_pass;
-    private javax.swing.JTextField txt_user;
+    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
