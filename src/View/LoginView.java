@@ -5,6 +5,8 @@
  */
 package View;
 
+import Model.DAO.UsersDAO;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -136,9 +138,18 @@ public class LoginView extends javax.swing.JFrame {
 
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
         // TODO add your handling code here:
-        if (txtUsuario.getText().equals("guilherme") && txtSenha.getText().equals("123")) {
-            usuario = txtUsuario.getText();
-            dispose();
+        // instanciamento da classe Users Dara Acess Object
+        UsersDAO udao = new UsersDAO();
+        // checando se o usuario existe e esta correto
+        if (udao.Check(txtUsuario.getText(),Arrays.toString(txtSenha.getPassword()))) {
+            if (udao.CheckAdm(txtUsuario.getText())){
+                this.dispose();
+                new MenuAdmView().setVisible(true);
+            }
+            else{
+                this.dispose();
+                new MenuAgenteView().setVisible(true);
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Usuário ou Senha Inválida", "Atenção", JOptionPane.ERROR_MESSAGE);
             usuario = "";

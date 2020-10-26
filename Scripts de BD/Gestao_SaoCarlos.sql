@@ -4,11 +4,10 @@ use Gestao_SaoCarlos;
 
 create table users (
 
-id_user 	int auto_increment	primary key,
-login		varchar(100) UNIQUE,
-nome_user	varchar (100),
+login		varchar(100) UNIQUE primary key,
+nome	    varchar (100),
 senha		varchar (30),
-Adm			boolean
+adm			boolean
 
 )engine=InnoDB;
 
