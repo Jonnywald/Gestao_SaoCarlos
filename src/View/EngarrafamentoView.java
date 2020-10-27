@@ -46,6 +46,12 @@ public class EngarrafamentoView extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        cbxNumBarril.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxNumBarrilActionPerformed(evt);
+            }
+        });
+
         lblBarril.setText("Barril:");
 
         lblNumGarrafas.setText("Número de garrafas:");
@@ -166,6 +172,10 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         
         
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxNumBarrilActionPerformed
 
     /**
      * @param args the command line arguments
