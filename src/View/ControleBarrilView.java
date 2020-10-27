@@ -9,7 +9,7 @@ package View;
  *
  * @author Débora
  */
-public class EngarrafamentoView extends javax.swing.JDialog {
+public class ControleBarrilView extends javax.swing.JDialog {
 
     /**
      * Creates new form EngarrafamentoView
@@ -17,7 +17,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
     
     
     
-    public EngarrafamentoView(java.awt.Frame parent, boolean modal) {
+    public ControleBarrilView(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -34,23 +34,22 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         cbxNumBarril = new javax.swing.JComboBox<>();
         lblBarril = new javax.swing.JLabel();
         lblNumGarrafas = new javax.swing.JLabel();
-        txtNumGarrafas = new javax.swing.JTextField();
         lblTipoCachaça = new javax.swing.JLabel();
         txtTipoCachaça = new javax.swing.JTextField();
         lblTipoGarrafa = new javax.swing.JLabel();
-        cbxTipoGarrafa = new javax.swing.JComboBox<>();
-        btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         lblLote = new javax.swing.JLabel();
         txtLote = new javax.swing.JTextField();
+        txtTipoCachaça1 = new javax.swing.JTextField();
+        txtTipoCachaça2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblBarril.setText("Barril:");
 
-        lblNumGarrafas.setText("Número de garrafas:");
+        lblNumGarrafas.setText("Estado do Barril");
 
-        lblTipoCachaça.setText("Tipo de cachaça");
+        lblTipoCachaça.setText("Volume Atual");
 
         txtTipoCachaça.setEditable(false);
         txtTipoCachaça.addActionListener(new java.awt.event.ActionListener() {
@@ -59,66 +58,66 @@ public class EngarrafamentoView extends javax.swing.JDialog {
             }
         });
 
-        lblTipoGarrafa.setText("Tipo de garrafa:");
+        lblTipoGarrafa.setText("Ultima data");
 
-        cbxTipoGarrafa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxTipoGarrafaActionPerformed(evt);
-            }
-        });
-
-        btnSalvar.setText("Salvar");
-
-        btnCancelar.setText("Cancelar");
+        btnCancelar.setText("Voltar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
 
-        lblLote.setText("Lote:");
+        lblLote.setText("Proxima data");
 
         txtLote.setEditable(false);
+
+        txtTipoCachaça1.setEditable(false);
+        txtTipoCachaça1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoCachaça1ActionPerformed(evt);
+            }
+        });
+
+        txtTipoCachaça2.setEditable(false);
+        txtTipoCachaça2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTipoCachaça2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(lblTipoGarrafa)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(cbxTipoGarrafa, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblNumGarrafas)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtNumGarrafas, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblLote)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(lblBarril))
-                                    .addComponent(lblTipoCachaça))
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTipoCachaça, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 60, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(lblTipoCachaça)
+                            .addComponent(lblBarril))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTipoCachaça, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblLote)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblTipoGarrafa)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTipoCachaça1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblNumGarrafas)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtTipoCachaça2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(btnCancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,20 +133,18 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTipoGarrafa)
-                    .addComponent(cbxTipoGarrafa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTipoCachaça1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumGarrafas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumGarrafas))
+                    .addComponent(lblNumGarrafas)
+                    .addComponent(txtTipoCachaça2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar)
-                    .addComponent(btnCancelar))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(btnCancelar)
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -157,15 +154,19 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipoCachaçaActionPerformed
 
-    private void cbxTipoGarrafaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoGarrafaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxTipoGarrafaActionPerformed
-
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         
         
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtTipoCachaça1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoCachaça1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoCachaça1ActionPerformed
+
+    private void txtTipoCachaça2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoCachaça2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTipoCachaça2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,20 +185,21 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EngarrafamentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ControleBarrilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EngarrafamentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ControleBarrilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EngarrafamentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ControleBarrilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EngarrafamentoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ControleBarrilView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                EngarrafamentoView dialog = new EngarrafamentoView(new javax.swing.JFrame(), true);
+                ControleBarrilView dialog = new ControleBarrilView(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -211,16 +213,15 @@ public class EngarrafamentoView extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbxNumBarril;
-    private javax.swing.JComboBox<String> cbxTipoGarrafa;
     private javax.swing.JLabel lblBarril;
     private javax.swing.JLabel lblLote;
     private javax.swing.JLabel lblNumGarrafas;
     private javax.swing.JLabel lblTipoCachaça;
     private javax.swing.JLabel lblTipoGarrafa;
     private javax.swing.JTextField txtLote;
-    private javax.swing.JTextField txtNumGarrafas;
     private javax.swing.JTextField txtTipoCachaça;
+    private javax.swing.JTextField txtTipoCachaça1;
+    private javax.swing.JTextField txtTipoCachaça2;
     // End of variables declaration//GEN-END:variables
 }
