@@ -5,6 +5,13 @@
  */
 package View;
 
+import Model.Bean.Users;
+import Model.DAO.UsersDAO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author delri
@@ -65,8 +72,18 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         ccbAdministrador.setText("Administrador");
 
         btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         txtLabelCadastroUsuário.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtLabelCadastroUsuário.setText("Cadastro de Usuário");
@@ -85,15 +102,13 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnSalvar))
                         .addGroup(painelCadastroLayout.createSequentialGroup()
-                            .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                                .addComponent(txtLabelCadastroUsuário))
-                            .addGap(423, 423, 423))
+                            .addComponent(txtLabelCadastroUsuário)
+                            .addGap(454, 454, 454))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelCadastroLayout.createSequentialGroup()
                             .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblLogin))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGap(18, 18, 18)
                             .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtRecebeLogin)
                                 .addGroup(painelCadastroLayout.createSequentialGroup()
@@ -102,7 +117,8 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                                     .addComponent(lblSenha1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtRecebeNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtRecebeNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblSenha, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelCadastroLayout.setVerticalGroup(
@@ -112,21 +128,21 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                 .addComponent(txtLabelCadastroUsuário)
                 .addGap(23, 23, 23)
                 .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblSenha)
                     .addGroup(painelCadastroLayout.createSequentialGroup()
-                        .addComponent(lblNome)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblLogin)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblSenha))
-                    .addGroup(painelCadastroLayout.createSequentialGroup()
-                        .addComponent(txtRecebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtRecebeLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtRecebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome))
                         .addGap(18, 18, 18)
                         .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSenha1)
-                            .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passRecebeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtRecebeLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLogin))
+                        .addGap(18, 18, 18)
+                        .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passRecebeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblSenha1)
+                                .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
                 .addComponent(ccbAdministrador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
@@ -140,7 +156,18 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
 
         lblBuscaNome.setText("Nome:");
 
+        txtBuscaNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscaNomeActionPerformed(evt);
+            }
+        });
+
         btnBusca.setText("Buscar");
+        btnBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaActionPerformed(evt);
+            }
+        });
 
         tblLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,6 +192,11 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         btnExcluir.setText("Excluir");
 
         btnVoltarLista.setText("Voltar");
+        btnVoltarLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarListaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelBuscaLayout = new javax.swing.GroupLayout(painelBusca);
         painelBusca.setLayout(painelBuscaLayout);
@@ -230,6 +262,61 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+
+        this.dispose();
+
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnVoltarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarListaActionPerformed
+        // TODO add your handling code here:
+
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarListaActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+
+        if (passRecebeSenha.getText().equals(passConfirmaSenha.getText())) {
+            Users usuario = new Users();
+            usuario.setNome(txtRecebeNome.getText());
+            usuario.setLogin(txtRecebeLogin.getText());
+            usuario.setPassword(passRecebeSenha.getText());
+            usuario.setAdm(ccbAdministrador.isSelected());
+
+            UsersDAO UD = new UsersDAO();
+            UD.Create(usuario);
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Senhas diferentes");
+        }
+
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
+        // TODO add your handling code here:
+        UsersDAO UD = new UsersDAO();
+        if (txtBuscaNome.getText().equals("")) {
+            List<Users> usuarios = new ArrayList<Users>();
+            usuarios = UD.Read();
+            DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+            modelo.setNumRows(0);
+
+            usuarios.forEach(U -> {
+                modelo.addRow(new Object[]{
+                U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
+                });
+            });
+
+        }
+
+    }//GEN-LAST:event_btnBuscaActionPerformed
+
+    private void txtBuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscaNomeActionPerformed
 
     /**
      * @param args the command line arguments

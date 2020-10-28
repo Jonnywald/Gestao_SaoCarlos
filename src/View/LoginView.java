@@ -141,7 +141,7 @@ public class LoginView extends javax.swing.JFrame {
         // instanciamento da classe Users Dara Acess Object
         UsersDAO udao = new UsersDAO();
         // checando se o usuario existe e esta correto
-        if (udao.Check(txtUsuario.getText(),Arrays.toString(txtSenha.getPassword()))) {
+        if (udao.Check(txtUsuario.getText(),txtSenha.getText())) {
             if (udao.CheckAdm(txtUsuario.getText())){
                 this.dispose();
                 new MenuAdmView().setVisible(true);

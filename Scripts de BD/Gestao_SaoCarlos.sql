@@ -2,7 +2,7 @@ drop database if exists Gestao_SaoCarlos;
 create database Gestao_SaoCarlos;
 use Gestao_SaoCarlos;
 
-create table users (
+create table Users (
 
 login		varchar(100) UNIQUE primary key,
 nome	    varchar (100),
@@ -70,3 +70,7 @@ tpCura	int NOT NULL,
 materiaPrima	varchar (50)
 
 )engine=InnoDB;
+
+insert into Users values ("ADM", "ADM", "ADM", TRUE);
+insert into Users values ("AGT", "AGT", "AGT", FALSE);
+
