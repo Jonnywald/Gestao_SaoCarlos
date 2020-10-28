@@ -40,6 +40,7 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         ccbAdministrador = new javax.swing.JCheckBox();
         btnVoltar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        txtLabelCadastroUsuário = new javax.swing.JLabel();
         painelBusca = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         lblBuscaNome = new javax.swing.JLabel();
@@ -67,6 +68,9 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
 
         btnSalvar.setText("Salvar");
 
+        txtLabelCadastroUsuário.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabelCadastroUsuário.setText("Cadastro de Usuário");
+
         javax.swing.GroupLayout painelCadastroLayout = new javax.swing.GroupLayout(painelCadastro);
         painelCadastro.setLayout(painelCadastroLayout);
         painelCadastroLayout.setHorizontalGroup(
@@ -74,58 +78,62 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
             .addGroup(painelCadastroLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelCadastroLayout.createSequentialGroup()
-                        .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ccbAdministrador)
-                            .addGroup(painelCadastroLayout.createSequentialGroup()
-                                .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblNome)
-                                        .addComponent(lblLogin))
-                                    .addGroup(painelCadastroLayout.createSequentialGroup()
-                                        .addComponent(lblSenha)
-                                        .addGap(2, 2, 2)))
-                                .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtRecebeLogin)
-                                    .addComponent(txtRecebeNome)
-                                    .addGroup(painelCadastroLayout.createSequentialGroup()
-                                        .addComponent(passRecebeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblSenha1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(104, Short.MAX_VALUE))
-                    .addGroup(painelCadastroLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnVoltar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvar)
-                        .addGap(20, 20, 20))))
+                    .addComponent(ccbAdministrador)
+                    .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(painelCadastroLayout.createSequentialGroup()
+                            .addComponent(btnVoltar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnSalvar))
+                        .addGroup(painelCadastroLayout.createSequentialGroup()
+                            .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                .addComponent(txtLabelCadastroUsuário))
+                            .addGap(423, 423, 423))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelCadastroLayout.createSequentialGroup()
+                            .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblLogin))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtRecebeLogin)
+                                .addGroup(painelCadastroLayout.createSequentialGroup()
+                                    .addComponent(passRecebeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(lblSenha1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtRecebeNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelCadastroLayout.setVerticalGroup(
             painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCadastroLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNome)
-                    .addComponent(txtRecebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLogin)
-                    .addComponent(txtRecebeLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSenha)
-                    .addComponent(passRecebeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSenha1)
-                    .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addComponent(txtLabelCadastroUsuário)
+                .addGap(23, 23, 23)
+                .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelCadastroLayout.createSequentialGroup()
+                        .addComponent(lblNome)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblLogin)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblSenha))
+                    .addGroup(painelCadastroLayout.createSequentialGroup()
+                        .addComponent(txtRecebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtRecebeLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSenha1)
+                            .addComponent(passConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passRecebeSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(ccbAdministrador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                 .addGroup(painelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
                     .addComponent(btnSalvar))
-                .addContainerGap())
+                .addGap(27, 27, 27))
         );
 
         jTabbedPane1.addTab("Cadastrar", painelCadastro);
@@ -185,7 +193,7 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                     .addGroup(painelBuscaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         painelBuscaLayout.setVerticalGroup(
             painelBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,6 +288,7 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
     private javax.swing.JPasswordField passRecebeSenha;
     private javax.swing.JTable tblLista;
     private javax.swing.JTextField txtBuscaNome;
+    private javax.swing.JLabel txtLabelCadastroUsuário;
     private javax.swing.JTextField txtRecebeLogin;
     private javax.swing.JTextField txtRecebeNome;
     // End of variables declaration//GEN-END:variables

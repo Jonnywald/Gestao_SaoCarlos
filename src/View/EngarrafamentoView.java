@@ -31,6 +31,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtLabelControleBarril = new javax.swing.JLabel();
         cbxNumBarril = new javax.swing.JComboBox<>();
         lblBarril = new javax.swing.JLabel();
         lblNumGarrafas = new javax.swing.JLabel();
@@ -43,6 +44,10 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         btnCancelar = new javax.swing.JButton();
         lblLote = new javax.swing.JLabel();
         txtLote = new javax.swing.JTextField();
+        txtLabelEngarrafamento = new javax.swing.JLabel();
+
+        txtLabelControleBarril.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabelControleBarril.setText("Controle Barril");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -80,50 +85,55 @@ public class EngarrafamentoView extends javax.swing.JDialog {
 
         txtLote.setEditable(false);
 
+        txtLabelEngarrafamento.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabelEngarrafamento.setText("Engarrafamento");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvar))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(lblTipoGarrafa)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(cbxTipoGarrafa, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblTipoGarrafa)
+                                .addGap(40, 40, 40)
+                                .addComponent(cbxTipoGarrafa, 0, 205, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNumGarrafas)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtNumGarrafas, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblLote)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(lblLote))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtLote)
+                                    .addComponent(txtNumGarrafas)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(lblBarril))
-                                    .addComponent(lblTipoCachaça))
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTipoCachaça, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 60, Short.MAX_VALUE)))
-                .addContainerGap())
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblTipoCachaça)
+                                            .addComponent(lblBarril))
+                                        .addGap(41, 41, 41)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cbxNumBarril, 0, 205, Short.MAX_VALUE)
+                                            .addComponent(txtTipoCachaça)))
+                                    .addComponent(txtLabelEngarrafamento))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancelar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalvar)))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(15, 15, 15)
+                .addComponent(txtLabelEngarrafamento)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBarril)
                     .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,11 +153,11 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar))
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -219,6 +229,8 @@ public class EngarrafamentoView extends javax.swing.JDialog {
     private javax.swing.JLabel lblNumGarrafas;
     private javax.swing.JLabel lblTipoCachaça;
     private javax.swing.JLabel lblTipoGarrafa;
+    private javax.swing.JLabel txtLabelControleBarril;
+    private javax.swing.JLabel txtLabelEngarrafamento;
     private javax.swing.JTextField txtLote;
     private javax.swing.JTextField txtNumGarrafas;
     private javax.swing.JTextField txtTipoCachaça;

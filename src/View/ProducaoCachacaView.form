@@ -49,46 +49,53 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblNumDorna" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDtAlarmeFerment" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDtInicioFerment" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTotalCaldo" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAgua" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblBrix" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblQtdCaldo" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDtMoagem" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblLote" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtLote" max="32767" attributes="0"/>
-                          <Component id="ftxtDtMoagem" max="32767" attributes="0"/>
-                          <Component id="txtQtdCaldo" max="32767" attributes="0"/>
-                          <Component id="txtBrix" max="32767" attributes="0"/>
-                          <Component id="txtQtdAgua" max="32767" attributes="0"/>
-                          <Component id="txtTotalCaldo" max="32767" attributes="0"/>
-                          <Component id="ftxtDtInicioFerment" max="32767" attributes="0"/>
-                          <Component id="ftxtDtAlarmeFerment" max="32767" attributes="0"/>
-                          <Component id="cmbDorna" pref="125" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="344" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="474" max="32767" attributes="0"/>
                       <Component id="btnLancarLote" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnVoltarLote" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblNumDorna" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDtAlarmeFerment" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDtInicioFerment" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTotalCaldo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAgua" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblBrix" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblQtdCaldo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDtMoagem" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblLote" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtLote" max="32767" attributes="0"/>
+                                  <Component id="ftxtDtMoagem" max="32767" attributes="0"/>
+                                  <Component id="txtQtdCaldo" max="32767" attributes="0"/>
+                                  <Component id="txtBrix" max="32767" attributes="0"/>
+                                  <Component id="txtQtdAgua" max="32767" attributes="0"/>
+                                  <Component id="txtTotalCaldo" max="32767" attributes="0"/>
+                                  <Component id="ftxtDtInicioFerment" max="32767" attributes="0"/>
+                                  <Component id="ftxtDtAlarmeFerment" max="32767" attributes="0"/>
+                                  <Component id="cmbDorna" min="-2" pref="125" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblLote" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtLote" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -133,7 +140,7 @@
                           <Component id="lblNumDorna" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cmbDorna" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnVoltarLote" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnLancarLote" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -249,6 +256,14 @@
             <Component class="javax.swing.JButton" name="btnLancarLote">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lan&#xe7;ar Lote"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="txtLabeProdu&#xe7;&#xe3;oCacha&#xe7;a">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Produ&#xe7;&#xe3;o de Cacha&#xe7;a"/>
               </Properties>
             </Component>
           </SubComponents>

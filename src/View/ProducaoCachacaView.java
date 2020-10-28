@@ -49,6 +49,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         cmbDorna = new javax.swing.JComboBox<>();
         btnVoltarLote = new javax.swing.JButton();
         btnLancarLote = new javax.swing.JButton();
+        txtLabeProduçãoCachaça = new javax.swing.JLabel();
         painelEmAndamento = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -104,45 +105,53 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         btnLancarLote.setText("Lançar Lote");
 
+        txtLabeProduçãoCachaça.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabeProduçãoCachaça.setText("Produção de Cachaça");
+
         javax.swing.GroupLayout painelNovoLoteLayout = new javax.swing.GroupLayout(painelNovoLote);
         painelNovoLote.setLayout(painelNovoLoteLayout);
         painelNovoLoteLayout.setHorizontalGroup(
             painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelNovoLoteLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblNumDorna)
-                    .addComponent(lblDtAlarmeFerment)
-                    .addComponent(lblDtInicioFerment)
-                    .addComponent(lblTotalCaldo)
-                    .addComponent(lblAgua)
-                    .addComponent(lblBrix)
-                    .addComponent(lblQtdCaldo)
-                    .addComponent(lblDtMoagem)
-                    .addComponent(lblLote))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtLote)
-                    .addComponent(ftxtDtMoagem)
-                    .addComponent(txtQtdCaldo)
-                    .addComponent(txtBrix)
-                    .addComponent(txtQtdAgua)
-                    .addComponent(txtTotalCaldo)
-                    .addComponent(ftxtDtInicioFerment)
-                    .addComponent(ftxtDtAlarmeFerment)
-                    .addComponent(cmbDorna, 0, 125, Short.MAX_VALUE))
-                .addContainerGap(344, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelNovoLoteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(474, Short.MAX_VALUE)
                 .addComponent(btnLancarLote)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnVoltarLote)
                 .addContainerGap())
+            .addGroup(painelNovoLoteLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtLabeProduçãoCachaça)
+                    .addGroup(painelNovoLoteLayout.createSequentialGroup()
+                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNumDorna)
+                            .addComponent(lblDtAlarmeFerment)
+                            .addComponent(lblDtInicioFerment)
+                            .addComponent(lblTotalCaldo)
+                            .addComponent(lblAgua)
+                            .addComponent(lblBrix)
+                            .addComponent(lblQtdCaldo)
+                            .addComponent(lblDtMoagem)
+                            .addComponent(lblLote))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtLote)
+                            .addComponent(ftxtDtMoagem)
+                            .addComponent(txtQtdCaldo)
+                            .addComponent(txtBrix)
+                            .addComponent(txtQtdAgua)
+                            .addComponent(txtTotalCaldo)
+                            .addComponent(ftxtDtInicioFerment)
+                            .addComponent(ftxtDtAlarmeFerment)
+                            .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelNovoLoteLayout.setVerticalGroup(
             painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelNovoLoteLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(25, 25, 25)
+                .addComponent(txtLabeProduçãoCachaça)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,7 +187,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumDorna)
                     .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarLote)
                     .addComponent(btnLancarLote))
@@ -370,6 +379,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private javax.swing.JPanel painelNovoLote;
     private javax.swing.JTextField txtBrix;
     private javax.swing.JTextField txtGL;
+    private javax.swing.JLabel txtLabeProduçãoCachaça;
     private javax.swing.JTextField txtLote;
     private javax.swing.JTextField txtQtdAgua;
     private javax.swing.JTextField txtQtdCaldo;

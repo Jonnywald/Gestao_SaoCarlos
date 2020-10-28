@@ -31,6 +31,7 @@ public class ControleBarrilView extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtLabelCadastroUsuário = new javax.swing.JLabel();
         cbxNumBarril = new javax.swing.JComboBox<>();
         lblBarril = new javax.swing.JLabel();
         lblNumGarrafas = new javax.swing.JLabel();
@@ -42,6 +43,10 @@ public class ControleBarrilView extends javax.swing.JDialog {
         txtLote = new javax.swing.JTextField();
         txtTipoCachaça1 = new javax.swing.JTextField();
         txtTipoCachaça2 = new javax.swing.JTextField();
+        txtLabelControleBarril = new javax.swing.JLabel();
+
+        txtLabelCadastroUsuário.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabelCadastroUsuário.setText("Cadastro de Usuário");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -85,6 +90,9 @@ public class ControleBarrilView extends javax.swing.JDialog {
             }
         });
 
+        txtLabelControleBarril.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabelControleBarril.setText("Controle Barril");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,6 +100,7 @@ public class ControleBarrilView extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtLabelControleBarril)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTipoCachaça)
@@ -115,14 +124,15 @@ public class ControleBarrilView extends javax.swing.JDialog {
                             .addComponent(txtTipoCachaça2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(127, 127, 127)
-                        .addComponent(btnCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCancelar)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(15, 15, 15)
+                .addComponent(txtLabelControleBarril)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBarril)
                     .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,6 +229,8 @@ public class ControleBarrilView extends javax.swing.JDialog {
     private javax.swing.JLabel lblNumGarrafas;
     private javax.swing.JLabel lblTipoCachaça;
     private javax.swing.JLabel lblTipoGarrafa;
+    private javax.swing.JLabel txtLabelCadastroUsuário;
+    private javax.swing.JLabel txtLabelControleBarril;
     private javax.swing.JTextField txtLote;
     private javax.swing.JTextField txtTipoCachaça;
     private javax.swing.JTextField txtTipoCachaça1;
