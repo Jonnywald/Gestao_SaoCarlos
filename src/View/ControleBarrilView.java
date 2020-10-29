@@ -7,18 +7,14 @@ package View;
 
 /**
  *
- * @author Débora
+ * @author guilherme.bertola
  */
-public class ControleBarrilView extends javax.swing.JDialog {
+public class ControleBarrilView extends javax.swing.JFrame {
 
     /**
-     * Creates new form EngarrafamentoView
+     * Creates new form ControleBarril
      */
-    
-    
-    
-    public ControleBarrilView(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public ControleBarrilView() {
         initComponents();
     }
 
@@ -31,8 +27,6 @@ public class ControleBarrilView extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtLabelCadastroUsuário = new javax.swing.JLabel();
-        cbxNumBarril = new javax.swing.JComboBox<>();
         lblBarril = new javax.swing.JLabel();
         lblNumGarrafas = new javax.swing.JLabel();
         lblTipoCachaça = new javax.swing.JLabel();
@@ -43,12 +37,10 @@ public class ControleBarrilView extends javax.swing.JDialog {
         txtLote = new javax.swing.JTextField();
         txtTipoCachaça1 = new javax.swing.JTextField();
         txtTipoCachaça2 = new javax.swing.JTextField();
+        cbxNumBarril = new javax.swing.JComboBox<>();
         txtLabelControleBarril = new javax.swing.JLabel();
 
-        txtLabelCadastroUsuário.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        txtLabelCadastroUsuário.setText("Cadastro de Usuário");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblBarril.setText("Barril:");
 
@@ -125,7 +117,7 @@ public class ControleBarrilView extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(btnCancelar)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +144,7 @@ public class ControleBarrilView extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCancelar)
                 .addGap(19, 19, 19))
         );
@@ -166,8 +158,8 @@ public class ControleBarrilView extends javax.swing.JDialog {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
-        
-        
+        this.dispose();
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtTipoCachaça1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoCachaça1ActionPerformed
@@ -206,17 +198,10 @@ public class ControleBarrilView extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ControleBarrilView dialog = new ControleBarrilView(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new ControleBarrilView().setVisible(true);
             }
         });
     }
@@ -229,7 +214,6 @@ public class ControleBarrilView extends javax.swing.JDialog {
     private javax.swing.JLabel lblNumGarrafas;
     private javax.swing.JLabel lblTipoCachaça;
     private javax.swing.JLabel lblTipoGarrafa;
-    private javax.swing.JLabel txtLabelCadastroUsuário;
     private javax.swing.JLabel txtLabelControleBarril;
     private javax.swing.JTextField txtLote;
     private javax.swing.JTextField txtTipoCachaça;

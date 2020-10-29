@@ -7,18 +7,14 @@ package View;
 
 /**
  *
- * @author Débora
+ * @author guilherme.bertola
  */
-public class EstoqueView extends javax.swing.JDialog {
+public class EstoqueView extends javax.swing.JFrame {
 
     /**
-     * Creates new form EngarrafamentoView
+     * Creates new form Estoque
      */
-    
-    
-    
-    public EstoqueView(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public EstoqueView() {
         initComponents();
     }
 
@@ -33,17 +29,17 @@ public class EstoqueView extends javax.swing.JDialog {
 
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblGarrafa = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblRapadura = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblMelado = new javax.swing.JTable();
         txtLabelEngarrafamento = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblGarrafa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -54,11 +50,11 @@ public class EstoqueView extends javax.swing.JDialog {
                 "Nome", "Tipo Garrafa", "Tipo Bebida", "Quantidade"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblGarrafa);
 
         jTabbedPane5.addTab("Garrafa", jScrollPane1);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblRapadura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -69,11 +65,11 @@ public class EstoqueView extends javax.swing.JDialog {
                 "Nome", "Peso", "Data Produção", "Quantidade"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblRapadura);
 
         jTabbedPane5.addTab("Rapadura", jScrollPane2);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblMelado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -84,7 +80,7 @@ public class EstoqueView extends javax.swing.JDialog {
                 "Nome", "Peso", "Data Produção", "Quantidade"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tblMelado);
 
         jTabbedPane5.addTab("Melado", jScrollPane3);
 
@@ -100,7 +96,7 @@ public class EstoqueView extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtLabelEngarrafamento)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -119,7 +115,7 @@ public class EstoqueView extends javax.swing.JDialog {
                 .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnVoltar)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,20 +148,11 @@ public class EstoqueView extends javax.swing.JDialog {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                EstoqueView dialog = new EstoqueView(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new EstoqueView().setVisible(true);
             }
         });
     }
@@ -176,9 +163,9 @@ public class EstoqueView extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JTable tblGarrafa;
+    private javax.swing.JTable tblMelado;
+    private javax.swing.JTable tblRapadura;
     private javax.swing.JLabel txtLabelEngarrafamento;
     // End of variables declaration//GEN-END:variables
 }

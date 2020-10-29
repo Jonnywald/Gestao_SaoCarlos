@@ -147,6 +147,7 @@ public class MenuAgenteView extends javax.swing.JFrame {
 
     private void btnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendaActionPerformed
         // TODO add your handling code here:
+        new LancamentoDeVendasView().setVisible(true);
     }//GEN-LAST:event_btnVendaActionPerformed
 
     private void btnEngarrafamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEngarrafamentoActionPerformed
@@ -159,14 +160,17 @@ public class MenuAgenteView extends javax.swing.JFrame {
 
     private void btnMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeladoActionPerformed
         // TODO add your handling code here:
+        new ProducaoRapaduraMeladoView().setVisible(true);
     }//GEN-LAST:event_btnMeladoActionPerformed
 
     private void btnCachaçaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCachaçaActionPerformed
         // TODO add your handling code here:
+        new ProducaoCachacaView().setVisible(true);
     }//GEN-LAST:event_btnCachaçaActionPerformed
 
     private void btnRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRapaduraActionPerformed
         // TODO add your handling code here:
+        new ProducaoRapaduraMeladoView().setVisible(true);
     }//GEN-LAST:event_btnRapaduraActionPerformed
 
     /**

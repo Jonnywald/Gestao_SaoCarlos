@@ -126,6 +126,39 @@ public class UsersDAO {
         }
         return users;
     }
+    // metodo para a busca de um usuario em especifico
+    public List<Users> Busca(String nome){
+         // iniciar a conexao com o banco usando a classe connection factory
+        Connection con = ConnectionFactory.getConnection();
+        // gerar uma variavel de operacao com o banco
+        PreparedStatement stmt = null;
+        // gera a variavel de resultado de busca de banco
+        ResultSet rs = null;
+        // cria uma lista de usuarios
+        List<Users> users = new ArrayList<>();
+        try{
+             // operacao de busca de todos os usuarios
+            stmt = con.prepareStatement("SELECT * FROM Users WHERE nome LIKE '%" + nome + "%'");
+            // executar a operacao no banco
+            rs = stmt.executeQuery();
+            // percorre a lista do resultado alimentando a lista dos usuarios
+            while (rs.next()) {
+                Users u = new Users();
+                u.setLogin(rs.getString("login"));
+                u.setNome(rs.getString("nome"));
+                u.setPassword(rs.getString("senha"));
+                u.setAdm(rs.getBoolean("adm"));
+                users.add(u);
+            }
+        } catch(SQLException ex){
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler dados: " + ex);
+        } finally{
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return users;
+    }
     // metodo para validar a usuario e senha
     public boolean Check(String login, String senha) {
         // iniciar a conexao com o banco usando a classe connection factory

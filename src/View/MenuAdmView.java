@@ -217,6 +217,7 @@ public class MenuAdmView extends javax.swing.JFrame {
 
     private void btnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendaActionPerformed
         // TODO add your handling code here:
+        new LancamentoDeVendasView().setVisible(true);
     }//GEN-LAST:event_btnVendaActionPerformed
 
     private void btnEngarrafamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEngarrafamentoActionPerformed
@@ -228,30 +229,37 @@ public class MenuAdmView extends javax.swing.JFrame {
 
     private void btnRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosActionPerformed
         // TODO add your handling code here:
+        new RelatoriosView().setVisible(true);
     }//GEN-LAST:event_btnRelatoriosActionPerformed
 
     private void btnMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeladoActionPerformed
         // TODO add your handling code here:
+        new ProducaoRapaduraMeladoView().setVisible(true);
     }//GEN-LAST:event_btnMeladoActionPerformed
 
     private void btnBebidasMistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBebidasMistasActionPerformed
         // TODO add your handling code here:
+        new CadastroBebidasMistas().setVisible(true);
     }//GEN-LAST:event_btnBebidasMistasActionPerformed
 
     private void btnCachaçaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCachaçaActionPerformed
         // TODO add your handling code here:
+        new ProducaoCachacaView().setVisible(true);
     }//GEN-LAST:event_btnCachaçaActionPerformed
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
         // TODO add your handling code here:
+        new EstoqueView().setVisible(true);
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBarrilActionPerformed
         // TODO add your handling code here:
+        new ControleBarrilView().setVisible(true);
     }//GEN-LAST:event_btnBarrilActionPerformed
 
     private void btnRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRapaduraActionPerformed
         // TODO add your handling code here:
+        new ProducaoRapaduraMeladoView().setVisible(true);
     }//GEN-LAST:event_btnRapaduraActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed

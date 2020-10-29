@@ -60,6 +60,11 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         btnVoltarLista = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         lblNome.setText("Nome:");
 
@@ -297,19 +302,42 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
 
     private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
         // TODO add your handling code here:
+        // Instanciamento da Classe de acesso ao banco de dados de usuarios
         UsersDAO UD = new UsersDAO();
+        // caso o campo de busca esteja vazio o programa ira exibir todos os usuarios
         if (txtBuscaNome.getText().equals("")) {
+            // instanciamento da lista de usuarios onde os resultados serao armazenados
             List<Users> usuarios = new ArrayList<Users>();
+            // comando da classe de acesso ao banco de usuarios para buscar todos os usuarios cadastrados
             usuarios = UD.Read();
+            // instanciamentdo de objeto para manipulacao de tabela
             DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+            // zerar o numero de linha da tabela
             modelo.setNumRows(0);
-
+            // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
             usuarios.forEach(U -> {
+                // adiciona uma linha na tabela com os dados do usuario U em questao
                 modelo.addRow(new Object[]{
-                U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
+                    U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
                 });
             });
-
+        } // caso o campo tenha um nome a tabela sera preenchida apenas com os usuarios com o nome semelhantes
+        else {
+            // instanciamento da lista de usuarios onde os resultados serao armazenados
+            List<Users> usuarios = new ArrayList<Users>();
+            // comando da classe de acesso ao banco de usuatios onde retorna a busca no banco para o nome do usuario
+            usuarios = UD.Busca(txtBuscaNome.getText());
+            // instanciamentdo de objeto para manipulacao de tabela
+            DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+            // zerar o numero de linha da tabela
+            modelo.setNumRows(0);
+            // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
+            usuarios.forEach(U -> {
+                // adiciona uma linha na tabela com os dados do usuario U em questao
+                modelo.addRow(new Object[]{
+                    U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
+                });
+            });
         }
 
     }//GEN-LAST:event_btnBuscaActionPerformed
@@ -317,6 +345,25 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
     private void txtBuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscaNomeActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        UsersDAO UD = new UsersDAO();
+        List<Users> usuarios = new ArrayList<Users>();
+        // comando da classe de acesso ao banco de usuarios para buscar todos os usuarios cadastrados
+        usuarios = UD.Read();
+        // instanciamentdo de objeto para manipulacao de tabela
+        DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+        // zerar o numero de linha da tabela
+        modelo.setNumRows(0);
+        // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
+        usuarios.forEach(U -> {
+            // adiciona uma linha na tabela com os dados do usuario U em questao
+            modelo.addRow(new Object[]{
+                U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
+            });
+        });
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
