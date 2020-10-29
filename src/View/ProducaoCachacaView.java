@@ -102,6 +102,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         cmbDorna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dorna 1", "Dorna 2" }));
 
         btnVoltarLote.setText("Voltar");
+        btnVoltarLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarLoteActionPerformed(evt);
+            }
+        });
 
         btnLancarLote.setText("Lançar Lote");
 
@@ -223,6 +228,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barril 1", "Barril 2", "Barril 3", "Barril 4", "Barril 5", "Barril 6", "Barril 7", "Barril 8", "Barril 9", "Barril 10", "Barril 11", "Barril 12" }));
 
         btnVoltarAndamento.setText("Voltar");
+        btnVoltarAndamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarAndamentoActionPerformed(evt);
+            }
+        });
 
         btnLacarDestilacao.setText("Lançar Destilação");
 
@@ -310,6 +320,16 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoltarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarLoteActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarLoteActionPerformed
+
+    private void btnVoltarAndamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAndamentoActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarAndamentoActionPerformed
 
     /**
      * @param args the command line arguments

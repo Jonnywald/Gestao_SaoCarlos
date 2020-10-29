@@ -108,6 +108,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         btnSalvarMelado.setText("Salvar Lote");
 
         btnMeladoVoltar.setText("Voltar");
+        btnMeladoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMeladoVoltarActionPerformed(evt);
+            }
+        });
 
         btnRemoverMelado.setText("Remover");
 
@@ -218,6 +223,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         Abas.addTab("Melado", painelMelado);
 
         btnRapaduraVoltar.setText("Voltar");
+        btnRapaduraVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRapaduraVoltarActionPerformed(evt);
+            }
+        });
 
         lblAddRapadura.setText("Adição de Rapadura");
 
@@ -366,6 +376,16 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMeladoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeladoVoltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnMeladoVoltarActionPerformed
+
+    private void btnRapaduraVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRapaduraVoltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnRapaduraVoltarActionPerformed
 
     /**
      * @param args the command line arguments

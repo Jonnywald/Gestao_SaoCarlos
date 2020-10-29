@@ -193,8 +193,18 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblLista);
 
         btnSalvarLista.setText("Salvar");
+        btnSalvarLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarListaActionPerformed(evt);
+            }
+        });
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnVoltarLista.setText("Voltar");
         btnVoltarLista.addActionListener(new java.awt.event.ActionListener() {
@@ -364,6 +374,45 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
             });
         });
     }//GEN-LAST:event_formWindowActivated
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+        //executar caso tenha uma linha selecionada
+        if (tblLista.getSelectedRow() != -1){
+            // intanciar a um objeto de manipulacao de banco de usuarios
+            UsersDAO udao = new UsersDAO();
+            // instanciar um usuario
+            Users u = new Users();
+            // adicionar um login no objeto usuario previamente instanciado
+            u.setLogin((String)tblLista.getValueAt(tblLista.getSelectedRow(),1));
+            // executar a acao de deletar o usuario
+            udao.Delete(u);
+        }else{
+            // exibir mensagem para selecionar uma linha
+            JOptionPane.showMessageDialog(null,"Selecione uma linha/usuário!");
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnSalvarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarListaActionPerformed
+        // TODO add your handling code here:
+        //executar caso tenha uma linha selecionada
+        if(tblLista.getSelectedRow() != -1){
+            // intanciar a um objeto de manipulacao de banco de usuarios
+            UsersDAO udao = new UsersDAO();
+            // instanciar um usuario
+            Users u = new Users();
+            // criacao do usuario
+            u.setNome((String)tblLista.getValueAt(tblLista.getSelectedRow(),0));
+            u.setLogin((String)tblLista.getValueAt(tblLista.getSelectedRow(),1));
+            u.setPassword((String)tblLista.getValueAt(tblLista.getSelectedRow(),2));
+            u.setAdm((Boolean)tblLista.getValueAt(tblLista.getSelectedRow(),3));
+            udao.Update(u, u.getLogin());
+            
+        }else{
+            // exibir mensagem para selecionar uma linha
+            JOptionPane.showMessageDialog(null,"Selecione uma linha/usuário!");
+        }
+    }//GEN-LAST:event_btnSalvarListaActionPerformed
 
     /**
      * @param args the command line arguments
