@@ -5,6 +5,12 @@
  */
 package View;
 
+import Model.Bean.ProducaoCachaca;
+import Model.DAO.CachacaDAO;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 /**
  *
  * @author guilherme.bertola
@@ -68,6 +74,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         btnLacarDestilacao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         lblLote.setText("Lote:");
 
@@ -109,6 +120,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         });
 
         btnLancarLote.setText("Lançar Lote");
+        btnLancarLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLancarLoteActionPerformed(evt);
+            }
+        });
 
         txtLabeProduçãoCachaça.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtLabeProduçãoCachaça.setText("Produção de Cachaça");
@@ -330,6 +346,46 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnVoltarAndamentoActionPerformed
+
+    private void btnLancarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLancarLoteActionPerformed
+        // TODO add your handling code here:
+        ProducaoCachaca pCachaca = new ProducaoCachaca();
+        CachacaDAO cDAO = new CachacaDAO ();
+        
+        pCachaca.setLote(Integer.parseInt(txtLote.getText()));
+        //pCachaca.setDtMoagem((Date)ftxtDtMoagem.getText());
+        pCachaca.setQtdCaldo(Integer.parseInt(txtQtdCaldo.getText()));
+        pCachaca.setQtdAgua(Integer.parseInt(txtQtdAgua.getText()));
+        pCachaca.setBrix(Double.parseDouble(txtBrix.getText()));
+        pCachaca.setTotalCaldo(Integer.parseInt(txtTotalCaldo.getText()));
+        //pCachaca.setDtInicioFerment(dtInicioFerment);
+        //pCachaca.setDtAlarmFerment(dtAlarmFerment);
+        pCachaca.setNumDorna(cmbDorna.getSelectedIndex());
+        
+        
+        cDAO.IniciarProducao(pCachaca);
+    }//GEN-LAST:event_btnLancarLoteActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+          CachacaDAO cDAO = new CachacaDAO();
+        List<ProducaoCachaca> pc = new ArrayList<ProducaoCachaca>();
+        // comando da classe de acesso ao banco de usuarios para buscar todos os usuarios cadastrados
+       //cDAO = pc.Read();
+        // instanciamentdo de objeto para manipulacao de tabela
+        //DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+        // zerar o numero de linha da tabela
+        //modelo.setNumRows(0);
+        // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
+        //usuarios.forEach(U -> {
+            // adiciona uma linha na tabela com os dados do usuario U em questao
+           // modelo.addRow(new Object[]{
+              //  U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
+         //   });
+     //   });
+        
+        
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

@@ -12,8 +12,7 @@ adm			boolean
 )engine=InnoDB;
 
 create table producaoCachaca (
-id_producaoC	int auto_increment	primary key,
-lote		int,
+lote		int auto_increment	primary key,
 dtMoagem     date NOT NULL,
 qtdCaldo 	int NOT NULL,
 qtdAgua	 	int NOT NULL,
@@ -22,11 +21,11 @@ brix		double,
 dtInicioFerment date NOT NULL,
 dtAlarmFerment 	date,
 numDorna	int NOT NULL,
-dtAlambicagem date NOT NULL,
-qtdCoracao	double NOT NULL,
-rendimento 	double NOT NULL,
-gl			double NOT NULL,
-numBarril	int NOT NULL
+dtAlambicagem date,
+qtdCoracao	double,
+rendimento 	double,
+gl			double,
+numBarril	int
     
 )engine=InnoDB;
 
