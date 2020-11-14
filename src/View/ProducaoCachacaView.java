@@ -7,9 +7,14 @@ package View;
 
 import Model.Bean.ProducaoCachaca;
 import Model.DAO.CachacaDAO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -56,9 +61,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         btnVoltarLote = new javax.swing.JButton();
         btnLancarLote = new javax.swing.JButton();
         txtLabeProduçãoCachaça = new javax.swing.JLabel();
+        btnCalcTot = new javax.swing.JButton();
+        btnCalcAgua = new javax.swing.JButton();
         painelEmAndamento = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblLista = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         lblDtAlambicagem = new javax.swing.JLabel();
         lblQtdCoracao = new javax.swing.JLabel();
@@ -69,9 +76,15 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         lblGL = new javax.swing.JLabel();
         txtGL = new javax.swing.JTextField();
         lblNumBarril = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbBarril = new javax.swing.JComboBox<>();
         btnVoltarAndamento = new javax.swing.JButton();
         btnLacarDestilacao = new javax.swing.JButton();
+        btnCalcRend = new javax.swing.JButton();
+        painelHistorico = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblHist = new javax.swing.JTable();
+        btnVoltarHist = new javax.swing.JButton();
+        btnAtualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -129,6 +142,20 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         txtLabeProduçãoCachaça.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtLabeProduçãoCachaça.setText("Produção de Cachaça");
 
+        btnCalcTot.setText("Calcular");
+        btnCalcTot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcTotActionPerformed(evt);
+            }
+        });
+
+        btnCalcAgua.setText("Calcular");
+        btnCalcAgua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcAguaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelNovoLoteLayout = new javax.swing.GroupLayout(painelNovoLote);
         painelNovoLote.setLayout(painelNovoLoteLayout);
         painelNovoLoteLayout.setHorizontalGroup(
@@ -164,15 +191,19 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                             .addComponent(txtTotalCaldo)
                             .addComponent(ftxtDtInicioFerment)
                             .addComponent(ftxtDtAlarmeFerment)
-                            .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCalcTot)
+                            .addComponent(btnCalcAgua))))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         painelNovoLoteLayout.setVerticalGroup(
             painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelNovoLoteLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(txtLabeProduçãoCachaça)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -191,11 +222,13 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAgua)
-                    .addComponent(txtQtdAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtQtdAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcAgua))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTotalCaldo)
-                    .addComponent(txtTotalCaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTotalCaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcTot))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDtInicioFerment)
@@ -217,7 +250,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Novo Lote", painelNovoLote);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -225,7 +258,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 "Lote", "Data de Fermentação", "Volume", "Dorna"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblLista);
 
         lblDtAlambicagem.setText("Data da Alambicagem:");
 
@@ -241,7 +274,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblNumBarril.setText("Numero do Barril:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barril 1", "Barril 2", "Barril 3", "Barril 4", "Barril 5", "Barril 6", "Barril 7", "Barril 8", "Barril 9", "Barril 10", "Barril 11", "Barril 12" }));
+        cmbBarril.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barril 1", "Barril 2", "Barril 3", "Barril 4", "Barril 5", "Barril 6", "Barril 7", "Barril 8", "Barril 9", "Barril 10", "Barril 11", "Barril 12" }));
 
         btnVoltarAndamento.setText("Voltar");
         btnVoltarAndamento.addActionListener(new java.awt.event.ActionListener() {
@@ -251,6 +284,18 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         });
 
         btnLacarDestilacao.setText("Lançar Destilação");
+        btnLacarDestilacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLacarDestilacaoActionPerformed(evt);
+            }
+        });
+
+        btnCalcRend.setText("Calcular");
+        btnCalcRend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcRendActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelEmAndamentoLayout = new javax.swing.GroupLayout(painelEmAndamento);
         painelEmAndamento.setLayout(painelEmAndamentoLayout);
@@ -278,7 +323,9 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                             .addComponent(ftxtDtAlambicagem)
                             .addComponent(txtRendimento)
                             .addComponent(txtGL)
-                            .addComponent(jComboBox1, 0, 125, Short.MAX_VALUE))
+                            .addComponent(cmbBarril, 0, 125, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCalcRend)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEmAndamentoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -305,7 +352,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRendimento)
-                    .addComponent(txtRendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcRend))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGL)
@@ -313,8 +361,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumBarril)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                    .addComponent(cmbBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarAndamento)
                     .addComponent(btnLacarDestilacao))
@@ -322,6 +370,57 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Em andamento", painelEmAndamento);
+
+        tblHist.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lote", "Data de Moagem", "Qtd Caldo", "Brix", "Qtd Agua", "Volume", "Data de Fermentação", "Data Maxima", "Dorna", "Data de Destilação", "Coração", "GL", "Rendimento", "Barril"
+            }
+        ));
+        jScrollPane2.setViewportView(tblHist);
+
+        btnVoltarHist.setText("Voltar");
+        btnVoltarHist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarHistActionPerformed(evt);
+            }
+        });
+
+        btnAtualizar.setText("Relistar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelHistoricoLayout = new javax.swing.GroupLayout(painelHistorico);
+        painelHistorico.setLayout(painelHistoricoLayout);
+        painelHistoricoLayout.setHorizontalGroup(
+            painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelHistoricoLayout.createSequentialGroup()
+                .addGroup(painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelHistoricoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAtualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnVoltarHist)))
+                .addContainerGap())
+        );
+        painelHistoricoLayout.setVerticalGroup(
+            painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelHistoricoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVoltarHist)
+                    .addComponent(btnAtualizar)))
+        );
+
+        jTabbedPane1.addTab("Historico", painelHistorico);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -350,42 +449,130 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private void btnLancarLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLancarLoteActionPerformed
         // TODO add your handling code here:
         ProducaoCachaca pCachaca = new ProducaoCachaca();
-        CachacaDAO cDAO = new CachacaDAO ();
-        
+        CachacaDAO cDAO = new CachacaDAO();
+
         pCachaca.setLote(Integer.parseInt(txtLote.getText()));
-        //pCachaca.setDtMoagem((Date)ftxtDtMoagem.getText());
+        Date dtMoag = null, dtIn = null, dtAl = null;
+        try {
+            dtMoag = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtMoagem.getText());
+            dtIn = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtInicioFerment.getText());
+            dtAl = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtAlarmeFerment.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        pCachaca.setDtMoagem(dtMoag);
         pCachaca.setQtdCaldo(Integer.parseInt(txtQtdCaldo.getText()));
         pCachaca.setQtdAgua(Integer.parseInt(txtQtdAgua.getText()));
         pCachaca.setBrix(Double.parseDouble(txtBrix.getText()));
         pCachaca.setTotalCaldo(Integer.parseInt(txtTotalCaldo.getText()));
-        //pCachaca.setDtInicioFerment(dtInicioFerment);
-        //pCachaca.setDtAlarmFerment(dtAlarmFerment);
-        pCachaca.setNumDorna(cmbDorna.getSelectedIndex());
-        
-        
+        pCachaca.setDtInicioFerment(dtIn);
+        pCachaca.setDtAlarmFerment(dtAl);
+        pCachaca.setNumDorna(cmbDorna.getSelectedIndex() + 1);
+
         cDAO.IniciarProducao(pCachaca);
     }//GEN-LAST:event_btnLancarLoteActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-          CachacaDAO cDAO = new CachacaDAO();
+        CachacaDAO cDAO = new CachacaDAO();
         List<ProducaoCachaca> pc = new ArrayList<ProducaoCachaca>();
         // comando da classe de acesso ao banco de usuarios para buscar todos os usuarios cadastrados
-       //cDAO = pc.Read();
+        pc = cDAO.ListarProducao();
         // instanciamentdo de objeto para manipulacao de tabela
-        //DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
         // zerar o numero de linha da tabela
-        //modelo.setNumRows(0);
+        modelo.setNumRows(0);
         // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
-        //usuarios.forEach(U -> {
+        pc.forEach(p -> {
             // adiciona uma linha na tabela com os dados do usuario U em questao
-           // modelo.addRow(new Object[]{
-              //  U.getNome(), U.getLogin(), U.getPassword(), U.isAdm()
-         //   });
-     //   });
-        
-        
+            if (p.getDtAlambicagem() == null) {
+                modelo.addRow(new Object[]{
+                    p.getLote(), p.getDtInicioFerment(), p.getTotalCaldo(), p.getNumDorna()
+                });
+            }
+        });
+
+
     }//GEN-LAST:event_formWindowActivated
+
+    private void btnCalcRendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcRendActionPerformed
+        // TODO add your handling code here:
+        Double rend;
+        rend = Double.parseDouble(txtQtdCoracao.getText()) / ((Double) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
+        txtRendimento.setText(rend.toString());
+    }//GEN-LAST:event_btnCalcRendActionPerformed
+
+    private void btnLacarDestilacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLacarDestilacaoActionPerformed
+        // TODO add your handling code here:
+        ProducaoCachaca pCachaca = new ProducaoCachaca();
+        CachacaDAO cDAO = new CachacaDAO();
+        Integer bLote = (Integer) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
+        pCachaca = cDAO.BuscaLote(bLote);
+        Date alam = null;
+        try {
+            alam = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtAlambicagem.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        pCachaca.setDtAlambicagem(alam);
+        pCachaca.setQtdCoracao(Double.parseDouble(txtQtdCoracao.getText()));
+        pCachaca.setRendimento(Double.parseDouble(txtRendimento.getText()));
+        pCachaca.setGl(Double.parseDouble(txtGL.getText()));
+        pCachaca.setNumBarril(cmbBarril.getSelectedIndex() + 1);
+        cDAO.FinalizarProducao(pCachaca);
+    }//GEN-LAST:event_btnLacarDestilacaoActionPerformed
+
+    private void btnCalcTotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcTotActionPerformed
+        // TODO add your handling code here:
+        Integer tot = Integer.parseInt(txtQtdAgua.getText()) + Integer.parseInt(txtQtdCaldo.getText());
+        txtTotalCaldo.setText(tot.toString());
+    }//GEN-LAST:event_btnCalcTotActionPerformed
+
+    private void btnCalcAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcAguaActionPerformed
+        // TODO add your handling code here:
+        Double brix, qtdC, qtdA;
+        brix = Double.parseDouble(txtBrix.getText());
+        qtdC = Double.parseDouble(txtQtdCaldo.getText());
+        qtdA = (brix * qtdC / 15) - qtdC;
+        txtQtdAgua.setText(qtdA.toString());
+    }//GEN-LAST:event_btnCalcAguaActionPerformed
+
+    private void btnVoltarHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarHistActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarHistActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        // TODO add your handling code here:
+        CachacaDAO cDAO = new CachacaDAO();
+        List<ProducaoCachaca> pc = new ArrayList<ProducaoCachaca>();
+        // comando da classe de acesso ao banco de usuarios para buscar todos os usuarios cadastrados
+        pc = cDAO.ListarProducao();
+        // instanciamentdo de objeto para manipulacao de tabela
+        DefaultTableModel modelo = (DefaultTableModel) tblHist.getModel();
+        // zerar o numero de linha da tabela
+        modelo.setNumRows(0);
+        // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
+        pc.forEach(p -> {
+            // adiciona uma linha na tabela com os dados do usuario U em questao
+            modelo.addRow(new Object[]{
+                p.getLote(),
+                p.getDtMoagem(),
+                p.getQtdCaldo(),
+                p.getBrix(),
+                p.getQtdAgua(),
+                p.getTotalCaldo(),
+                p.getDtInicioFerment(),
+                p.getDtAlarmFerment(),
+                p.getNumDorna(),
+                p.getDtAlambicagem(),
+                p.getQtdCoracao(),
+                p.getGl(),
+                p.getRendimento(),
+                p.getNumBarril()
+            });
+        });
+    }//GEN-LAST:event_btnAtualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -423,20 +610,25 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtualizar;
+    private javax.swing.JButton btnCalcAgua;
+    private javax.swing.JButton btnCalcRend;
+    private javax.swing.JButton btnCalcTot;
     private javax.swing.JButton btnLacarDestilacao;
     private javax.swing.JButton btnLancarLote;
     private javax.swing.JButton btnVoltarAndamento;
+    private javax.swing.JButton btnVoltarHist;
     private javax.swing.JButton btnVoltarLote;
+    private javax.swing.JComboBox<String> cmbBarril;
     private javax.swing.JComboBox<String> cmbDorna;
     private javax.swing.JFormattedTextField ftxtDtAlambicagem;
     private javax.swing.JFormattedTextField ftxtDtAlarmeFerment;
     private javax.swing.JFormattedTextField ftxtDtInicioFerment;
     private javax.swing.JFormattedTextField ftxtDtMoagem;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAgua;
     private javax.swing.JLabel lblBrix;
     private javax.swing.JLabel lblDtAlambicagem;
@@ -452,7 +644,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private javax.swing.JLabel lblRendimento;
     private javax.swing.JLabel lblTotalCaldo;
     private javax.swing.JPanel painelEmAndamento;
+    private javax.swing.JPanel painelHistorico;
     private javax.swing.JPanel painelNovoLote;
+    private javax.swing.JTable tblHist;
+    private javax.swing.JTable tblLista;
     private javax.swing.JTextField txtBrix;
     private javax.swing.JTextField txtGL;
     private javax.swing.JLabel txtLabeProduçãoCachaça;

@@ -108,4 +108,41 @@ public class CachacaDAO {
         }
         return pCachaca;
     }
+    public ProducaoCachaca BuscaLote(Integer L){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        ProducaoCachaca pCachaca = new ProducaoCachaca();
+        try {
+            stmt = con.prepareStatement("SELECT * FROM producaoCachaca where lote=?");
+            stmt.setInt(1,L);
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                
+                pCachaca.setLote(rs.getInt("lote"));
+                pCachaca.setDtMoagem(rs.getDate("dtMoagem "));
+                pCachaca.setQtdCaldo(rs.getInt("qtdCaldo"));
+                pCachaca.setQtdAgua(rs.getInt("qtdAgua"));
+                pCachaca.setTotalCaldo(rs.getInt("totalCaldo"));
+                pCachaca.setBrix(rs.getDouble("brix"));
+                pCachaca.setDtInicioFerment(rs.getDate("dtInicioFerment"));
+                pCachaca.setDtAlarmFerment(rs.getDate("dtAlarmFerment"));
+                pCachaca.setNumDorna(rs.getInt("numDorna"));
+                pCachaca.setDtAlambicagem(rs.getDate("dtAlambicagem"));
+                pCachaca.setQtdCoracao(rs.getDouble("qtdCoracao"));
+                pCachaca.setRendimento(rs.getDouble("rendimento"));
+                pCachaca.setGl(rs.getDouble("gl"));
+                pCachaca.setNumBarril(rs.getInt("numBarril"));
+                
+            }
+            
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        }finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return pCachaca;
+    }
 }
