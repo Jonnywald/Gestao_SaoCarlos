@@ -95,7 +95,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblLote.setText("Lote:");
 
-        txtLote.setEditable(false);
         txtLote.setText("0001");
 
         lblDtMoagem.setText("Data de Moagem:");

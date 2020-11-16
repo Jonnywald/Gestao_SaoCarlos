@@ -82,6 +82,12 @@ public class ControleBarrilView extends javax.swing.JFrame {
             }
         });
 
+        cbxNumBarril.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxNumBarrilActionPerformed(evt);
+            }
+        });
+
         txtLabelControleBarril.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtLabelControleBarril.setText("Controle Barril");
 
@@ -169,6 +175,11 @@ public class ControleBarrilView extends javax.swing.JFrame {
     private void txtTipoCachaça2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoCachaça2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipoCachaça2ActionPerformed
+
+    private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cbxNumBarrilActionPerformed
 
     /**
      * @param args the command line arguments
