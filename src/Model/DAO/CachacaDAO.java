@@ -145,4 +145,25 @@ public class CachacaDAO {
         }
         return pCachaca;
     }
+    public void Delete(ProducaoCachaca p){
+        // iniciar a conexao com o banco usando a classe connection factory
+        Connection con = ConnectionFactory.getConnection();
+        // gerar uma variavel de operacao com o banco
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("DELETE FROM producaocachaca WHERE lote = ?");
+            stmt.setInt(1, p.getLote());
+             // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
+            
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
+        }finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
 }

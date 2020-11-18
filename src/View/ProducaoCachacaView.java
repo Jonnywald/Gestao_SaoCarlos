@@ -85,6 +85,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         tblHist = new javax.swing.JTable();
         btnVoltarHist = new javax.swing.JButton();
         btnAtualizar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -394,6 +395,13 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             }
         });
 
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelHistoricoLayout = new javax.swing.GroupLayout(painelHistorico);
         painelHistorico.setLayout(painelHistoricoLayout);
         painelHistoricoLayout.setHorizontalGroup(
@@ -403,6 +411,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelHistoricoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAtualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnVoltarHist)))
@@ -416,7 +426,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarHist)
-                    .addComponent(btnAtualizar)))
+                    .addComponent(btnAtualizar)
+                    .addComponent(btnExcluir)))
         );
 
         jTabbedPane1.addTab("Historico", painelHistorico);
@@ -573,6 +584,15 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+        ProducaoCachaca pCachaca = new ProducaoCachaca();
+        CachacaDAO cDAO = new CachacaDAO();
+        Integer bLote = (Integer) tblHist.getValueAt(tblHist.getSelectedRow(), 0);
+        pCachaca = cDAO.BuscaLote(bLote);
+        cDAO.Delete(pCachaca);
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -613,6 +633,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private javax.swing.JButton btnCalcAgua;
     private javax.swing.JButton btnCalcRend;
     private javax.swing.JButton btnCalcTot;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLacarDestilacao;
     private javax.swing.JButton btnLancarLote;
     private javax.swing.JButton btnVoltarAndamento;
