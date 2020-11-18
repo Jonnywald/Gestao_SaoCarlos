@@ -61,8 +61,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         btnVoltarLote = new javax.swing.JButton();
         btnLancarLote = new javax.swing.JButton();
         txtLabeProduçãoCachaça = new javax.swing.JLabel();
-        btnCalcTot = new javax.swing.JButton();
-        btnCalcAgua = new javax.swing.JButton();
         painelEmAndamento = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLista = new javax.swing.JTable();
@@ -97,20 +95,35 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         lblLote.setText("Lote:");
 
         txtLote.setText("0001");
+        txtLote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoteActionPerformed(evt);
+            }
+        });
 
         lblDtMoagem.setText("Data de Moagem:");
 
-        ftxtDtMoagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("MM/dd/yyyy"))));
+        ftxtDtMoagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         lblQtdCaldo.setText("Quantidade de Caldo (L):");
 
         lblBrix.setText("Grau Brix:");
 
+        txtBrix.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtBrixFocusLost(evt);
+            }
+        });
+
         lblAgua.setText("Quantidade de Agua (L):");
 
-        lblTotalCaldo.setText("Total de Caldo (L):");
+        txtQtdAgua.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtQtdAguaFocusLost(evt);
+            }
+        });
 
-        txtTotalCaldo.setEditable(false);
+        lblTotalCaldo.setText("Total de Caldo (L):");
 
         lblDtInicioFerment.setText("Data de Inicio da fermentação:");
 
@@ -118,8 +131,12 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblDtAlarmeFerment.setText("Data maxima de fermentação:");
 
-        ftxtDtAlarmeFerment.setEditable(false);
         ftxtDtAlarmeFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        ftxtDtAlarmeFerment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftxtDtAlarmeFermentActionPerformed(evt);
+            }
+        });
 
         lblNumDorna.setText("Numero da Dorna:");
 
@@ -141,20 +158,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         txtLabeProduçãoCachaça.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtLabeProduçãoCachaça.setText("Produção de Cachaça");
-
-        btnCalcTot.setText("Calcular");
-        btnCalcTot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcTotActionPerformed(evt);
-            }
-        });
-
-        btnCalcAgua.setText("Calcular");
-        btnCalcAgua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcAguaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout painelNovoLoteLayout = new javax.swing.GroupLayout(painelNovoLote);
         painelNovoLote.setLayout(painelNovoLoteLayout);
@@ -191,19 +194,15 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                             .addComponent(txtTotalCaldo)
                             .addComponent(ftxtDtInicioFerment)
                             .addComponent(ftxtDtAlarmeFerment)
-                            .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCalcTot)
-                            .addComponent(btnCalcAgua))))
-                .addContainerGap(262, Short.MAX_VALUE))
+                            .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(343, Short.MAX_VALUE))
         );
         painelNovoLoteLayout.setVerticalGroup(
             painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelNovoLoteLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(txtLabeProduçãoCachaça)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -222,13 +221,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAgua)
-                    .addComponent(txtQtdAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCalcAgua))
+                    .addComponent(txtQtdAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTotalCaldo)
-                    .addComponent(txtTotalCaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCalcTot))
+                    .addComponent(txtTotalCaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDtInicioFerment)
@@ -471,10 +468,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
         pCachaca.setDtMoagem(dtMoag);
-        pCachaca.setQtdCaldo(Integer.parseInt(txtQtdCaldo.getText()));
-        pCachaca.setQtdAgua(Integer.parseInt(txtQtdAgua.getText()));
+        pCachaca.setQtdCaldo((int)Double.parseDouble(txtQtdCaldo.getText()));
+        pCachaca.setQtdAgua((int)Double.parseDouble(txtQtdAgua.getText()));
         pCachaca.setBrix(Double.parseDouble(txtBrix.getText()));
-        pCachaca.setTotalCaldo(Integer.parseInt(txtTotalCaldo.getText()));
+        pCachaca.setTotalCaldo((int)Double.parseDouble(txtTotalCaldo.getText()));
         pCachaca.setDtInicioFerment(dtIn);
         pCachaca.setDtAlarmFerment(dtAl);
         pCachaca.setNumDorna(cmbDorna.getSelectedIndex() + 1);
@@ -532,21 +529,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         cDAO.FinalizarProducao(pCachaca);
     }//GEN-LAST:event_btnLacarDestilacaoActionPerformed
 
-    private void btnCalcTotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcTotActionPerformed
-        // TODO add your handling code here:
-        Integer tot = Integer.parseInt(txtQtdAgua.getText()) + Integer.parseInt(txtQtdCaldo.getText());
-        txtTotalCaldo.setText(tot.toString());
-    }//GEN-LAST:event_btnCalcTotActionPerformed
-
-    private void btnCalcAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcAguaActionPerformed
-        // TODO add your handling code here:
-        Double brix, qtdC, qtdA;
-        brix = Double.parseDouble(txtBrix.getText());
-        qtdC = Double.parseDouble(txtQtdCaldo.getText());
-        qtdA = (brix * qtdC / 15) - qtdC;
-        txtQtdAgua.setText(qtdA.toString());
-    }//GEN-LAST:event_btnCalcAguaActionPerformed
-
     private void btnVoltarHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarHistActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -593,6 +575,29 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         cDAO.Delete(pCachaca);
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    private void txtQtdAguaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtQtdAguaFocusLost
+        // TODO add your handling code here:
+        Double tot = Double.parseDouble(txtQtdAgua.getText()) + Integer.parseInt(txtQtdCaldo.getText());
+        txtTotalCaldo.setText(tot.toString());
+    }//GEN-LAST:event_txtQtdAguaFocusLost
+
+    private void ftxtDtAlarmeFermentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtDtAlarmeFermentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ftxtDtAlarmeFermentActionPerformed
+
+    private void txtBrixFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBrixFocusLost
+        // TODO add your handling code here:
+        Double brix, qtdC, qtdA;
+        brix = Double.parseDouble(txtBrix.getText());
+        qtdC = Double.parseDouble(txtQtdCaldo.getText());
+        qtdA = (brix * qtdC / 15) - qtdC;
+        txtQtdAgua.setText(qtdA.toString());
+    }//GEN-LAST:event_txtBrixFocusLost
+
+    private void txtLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLoteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -630,9 +635,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizar;
-    private javax.swing.JButton btnCalcAgua;
     private javax.swing.JButton btnCalcRend;
-    private javax.swing.JButton btnCalcTot;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLacarDestilacao;
     private javax.swing.JButton btnLancarLote;

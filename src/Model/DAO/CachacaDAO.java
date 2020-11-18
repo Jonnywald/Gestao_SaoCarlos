@@ -75,7 +75,7 @@ public class CachacaDAO {
         List<ProducaoCachaca> pCachaca = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement("SELECT ALL FROM producaoCachaca");
+            stmt = con.prepareStatement("SELECT * FROM producaoCachaca");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
