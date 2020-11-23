@@ -7,8 +7,8 @@ import java.util.Date;
  * @author Guilherme Bertola
  */
 public class Barril {
-    private double volumeTotal; // volume total da capacidade do barril
-    private double volumeAtual; // volume atual de cachaca no barril
+    private Double volumeTotal; // volume total da capacidade do barril
+    private Double volumeAtual; // volume atual de cachaca no barril
     private Integer numBarril; // numero de indentificacao do barril
     private String material; // material do barril
     private Date dtCheio; // data onde o barril ficou cheio
@@ -28,7 +28,7 @@ public class Barril {
     public Barril(){
     }
     // getter do volume total
-    public double getVolumeTotal() {
+    public Double getVolumeTotal() {
         return volumeTotal;
     }
     // setter do volume total
@@ -36,7 +36,7 @@ public class Barril {
         this.volumeTotal = volumeTotal;
     }
     // getter do volume atual
-    public double getVolumeAtual() {
+    public Double getVolumeAtual() {
         return volumeAtual;
     }
     // setter do volume atual

@@ -77,7 +77,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         cmbBarril = new javax.swing.JComboBox<>();
         btnVoltarAndamento = new javax.swing.JButton();
         btnLacarDestilacao = new javax.swing.JButton();
-        btnCalcRend = new javax.swing.JButton();
         painelHistorico = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblHist = new javax.swing.JTable();
@@ -261,11 +260,15 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblQtdCoracao.setText("Quantidade de coração (L):");
 
+        txtQtdCoracao.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtQtdCoracaoFocusLost(evt);
+            }
+        });
+
         ftxtDtAlambicagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
         lblRendimento.setText("Rendimento (%):");
-
-        txtRendimento.setEditable(false);
 
         lblGL.setText("Grau Alcoólico:");
 
@@ -284,13 +287,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         btnLacarDestilacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLacarDestilacaoActionPerformed(evt);
-            }
-        });
-
-        btnCalcRend.setText("Calcular");
-        btnCalcRend.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcRendActionPerformed(evt);
             }
         });
 
@@ -321,8 +317,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                             .addComponent(txtRendimento)
                             .addComponent(txtGL)
                             .addComponent(cmbBarril, 0, 125, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCalcRend)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEmAndamentoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -349,8 +343,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRendimento)
-                    .addComponent(txtRendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCalcRend))
+                    .addComponent(txtRendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGL)
@@ -359,7 +352,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumBarril)
                     .addComponent(cmbBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarAndamento)
                     .addComponent(btnLacarDestilacao))
@@ -502,13 +495,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowActivated
 
-    private void btnCalcRendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcRendActionPerformed
-        // TODO add your handling code here:
-        Double rend;
-        rend = Double.parseDouble(txtQtdCoracao.getText()) / ((Double) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
-        txtRendimento.setText(rend.toString());
-    }//GEN-LAST:event_btnCalcRendActionPerformed
-
     private void btnLacarDestilacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLacarDestilacaoActionPerformed
         // TODO add your handling code here:
         ProducaoCachaca pCachaca = new ProducaoCachaca();
@@ -595,8 +581,14 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBrixFocusLost
 
     private void txtLoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoteActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code he
     }//GEN-LAST:event_txtLoteActionPerformed
+
+    private void txtQtdCoracaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtQtdCoracaoFocusLost
+        Double rend;
+        rend = Double.parseDouble(txtQtdCoracao.getText()) / ((Double) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
+        txtRendimento.setText(rend.toString());
+    }//GEN-LAST:event_txtQtdCoracaoFocusLost
 
     /**
      * @param args the command line arguments
@@ -635,7 +627,6 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizar;
-    private javax.swing.JButton btnCalcRend;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLacarDestilacao;
     private javax.swing.JButton btnLancarLote;

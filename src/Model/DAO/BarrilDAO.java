@@ -108,4 +108,22 @@ public class BarrilDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+    public void ExcluirBarril(Barril b){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("DELETE FROM barril WHERE numBarril = ?");
+            stmt.setInt(1, b.getNumBarril());
+            // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Excluir: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
 }

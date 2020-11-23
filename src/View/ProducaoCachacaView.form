@@ -323,8 +323,6 @@
                                   <Component id="txtGL" max="32767" attributes="0"/>
                                   <Component id="cmbBarril" pref="125" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnCalcRend" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -359,7 +357,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblRendimento" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtRendimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCalcRend" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -371,7 +368,7 @@
                           <Component id="lblNumBarril" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cmbBarril" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnVoltarAndamento" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnLacarDestilacao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -416,6 +413,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtQtdCoracao">
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtQtdCoracaoFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JFormattedTextField" name="ftxtDtAlambicagem">
               <Properties>
@@ -430,9 +430,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRendimento">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblGL">
               <Properties>
@@ -483,14 +480,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLacarDestilacaoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnCalcRend">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Calcular"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcRendActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
