@@ -187,6 +187,11 @@ public class RelatoriosView extends javax.swing.JPanel {
         });
 
         btnVoltarGerar.setText("Voltar");
+        btnVoltarGerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarGerarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelRelatorioLayout = new javax.swing.GroupLayout(painelRelatorio);
         painelRelatorio.setLayout(painelRelatorioLayout);
@@ -268,7 +273,13 @@ public class RelatoriosView extends javax.swing.JPanel {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnVoltarGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarGerarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarGerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -302,5 +313,9 @@ public class RelatoriosView extends javax.swing.JPanel {
     private javax.swing.JTextField txtRapadura28;
     private javax.swing.JTextField txtRapaduraGeral;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

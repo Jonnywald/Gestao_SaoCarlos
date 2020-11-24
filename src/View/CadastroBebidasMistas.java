@@ -207,6 +207,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
 
     private void btnVoltarBebidaMistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarBebidaMistaActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_btnVoltarBebidaMistaActionPerformed
 
     private void btnSalvarBebidaMistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarBebidaMistaActionPerformed

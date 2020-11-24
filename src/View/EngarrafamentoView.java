@@ -173,6 +173,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         
         
     }//GEN-LAST:event_btnCancelarActionPerformed
