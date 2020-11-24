@@ -126,4 +126,28 @@ public class BarrilDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+    public void AtualizarDatasBarril(Barril b){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE barril set dtCheio=?, dtTipoA=?, dtTipoE=?, dtTipoEP=?, dtTipoP=? where numBarril = ?");
+            
+            stmt.setDate(1, (Date) b.getDtCheio());
+            stmt.setDate(2, (Date) b.getDtTipoArmazenado());
+            stmt.setDate(3, (Date) b.getDtTipoEnvelhecido());
+            stmt.setDate(4, (Date) b.getDtTipoExtraPremium());
+            stmt.setDate(5, (Date) b.getDtTipoPremium());
+            stmt.setInt(6, b.getNumBarril());
+            // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Atualizar: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
 }
