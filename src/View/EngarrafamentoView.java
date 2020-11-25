@@ -5,6 +5,11 @@
  */
 package View;
 
+import Model.Bean.Barril;
+import Model.DAO.BarrilDAO;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Débora
@@ -50,6 +55,17 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         txtLabelControleBarril.setText("Controle Barril");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
+
+        cbxNumBarril.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxNumBarrilItemStateChanged(evt);
+            }
+        });
 
         lblBarril.setText("Barril:");
 
@@ -177,6 +193,26 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         
         
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        BarrilDAO bDAO = new BarrilDAO();
+        List<Barril> barris = new ArrayList<Barril>();
+        barris = bDAO.ListarBarril();
+        cbxNumBarril.removeAllItems();
+        barris.forEach(b -> {
+            cbxNumBarril.addItem(b.getNumBarril().toString());
+        });
+    }//GEN-LAST:event_formWindowActivated
+
+    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
+        // TODO add your handling code here:
+        Barril b = new Barril();
+        BarrilDAO bDAO = new BarrilDAO();
+        b = bDAO.BuscaBarril((Integer)cbxNumBarril.getSelectedItem());
+        txtTipoCachaça.setText(b.getMaterial() +" "+ b.getTipoAtual());
+        
+    }//GEN-LAST:event_cbxNumBarrilItemStateChanged
 
     /**
      * @param args the command line arguments
