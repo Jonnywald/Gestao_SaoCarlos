@@ -138,6 +138,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRecebeNome">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRecebeNomeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLogin">
               <Properties>

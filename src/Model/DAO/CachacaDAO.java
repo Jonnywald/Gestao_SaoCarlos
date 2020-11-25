@@ -151,7 +151,7 @@ public class CachacaDAO {
         // gerar uma variavel de operacao com o banco
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("DELETE FROM producaocachaca WHERE lote = ?");
+            stmt = con.prepareStatement("DELETE FROM producaoCachaca WHERE lote = ?");
             stmt.setInt(1, p.getLote());
              // executar a operacao no banco
             stmt.executeUpdate();

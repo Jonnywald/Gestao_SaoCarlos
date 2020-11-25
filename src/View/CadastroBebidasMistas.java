@@ -5,6 +5,10 @@
  */
 package View;
 
+import Model.Bean.BebidaMista;
+import Model.DAO.BebidaMistaDAO;
+
+
 /**
  *
  * @author apapst
@@ -28,7 +32,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tblEditar = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         txtRecebeNomeBebidaMista = new javax.swing.JTextField();
         lblNomeBebidaMista = new javax.swing.JLabel();
@@ -41,7 +45,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         btnSalvarBebidaMista = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblLista = new javax.swing.JTable();
         btnEditarVoltarBM = new javax.swing.JButton();
         btnEditarSalvarBM = new javax.swing.JButton();
         btnEditarExcluirBM = new javax.swing.JButton();
@@ -56,6 +60,12 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         txtLabelBebidaMista.setText("Cadastro de Bebida Mista");
 
         lblTempoCura.setText("Tempo de cura");
+
+        numberRecebeTempoCura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numberRecebeTempoCuraActionPerformed(evt);
+            }
+        });
 
         lblMAteriaPrima.setText("Matéria prima");
 
@@ -95,7 +105,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
                                     .addComponent(txtRecebeNomeBebidaMista, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(numberRecebeTempoCura, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtRecebeMateriaPrima, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(39, Short.MAX_VALUE))))
+                        .addContainerGap(118, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVoltarBebidaMista)
@@ -127,26 +137,26 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Cadastrar", jPanel1);
+        tblEditar.addTab("Cadastrar", jPanel1);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, "", null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nome", "Tempo de cura", "Matéria Prima"
+                "Lote", "Nome", "Tempo de cura", "Matéria Prima"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblLista);
 
         btnEditarVoltarBM.setText("Voltar");
 
@@ -173,7 +183,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
                         .addComponent(btnEditarSalvarBM)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditarExcluirBM))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -189,17 +199,17 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Editar", jPanel2);
+        tblEditar.addTab("Editar", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tblEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tblEditar)
         );
 
         pack();
@@ -212,11 +222,31 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
 
     private void btnSalvarBebidaMistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarBebidaMistaActionPerformed
         // TODO add your handling code here:
+        BebidaMista bMista = new BebidaMista();
+        
+        Integer bLote = (Integer) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
+                
+        bMista.setNome(txtRecebeNomeBebidaMista.getText());
+        bMista.setTempoCura(Integer.parseInt(numberRecebeTempoCura.getText()));
+        bMista.setMateriaPrima(txtRecebeMateriaPrima.getText());
+
+        
+            BebidaMistaDAO bmDAO = new BebidaMistaDAO();
+            bmDAO.CadastrarBebidaMista(bMista);
     }//GEN-LAST:event_btnSalvarBebidaMistaActionPerformed
 
     private void btnEditarExcluirBMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarExcluirBMActionPerformed
         // TODO add your handling code here:
+
+        BebidaMista bMista = new BebidaMista();
+        BebidaMistaDAO bmDAO = new BebidaMistaDAO();
+        Integer bLote = (Integer) tblEditar.getValueAt(tblEditar.getSelectedRow, 0);
+        bmDAO.Deletar(bMista);
     }//GEN-LAST:event_btnEditarExcluirBMActionPerformed
+
+    private void numberRecebeTempoCuraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberRecebeTempoCuraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numberRecebeTempoCuraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,12 +293,12 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblMAteriaPrima;
     private javax.swing.JLabel lblNomeBebidaMista;
     private javax.swing.JLabel lblTempoCura;
     private javax.swing.JTextField numberRecebeTempoCura;
+    private javax.swing.JTabbedPane tblEditar;
+    private javax.swing.JTable tblLista;
     private javax.swing.JLabel txtLabelBebidaMista;
     private javax.swing.JTextField txtRecebeMateriaPrima;
     private javax.swing.JTextField txtRecebeNomeBebidaMista;

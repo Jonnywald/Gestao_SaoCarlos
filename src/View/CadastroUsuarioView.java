@@ -68,6 +68,12 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
 
         lblNome.setText("Nome:");
 
+        txtRecebeNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRecebeNomeActionPerformed(evt);
+            }
+        });
+
         lblLogin.setText("Login:");
 
         lblSenha.setText("Senha:");
@@ -413,6 +419,10 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Selecione uma linha/usuário!");
         }
     }//GEN-LAST:event_btnSalvarListaActionPerformed
+
+    private void txtRecebeNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRecebeNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRecebeNomeActionPerformed
 
     /**
      * @param args the command line arguments
