@@ -126,11 +126,16 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblDtInicioFerment.setText("Data de Inicio da fermentação:");
 
-        ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        ftxtDtInicioFerment.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ftxtDtInicioFermentFocusLost(evt);
+            }
+        });
 
         lblDtAlarmeFerment.setText("Data maxima de fermentação:");
 
-        ftxtDtAlarmeFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        ftxtDtAlarmeFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
         ftxtDtAlarmeFerment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftxtDtAlarmeFermentActionPerformed(evt);
@@ -589,6 +594,20 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         rend = Double.parseDouble(txtQtdCoracao.getText()) / ((Double) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
         txtRendimento.setText(rend.toString());
     }//GEN-LAST:event_txtQtdCoracaoFocusLost
+
+    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
+        // TODO add your handling code here:
+        ProducaoCachaca p = new ProducaoCachaca();
+        Date dtIn = null, dtAl = null;
+        try {
+            dtIn = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtInicioFerment.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        p.setDtInicioFerment(dtIn);
+        dtAl = p.calcDtAlarmFerment(dtIn);
+        ftxtDtAlarmeFerment.setText(dtAl.toString());
+    }//GEN-LAST:event_ftxtDtInicioFermentFocusLost
 
     /**
      * @param args the command line arguments
