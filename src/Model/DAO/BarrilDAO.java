@@ -55,7 +55,7 @@ public class BarrilDAO {
         ResultSet rs = null;
         List<Barril> barrils = new ArrayList<>();
         try {
-            stmt = con.prepareStatement("SELECT ALL FROM barril");
+            stmt = con.prepareStatement("SELECT * FROM barril");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Barril b = new Barril();

@@ -562,7 +562,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -588,19 +588,14 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_cbxNumBarrilActionPerformed
-
-    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
-        // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer)cbxNumBarril.getSelectedItem());
+        b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
         txtVolumeAtual.setText(b.getVolumeAtual().toString());
         txtEstado.setText(b.getTipoAtual());
         txtUltimaData.setText(b.getDtCheio().toString());
         txtMaterial.setText(b.getMaterial());
-        switch (b.getTipoAtual()){
+        switch (b.getTipoAtual()) {
             case "Armazenado":
                 txtProximaData.setText(b.getDtTipoEnvelhecido().toString());
                 break;
@@ -617,6 +612,12 @@ public class ControleBarrilView extends javax.swing.JFrame {
                 txtProximaData.setText(b.getDtTipoArmazenado().toString());
                 break;
         }
+    }//GEN-LAST:event_cbxNumBarrilActionPerformed
+
+    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
+        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_cbxNumBarrilItemStateChanged
 
     private void btnVoltarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarListaActionPerformed
@@ -640,7 +641,8 @@ public class ControleBarrilView extends javax.swing.JFrame {
         modelo.setNumRows(0);
         barris.forEach(b -> {
             cbxNumBarril.addItem(b.getNumBarril().toString());
-            cbxNumBarrilControle.addItem(b.getNumBarril().toString());
+                    });
+        barris.forEach(b ->{cbxNumBarrilControle.addItem(b.getNumBarril().toString());
             modelo.addRow(new Object[]{
                 b.getNumBarril(),
                 b.getDtCheio(),
@@ -652,7 +654,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
                 b.getVolumeAtual(),
                 b.getVolumeTotal()
             });
-        });
+});
     }//GEN-LAST:event_formWindowActivated
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
@@ -669,21 +671,22 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     private void cbxNumBarrilControleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleItemStateChanged
         // TODO add your handling code here:
+
+    }//GEN-LAST:event_cbxNumBarrilControleItemStateChanged
+
+    private void cbxNumBarrilControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleActionPerformed
+        // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer)cbxNumBarrilControle.getSelectedItem());
+        b = bDAO.BuscaBarril((Integer) cbxNumBarrilControle.getSelectedItem());
         txtVolumeAtualControle.setText(b.getVolumeAtual().toString());
         txtVolumeTotalControle.setText(b.getVolumeTotal().toString());
-        txtVolumePorcento.setText((b.getVolumeAtual()/b.getVolumeTotal() * 100) + "%");
+        txtVolumePorcento.setText((b.getVolumeAtual() / b.getVolumeTotal() * 100) + "%");
         txtDtCheioControle.setText(b.getDtCheio().toString());
         b.calcDtTipos();
         txtDtArmazenadoControle.setText(b.getDtTipoArmazenado().toString());
         txtDtEnvelhecidoControle.setText(b.getDtTipoEnvelhecido().toString());
         txtDtExtraPremiumControle.setText(b.getDtTipoExtraPremium().toString());
-    }//GEN-LAST:event_cbxNumBarrilControleItemStateChanged
-
-    private void cbxNumBarrilControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_cbxNumBarrilControleActionPerformed
 
     private void txtDtEnvelhecidoControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtEnvelhecidoControleActionPerformed
@@ -718,7 +721,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
         // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer)cbxNumBarrilControle.getSelectedItem());
+        b = bDAO.BuscaBarril((Integer) cbxNumBarrilControle.getSelectedItem());
         b.setVolumeAtual(Double.parseDouble(txtVolumeAtualControle.getText()));
         b.setVolumeTotal(Double.parseDouble(txtVolumeTotalControle.getText()));
         bDAO.AtualizarVolumeBarril(b);

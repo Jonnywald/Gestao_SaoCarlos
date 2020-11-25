@@ -63,13 +63,30 @@ dtEngarrafamento date
 )engine=InnoDB;
  
 create table bebidaMista(
-loteBM int auto_increment	primary key,
+id_bedidaMista int auto_increment	primary key,
 nomeBM	varchar (50),
 tpCura	int NOT NULL,
 materiaPrima	varchar (50)
 
 )engine=InnoDB;
 
+create table barril(
+numBarril  int primary key,
+dtCheio date, 
+dtTipoA date,
+dtTipoE date,
+dtTipoP date,
+dtTipoEP date,
+material varchar(30),
+tipoAtual varchar(30),
+volumeAtual double,
+volumeTotal double
+
+)engine=InnoDB;
+
+
 insert into Users values ("ADM", "ADM", "ADM", TRUE);
 insert into Users values ("AGT", "AGT", "AGT", FALSE);
+
+select * from barril;
 

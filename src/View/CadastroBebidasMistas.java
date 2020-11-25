@@ -205,7 +205,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tblEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(tblEditar)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
