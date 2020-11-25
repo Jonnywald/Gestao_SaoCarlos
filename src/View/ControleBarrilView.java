@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -68,6 +69,9 @@ public class ControleBarrilView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtVolumeTotalControle = new javax.swing.JTextField();
         txtVolumeAtualControle = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtVolumePorcento = new javax.swing.JTextField();
+        btnAtualizarVolume = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         txtDtCheioControle = new javax.swing.JTextField();
@@ -302,6 +306,17 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
         jLabel5.setText("Volume Atual:");
 
+        jLabel10.setText("Volume (%):");
+
+        txtVolumePorcento.setEditable(false);
+
+        btnAtualizarVolume.setText("Atualizar");
+        btnAtualizarVolume.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarVolumeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -314,10 +329,18 @@ public class ControleBarrilView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtVolumeTotalControle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtVolumeAtualControle)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtVolumeAtualControle)
+                            .addComponent(txtVolumePorcento))))
                 .addContainerGap(89, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAtualizarVolume)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +353,13 @@ public class ControleBarrilView extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtVolumeAtualControle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(txtVolumePorcento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAtualizarVolume)
+                .addContainerGap())
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Controle de Envelhecimento"));
@@ -587,9 +616,22 @@ public class ControleBarrilView extends javax.swing.JFrame {
         barris = bDAO.ListarBarril();
         cbxNumBarril.removeAllItems();
         cbxNumBarrilControle.removeAllItems();
+        DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+        modelo.setNumRows(0);
         barris.forEach(b -> {
             cbxNumBarril.addItem(b.getNumBarril().toString());
             cbxNumBarrilControle.addItem(b.getNumBarril().toString());
+            modelo.addRow(new Object[]{
+                b.getNumBarril(),
+                b.getDtCheio(),
+                b.getDtTipoArmazenado(),
+                b.getDtTipoEnvelhecido(),
+                b.getDtTipoExtraPremium(),
+                b.getMaterial(),
+                b.getTipoAtual(),
+                b.getVolumeAtual(),
+                b.getVolumeTotal()
+            });
         });
     }//GEN-LAST:event_formWindowActivated
 
@@ -607,6 +649,17 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     private void cbxNumBarrilControleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleItemStateChanged
         // TODO add your handling code here:
+        Barril b = new Barril();
+        BarrilDAO bDAO = new BarrilDAO();
+        b = bDAO.BuscaBarril((Integer)cbxNumBarrilControle.getSelectedItem());
+        txtVolumeAtualControle.setText(b.getVolumeAtual().toString());
+        txtVolumeTotalControle.setText(b.getVolumeTotal().toString());
+        txtVolumePorcento.setText((b.getVolumeAtual()/b.getVolumeTotal() * 100) + "%");
+        txtDtCheioControle.setText(b.getDtCheio().toString());
+        b.calcDtTipos();
+        txtDtArmazenadoControle.setText(b.getDtTipoArmazenado().toString());
+        txtDtEnvelhecidoControle.setText(b.getDtTipoEnvelhecido().toString());
+        txtDtExtraPremiumControle.setText(b.getDtTipoExtraPremium().toString());
     }//GEN-LAST:event_cbxNumBarrilControleItemStateChanged
 
     private void cbxNumBarrilControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleActionPerformed
@@ -640,6 +693,16 @@ public class ControleBarrilView extends javax.swing.JFrame {
         b = bDAO.BuscaBarril(numBarril);
         bDAO.ExcluirBarril(b);
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnAtualizarVolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarVolumeActionPerformed
+        // TODO add your handling code here:
+        Barril b = new Barril();
+        BarrilDAO bDAO = new BarrilDAO();
+        b = bDAO.BuscaBarril((Integer)cbxNumBarrilControle.getSelectedItem());
+        b.setVolumeAtual(Double.parseDouble(txtVolumeAtualControle.getText()));
+        b.setVolumeTotal(Double.parseDouble(txtVolumeTotalControle.getText()));
+        bDAO.AtualizarVolumeBarril(b);
+    }//GEN-LAST:event_btnAtualizarVolumeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -679,6 +742,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizarControle;
+    private javax.swing.JButton btnAtualizarVolume;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnExcluir;
@@ -687,6 +751,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxNumBarril;
     private javax.swing.JComboBox<String> cbxNumBarrilControle;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -723,6 +788,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
     private javax.swing.JTextField txtVolumeAtual;
     private javax.swing.JTextField txtVolumeAtualControle;
     private javax.swing.JTextField txtVolumeCadastro;
+    private javax.swing.JTextField txtVolumePorcento;
     private javax.swing.JTextField txtVolumeTotalControle;
     // End of variables declaration//GEN-END:variables
 }

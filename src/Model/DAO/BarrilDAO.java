@@ -150,4 +150,25 @@ public class BarrilDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+    public void AtualizarVolumeBarril (Barril b){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE barril set volumeAtual=?, volumeTotal=? where numBarril = ?");
+            
+            stmt.setDouble(1, b.getVolumeAtual());
+            stmt.setDouble(2, b.getVolumeTotal());
+            stmt.setInt(3, b.getNumBarril());
+            // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Atualizar: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
 }
