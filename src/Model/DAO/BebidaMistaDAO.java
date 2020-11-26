@@ -6,7 +6,6 @@
 package Model.DAO;
 
 import Model.Bean.BebidaMista;
-import com.mysql.cj.xdevapi.Result;
 import connection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

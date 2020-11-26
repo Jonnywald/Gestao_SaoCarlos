@@ -626,7 +626,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+//
     private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
         // TODO add your handling code here:
         ProducaoCachaca p = new ProducaoCachaca();
@@ -673,7 +673,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form */  
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ProducaoCachacaView().setVisible(true);

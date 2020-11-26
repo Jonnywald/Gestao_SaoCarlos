@@ -7,8 +7,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -167,5 +170,16 @@ public class CachacaDAO {
             // sempre finalizar encerrando a conexão com o banco
             ConnectionFactory.closeConnection(con, stmt);
         }
+    }
+    
+    public ResultSet selecionarTabela() {
+        try {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select lote, dtAlambicagem, rendimento from producaoCachaca");
+            return rs;
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
+        }
+        return null;
     }
 }
