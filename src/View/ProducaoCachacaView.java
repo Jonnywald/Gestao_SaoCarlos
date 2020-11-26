@@ -132,14 +132,15 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblDtInicioFerment.setText("Data de Inicio da fermentação:");
 
-<<<<<<< HEAD
-        ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-=======
         ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
->>>>>>> 216608911a0df0e0b86dd56a5428778404bd6456
         ftxtDtInicioFerment.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ftxtDtInicioFermentFocusLost(evt);
+            }
+        });
+        ftxtDtInicioFerment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftxtDtInicioFermentActionPerformed(evt);
             }
         });
 
@@ -605,12 +606,12 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         txtRendimento.setText(rend.toString());
     }//GEN-LAST:event_txtQtdCoracaoFocusLost
 
-<<<<<<< HEAD
+
     private void ftxtDtMoagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtDtMoagemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ftxtDtMoagemActionPerformed
 
-    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
+    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {                                              
         try {
             // TODO add your handling code here:
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -624,8 +625,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
-=======
     private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
         // TODO add your handling code here:
         ProducaoCachaca p = new ProducaoCachaca();
@@ -638,8 +639,12 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         p.setDtInicioFerment(dtIn);
         dtAl = p.calcDtAlarmFerment(dtIn);
         ftxtDtAlarmeFerment.setText(dtAl.toString());
->>>>>>> 216608911a0df0e0b86dd56a5428778404bd6456
+
     }//GEN-LAST:event_ftxtDtInicioFermentFocusLost
+
+    private void ftxtDtInicioFermentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ftxtDtInicioFermentActionPerformed
 
     /**
      * @param args the command line arguments
