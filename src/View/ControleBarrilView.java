@@ -599,7 +599,9 @@ public class ControleBarrilView extends javax.swing.JFrame {
         b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
         txtVolumeAtual.setText(b.getVolumeAtual().toString());
         txtEstado.setText(b.getTipoAtual());
+        if (b.getDtCheio() == null){
         txtUltimaData.setText(b.getDtCheio().toString());
+        }
         txtMaterial.setText(b.getMaterial());
         switch (b.getTipoAtual()) {
             case "Armazenado":
@@ -615,7 +617,9 @@ public class ControleBarrilView extends javax.swing.JFrame {
                 txtProximaData.setText(b.getDtTipoExtraPremium().toString());
                 break;
             default:
+                if (b.getDtCheio() == null){
                 txtProximaData.setText(b.getDtTipoArmazenado().toString());
+                }
                 break;
         }
     }//GEN-LAST:event_cbxNumBarrilActionPerformed
