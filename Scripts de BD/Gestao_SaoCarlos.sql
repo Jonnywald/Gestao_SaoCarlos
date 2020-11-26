@@ -89,4 +89,4 @@ insert into Users values ("ADM", "ADM", "ADM", TRUE);
 insert into Users values ("AGT", "AGT", "AGT", FALSE);
 
 select * from barril;
-
+select * from producaoCachaca;

@@ -10,6 +10,7 @@ import Model.DAO.CachacaDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -103,6 +104,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         lblDtMoagem.setText("Data de Moagem:");
 
         ftxtDtMoagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        ftxtDtMoagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftxtDtMoagemActionPerformed(evt);
+            }
+        });
 
         lblQtdCaldo.setText("Quantidade de Caldo (L):");
 
@@ -127,6 +133,11 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         lblDtInicioFerment.setText("Data de Inicio da fermentação:");
 
         ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        ftxtDtInicioFerment.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ftxtDtInicioFermentFocusLost(evt);
+            }
+        });
 
         lblDtAlarmeFerment.setText("Data maxima de fermentação:");
 
@@ -589,6 +600,27 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         rend = Double.parseDouble(txtQtdCoracao.getText()) / ((Double) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
         txtRendimento.setText(rend.toString());
     }//GEN-LAST:event_txtQtdCoracaoFocusLost
+
+    private void ftxtDtMoagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtDtMoagemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ftxtDtMoagemActionPerformed
+
+    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
+        try {
+            // TODO add your handling code here:
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            Date dataFormatada = formato.parse(ftxtDtInicioFerment.getText());
+            Calendar c = Calendar.getInstance();
+            c.setTime(dataFormatada);
+            
+            c.add(c.DATE, 2);
+            dataFormatada = c.getTime();
+            ftxtDtAlarmeFerment.setText(formato.format(dataFormatada) );
+        } catch (ParseException ex) {
+            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_ftxtDtInicioFermentFocusLost
 
     /**
      * @param args the command line arguments

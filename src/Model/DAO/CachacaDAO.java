@@ -20,16 +20,18 @@ public class CachacaDAO {
     public void IniciarProducao(ProducaoCachaca p) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
+        
+
         try {
             stmt = con.prepareStatement("INSERT INTO producaoCachaca (lote, dtMoagem, qtdCaldo, qtdAgua, totalCaldo, brix, dtInicioFerment, dtAlarmFerment, numDorna) VALUES(?,?,?,?,?,?,?,?,?)");
             stmt.setInt(1, p.getLote());
-            stmt.setDate(2, (Date) p.getDtMoagem());
+            stmt.setDate(2, new java.sql.Date(p.getDtMoagem().getTime()));
             stmt.setInt(3, p.getQtdCaldo());
             stmt.setInt(4, p.getQtdAgua());
             stmt.setInt(5, p.getTotalCaldo());
             stmt.setDouble(6, p.getBrix());
-            stmt.setDate(7, (Date) p.getDtInicioFerment());
-            stmt.setDate(8, (Date) p.getDtAlarmFerment());
+            stmt.setDate(7, new java.sql.Date( p.getDtInicioFerment().getTime()));
+            stmt.setDate(8, new java.sql.Date( p.getDtAlarmFerment().getTime()));
             stmt.setInt(9, p.getNumDorna());
             // executar a operacao no banco
             stmt.executeUpdate();
@@ -82,7 +84,7 @@ public class CachacaDAO {
 
                 ProducaoCachaca pc = new ProducaoCachaca();
                 pc.setLote(rs.getInt("lote"));
-                pc.setDtMoagem(rs.getDate("dtMoagem "));
+                pc.setDtMoagem(rs.getDate("dtMoagem"));
                 pc.setQtdCaldo(rs.getInt("qtdCaldo"));
                 pc.setQtdAgua(rs.getInt("qtdAgua"));
                 pc.setTotalCaldo(rs.getInt("totalCaldo"));
@@ -120,7 +122,7 @@ public class CachacaDAO {
             while(rs.next()){
                 
                 pCachaca.setLote(rs.getInt("lote"));
-                pCachaca.setDtMoagem(rs.getDate("dtMoagem "));
+                pCachaca.setDtMoagem(rs.getDate("dtMoagem"));
                 pCachaca.setQtdCaldo(rs.getInt("qtdCaldo"));
                 pCachaca.setQtdAgua(rs.getInt("qtdAgua"));
                 pCachaca.setTotalCaldo(rs.getInt("totalCaldo"));

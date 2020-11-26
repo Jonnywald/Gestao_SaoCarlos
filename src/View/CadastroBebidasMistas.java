@@ -240,7 +240,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
 
         BebidaMista bMista = new BebidaMista();
         BebidaMistaDAO bmDAO = new BebidaMistaDAO();
-        Integer bLote = (Integer) tblEditar.getValueAt(tblEditar.getSelectedRow, 0);
+       // Integer bLote = (Integer) tblEditar.getValueAt(tblEditar.getSelectedRow, 0);
         bmDAO.Deletar(bMista);
     }//GEN-LAST:event_btnEditarExcluirBMActionPerformed
 

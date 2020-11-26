@@ -284,37 +284,11 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
-
-        this.dispose();
-
-    }//GEN-LAST:event_btnVoltarActionPerformed
-
     private void btnVoltarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarListaActionPerformed
         // TODO add your handling code here:
 
         this.dispose();
     }//GEN-LAST:event_btnVoltarListaActionPerformed
-
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        // TODO add your handling code here:
-
-        if (passRecebeSenha.getText().equals(passConfirmaSenha.getText())) {
-            Users usuario = new Users();
-            usuario.setNome(txtRecebeNome.getText());
-            usuario.setLogin(txtRecebeLogin.getText());
-            usuario.setPassword(passRecebeSenha.getText());
-            usuario.setAdm(ccbAdministrador.isSelected());
-
-            UsersDAO UD = new UsersDAO();
-            UD.Create(usuario);
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Senhas diferentes");
-        }
-
-    }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
         // TODO add your handling code here:
@@ -419,6 +393,30 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Selecione uma linha/usuário!");
         }
     }//GEN-LAST:event_btnSalvarListaActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+
+        if (passRecebeSenha.getText().equals(passConfirmaSenha.getText())) {
+            Users usuario = new Users();
+            usuario.setNome(txtRecebeNome.getText());
+            usuario.setLogin(txtRecebeLogin.getText());
+            usuario.setPassword(passRecebeSenha.getText());
+            usuario.setAdm(ccbAdministrador.isSelected());
+
+            UsersDAO UD = new UsersDAO();
+            UD.Create(usuario);
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Senhas diferentes");
+        }
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void txtRecebeNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRecebeNomeActionPerformed
         // TODO add your handling code here:

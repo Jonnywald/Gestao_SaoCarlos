@@ -155,6 +155,12 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
         jLabel1.setText("Material:");
 
+        txtMaterialCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMaterialCadastroActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Volume:");
 
         jLabel3.setText("Numero do Barrl.:");
@@ -726,6 +732,10 @@ public class ControleBarrilView extends javax.swing.JFrame {
         b.setVolumeTotal(Double.parseDouble(txtVolumeTotalControle.getText()));
         bDAO.AtualizarVolumeBarril(b);
     }//GEN-LAST:event_btnAtualizarVolumeActionPerformed
+
+    private void txtMaterialCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaterialCadastroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaterialCadastroActionPerformed
 
     /**
      * @param args the command line arguments

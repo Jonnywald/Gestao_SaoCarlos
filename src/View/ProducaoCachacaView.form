@@ -178,6 +178,9 @@
                   <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ftxtDtMoagemActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblQtdCaldo">
               <Properties>
@@ -224,6 +227,9 @@
                   <Format subtype="0" type="1"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ftxtDtInicioFermentFocusLost"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblDtAlarmeFerment">
               <Properties>
