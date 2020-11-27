@@ -224,7 +224,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             .addGroup(painelNovoLoteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtLabeProduçãoCachaça)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -375,7 +375,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumBarril)
                     .addComponent(cmbBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarAndamento)
                     .addComponent(btnLacarDestilacao))
@@ -436,7 +436,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             .addGroup(painelHistoricoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addGroup(painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarHist)
                     .addComponent(btnAtualizar)
@@ -458,7 +458,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGap(0, 642, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -549,7 +549,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         // TODO add your handling code here:
         ProducaoCachaca pCachaca = new ProducaoCachaca();
         CachacaDAO cDAO = new CachacaDAO();
-        Integer bLote = (Integer) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
+        Integer bLote = (int) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
         pCachaca = cDAO.BuscaLote(bLote);
         Date alam = null;
         try {
@@ -636,7 +636,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
     private void txtQtdCoracaoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtQtdCoracaoFocusLost
         Double rend;
-        rend = Double.parseDouble(txtQtdCoracao.getText()) / ((Double) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
+        rend = Double.parseDouble(txtQtdCoracao.getText()) / ((int) tblLista.getValueAt(tblLista.getSelectedRow(), 2)) * 100;
         txtRendimento.setText(rend.toString());
     }//GEN-LAST:event_txtQtdCoracaoFocusLost
 

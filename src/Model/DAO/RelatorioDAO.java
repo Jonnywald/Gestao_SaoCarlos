@@ -47,14 +47,14 @@ public class RelatorioDAO {
 
     }
 
-    public ProducaoCachaca buscarDadosCachaca365() {
+    public ProducaoCachaca buscarDadosCachaca() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         ProducaoCachaca pCachaca = new ProducaoCachaca();
 
         try {
-            stmt = con.prepareStatement("SELECT AVG (rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-365 AN D currente_date()");
+            stmt = con.prepareStatement("SELECT AVG (rendimento) FROM producaoCachaca");
             rs = stmt.executeQuery();
 
             while (rs.next()) {

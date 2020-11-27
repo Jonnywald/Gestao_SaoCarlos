@@ -46,19 +46,20 @@ public class Header implements IEventHandler {
             Canvas canvas = new Canvas(new PdfCanvas(page), pageSize);
 
             //pegando caminho da imagem
-            URL urlImage = this.getClass().getResource("  ");
+           // URL urlImage = this.getClass().getResource("  ");
             //Construindo a imagem no PDF
 
-            ImageData imgData;
-            try {
-                imgData = ImageDataFactory.create(URLDecoder.decode(urlImage.getPath(), "UTF-8"));
+           // ImageData imgData;
+           // try {
+              //  imgData = ImageDataFactory.create(URLDecoder.decode(urlImage.getPath(), "UTF-8"));
 
-                Image img = new Image(imgData);
-                img.setWidth(90);
-                canvas.add(img);
-            } catch (UnsupportedEncodingException ex) {
-                Logger.getLogger(Header.class.getName()).log(Level.SEVERE, null, ex);
-            }
+              //  Image img = new Image(imgData);
+             //   img.setWidth(90);
+             //   canvas.add(img);
+             
+           // } catch (UnsupportedEncodingException ex) {
+          //      Logger.getLogger(Header.class.getName()).log(Level.SEVERE, null, ex);
+         //   }
             //Construindo o título
             canvas.setFontSize(18);
             canvas.showTextAligned(titulo, pageSize.getWidth() / 2, pageSize.getTop() - 60, TextAlignment.CENTER);

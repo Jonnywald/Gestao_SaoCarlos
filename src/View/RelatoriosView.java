@@ -5,10 +5,32 @@
  */
 package View;
 
+import com.itextpdf.kernel.events.PdfDocumentEvent;
+import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.property.TextAlignment;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import Model.Bean.Footer;
 import Model.Bean.Header;
 import Model.DAO.CachacaDAO;
-import com.mysql.cj.xdevapi.Table;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.ResultSet;
@@ -18,7 +40,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.text.Document;
 
 /**
  *
@@ -371,9 +392,9 @@ public class RelatoriosView extends javax.swing.JFrame {
                 Logger.getLogger(RelatoriosView.class.getName()).log(Level.SEVERE, null, ex);
             }
             //  for (int i = 0; i < cbxProducao.getRowCount(); i++) {
-                // tbl.addCell(cbxProducao.getValueAt(i, 0).toString());
-                // tbl.addCell(cbxProducao.getValueAt(i, 1).toString());
-                //  }
+            // tbl.addCell(cbxProducao.getValueAt(i, 0).toString());
+            // tbl.addCell(cbxProducao.getValueAt(i, 1).toString());
+            //  }
             doc.add(tbl);
             footer.writeTotal(pdf);
             doc.close();
@@ -394,7 +415,7 @@ public class RelatoriosView extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_formWindowActivated
 
     /**

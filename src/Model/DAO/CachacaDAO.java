@@ -55,7 +55,7 @@ public class CachacaDAO {
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement("UPDATE producaoCachaca set dtAlambicagem=?, qtdCoracao= ?, rendimento=?, gl=?, numBarril=? where lote=?");
-            stmt.setDate(1, (Date) p.getDtAlambicagem());
+            stmt.setDate(1,new java.sql.Date(p.getDtAlambicagem().getTime()));
             stmt.setDouble(2, p.getQtdCoracao());
             stmt.setDouble(3, p.getRendimento());
             stmt.setDouble(4, p.getGl());
