@@ -48,7 +48,7 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Gestão São Carlos");
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(111, 148, 148));
 
         Lbl_Titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Lbl_Titulo.setForeground(new java.awt.Color(255, 255, 255));

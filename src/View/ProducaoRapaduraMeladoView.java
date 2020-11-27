@@ -27,6 +27,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         Abas = new javax.swing.JTabbedPane();
         painelMelado = new javax.swing.JPanel();
         lblLoteMelado = new javax.swing.JLabel();
@@ -74,6 +75,8 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(111, 148, 148));
+
         lblLoteMelado.setText("Lote:");
 
         txtLoteMelado.setEditable(false);
@@ -116,7 +119,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         btnRemoverMelado.setText("Remover");
 
-        txtLabelEngarrafamento.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtLabelEngarrafamento.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtLabelEngarrafamento.setText("Produção Cachaça Melado");
 
         javax.swing.GroupLayout painelMeladoLayout = new javax.swing.GroupLayout(painelMelado);
@@ -145,7 +148,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
                                     .addGroup(painelMeladoLayout.createSequentialGroup()
                                         .addComponent(lblQtdMelado)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtQtdMelado, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
+                                        .addComponent(txtQtdMelado, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
                                     .addGroup(painelMeladoLayout.createSequentialGroup()
                                         .addComponent(lblDtProdMelado)
                                         .addGap(18, 18, 18)
@@ -213,7 +216,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
                     .addComponent(txtPesoMelado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddMelado)
                     .addComponent(btnRemoverMelado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(painelMeladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMeladoVoltar)
                     .addComponent(btnSalvarMelado))
@@ -363,15 +366,42 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         Abas.addTab("Rapadura", painelRapadura);
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 704, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Abas)
+                    .addContainerGap()))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 536, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Abas)
+                    .addContainerGap()))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Abas)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Abas)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -434,6 +464,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvarRapadura;
     private javax.swing.JFormattedTextField ftxtDtProdMelado;
     private javax.swing.JFormattedTextField ftxtDtProdRapadura;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblAddMelado;

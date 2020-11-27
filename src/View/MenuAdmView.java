@@ -68,10 +68,10 @@ public class MenuAdmView extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(111, 148, 148));
 
         lblBemVindo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblBemVindo.setForeground(new java.awt.Color(102, 102, 102));
+        lblBemVindo.setForeground(new java.awt.Color(255, 255, 255));
         lblBemVindo.setText("Bem Vindo! ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
