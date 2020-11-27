@@ -123,6 +123,7 @@ public class Barril {
     // calculo das datas dos diversos tipos
     public void calcDtTipos(){
         Calendar cal = Calendar.getInstance();
+        if (this.dtCheio != null){
         cal.setTime(this.dtCheio);
         cal.add(Calendar.MONTH,4); // adicao de 4 meses para a data de barril cheio
         this.dtTipoArmazenado = cal.getTime();
@@ -135,6 +136,6 @@ public class Barril {
         cal.setTime(this.dtCheio);
         cal.add(Calendar.YEAR,3); // adicao de 3 anos para a data de barril cheio
         this.dtTipoExtraPremium = cal.getTime();
-        
+        }
     }
 }

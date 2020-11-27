@@ -5,7 +5,9 @@
  */
 package View;
 
+import Model.Bean.Barril;
 import Model.Bean.ProducaoCachaca;
+import Model.DAO.BarrilDAO;
 import Model.DAO.CachacaDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -289,7 +292,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             }
         });
 
-        ftxtDtAlambicagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+        ftxtDtAlambicagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         lblRendimento.setText("Rendimento (%):");
 
@@ -526,12 +529,21 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         // TODO add your handling code here:
         CachacaDAO cDAO = new CachacaDAO();
         List<ProducaoCachaca> pc = new ArrayList<ProducaoCachaca>();
+        cmbBarril.removeAllItems();
+        BarrilDAO bDAO = new BarrilDAO();
+        List<Barril> barris = new ArrayList<Barril>();
+        barris = bDAO.ListarBarril();
+        barris.forEach(b -> {
+            cmbBarril.addItem(b.getNumBarril().toString());
+        });
         // comando da classe de acesso ao banco de usuarios para buscar todos os usuarios cadastrados
         pc = cDAO.ListarProducao();
         // instanciamentdo de objeto para manipulacao de tabela
         DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+        DefaultTableModel modeloH = (DefaultTableModel) tblHist.getModel();
         // zerar o numero de linha da tabela
         modelo.setNumRows(0);
+        modeloH.setNumRows(0);
         // para cada usuario que iremos nos referir genericamente por U iremos realizar a açao entre chaves
         pc.forEach(p -> {
             // adiciona uma linha na tabela com os dados do usuario U em questao
@@ -539,7 +551,24 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 modelo.addRow(new Object[]{
                     p.getLote(), p.getDtInicioFerment(), p.getTotalCaldo(), p.getNumDorna()
                 });
+                
             }
+            modeloH.addRow(new Object[]{
+                p.getLote(),
+                p.getDtMoagem(),
+                p.getQtdCaldo(),
+                p.getBrix(),
+                p.getQtdAgua(),
+                p.getTotalCaldo(),
+                p.getDtInicioFerment(),
+                p.getDtAlarmFerment(),
+                p.getNumDorna(),
+                p.getDtAlambicagem(),
+                p.getQtdCoracao(),
+                p.getGl(),
+                p.getRendimento(),
+                p.getNumBarril()
+            });
         });
 
 
@@ -561,8 +590,18 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         pCachaca.setQtdCoracao(Double.parseDouble(txtQtdCoracao.getText()));
         pCachaca.setRendimento(Double.parseDouble(txtRendimento.getText()));
         pCachaca.setGl(Double.parseDouble(txtGL.getText()));
-        pCachaca.setNumBarril(cmbBarril.getSelectedIndex() + 1);
-        cDAO.FinalizarProducao(pCachaca);
+        pCachaca.setNumBarril(Integer.parseInt(cmbBarril.getSelectedItem().toString()));
+        Barril b = new Barril();
+        BarrilDAO bDAO = new BarrilDAO();
+        b = bDAO.BuscaBarril(pCachaca.getNumBarril());
+        if (b.checkVolume(pCachaca.getQtdCoracao())){
+           b.addVolume(pCachaca.getQtdCoracao());
+           bDAO.AtualizarVolumeBarril(b);
+           cDAO.FinalizarProducao(pCachaca); 
+        } else {
+            JOptionPane.showMessageDialog(null, "Volume ultrapassa o limite do barril selecionado!");
+        }
+        
     }//GEN-LAST:event_btnLacarDestilacaoActionPerformed
 
     private void btnVoltarHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarHistActionPerformed

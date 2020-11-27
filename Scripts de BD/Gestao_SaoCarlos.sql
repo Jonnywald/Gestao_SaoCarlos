@@ -91,4 +91,4 @@ insert into Users values ("AGT", "AGT", "AGT", FALSE);
 select * from barril;
 select * from producaoCachaca;
 
-select avg(rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AN D currente_date();
+select avg(rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AND current_date();

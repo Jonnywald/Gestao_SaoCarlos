@@ -85,17 +85,12 @@ public class BarrilDAO {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("INSERT INTO barril (numBarril, dtCheio, dtTipoA, dtTipoE, dtTipoEP, dtTipoP, material, tipoAtual, volumeAtual, volumeTotal) VALUES(?,?,?,?,?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO barril (numBarril, material, tipoAtual, volumeAtual, volumeTotal) VALUES(?,?,?,?,?)");
             stmt.setInt(1, b.getNumBarril());
-            stmt.setDate(2, new java.sql.Date(b.getDtCheio().getTime()));
-            stmt.setDate(3, new java.sql.Date(b.getDtTipoArmazenado().getTime()));
-            stmt.setDate(4, new java.sql.Date(b.getDtTipoEnvelhecido().getTime()));
-            stmt.setDate(5, new java.sql.Date(b.getDtTipoExtraPremium().getTime()));
-            stmt.setDate(6, new java.sql.Date(b.getDtTipoPremium().getTime()));
-            stmt.setString(7, b.getMaterial());
-            stmt.setString(8, b.getTipoAtual());
-            stmt.setDouble(9, b.getVolumeAtual());
-            stmt.setDouble(10, b.getVolumeTotal());
+            stmt.setString(2, b.getMaterial());
+            stmt.setString(3, b.getTipoAtual());
+            stmt.setDouble(4, b.getVolumeAtual());
+            stmt.setDouble(5, b.getVolumeTotal());
             // executar a operacao no banco
             stmt.executeUpdate();
             // mensagem de sucesso

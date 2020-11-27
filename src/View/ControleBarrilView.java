@@ -619,38 +619,40 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_cbxNumBarrilActionPerformed
 
     private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
         // TODO add your handling code here:
-Barril b = new Barril();
+        Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
-        txtVolumeAtual.setText(b.getVolumeAtual().toString());
-        txtEstado.setText(b.getTipoAtual());
-        if (b.getDtCheio() != null){
-        txtUltimaData.setText(b.getDtCheio().toString());
-        }
-        txtMaterial.setText(b.getMaterial());
-        switch (b.getTipoAtual()) {
-            case "Armazenado":
-                txtProximaData.setText(b.getDtTipoEnvelhecido().toString());
-                break;
-            case "Envelhecido":
-                txtProximaData.setText(b.getDtTipoExtraPremium().toString());
-                break;
-            case "Premium":
-                txtProximaData.setText(b.getDtTipoExtraPremium().toString());
-                break;
-            case "Extra Premium":
-                txtProximaData.setText(b.getDtTipoExtraPremium().toString());
-                break;
-            default:
-                if (b.getDtCheio() != null){
-                txtProximaData.setText(b.getDtTipoArmazenado().toString());
-                }
-                break;
+        if (cbxNumBarril.getSelectedItem() != null) {
+            b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
+            txtVolumeAtual.setText(b.getVolumeAtual().toString());
+            txtEstado.setText(b.getTipoAtual());
+            if (b.getDtCheio() != null) {
+                txtUltimaData.setText(b.getDtCheio().toString());
+            }
+            txtMaterial.setText(b.getMaterial());
+            switch (b.getTipoAtual()) {
+                case "Armazenado":
+                    txtProximaData.setText(b.getDtTipoEnvelhecido().toString());
+                    break;
+                case "Envelhecido":
+                    txtProximaData.setText(b.getDtTipoExtraPremium().toString());
+                    break;
+                case "Premium":
+                    txtProximaData.setText(b.getDtTipoExtraPremium().toString());
+                    break;
+                case "Extra Premium":
+                    txtProximaData.setText(b.getDtTipoExtraPremium().toString());
+                    break;
+                default:
+                    if (b.getDtCheio() != null) {
+                        txtProximaData.setText(b.getDtTipoArmazenado().toString());
+                    }
+                    break;
+            }
         }
 
     }//GEN-LAST:event_cbxNumBarrilItemStateChanged
@@ -676,9 +678,9 @@ Barril b = new Barril();
         modelo.setNumRows(0);
         barris.forEach(b -> {
             cbxNumBarril.addItem(b.getNumBarril().toString());
-           
-                    });
-        barris.forEach(b ->{
+
+        });
+        barris.forEach(b -> {
             cbxNumBarrilControle.addItem(b.getNumBarril().toString());
             modelo.addRow(new Object[]{
                 b.getNumBarril(),
@@ -691,7 +693,7 @@ Barril b = new Barril();
                 b.getVolumeAtual(),
                 b.getVolumeTotal()
             });
-});
+        });
     }//GEN-LAST:event_formWindowActivated
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
@@ -708,24 +710,32 @@ Barril b = new Barril();
 
     private void cbxNumBarrilControleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleItemStateChanged
         // TODO add your handling code here:
-    Barril b = new Barril();
+        Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        
-        //inserir if
-        b = bDAO.BuscaBarril(Integer.parseInt( cbxNumBarrilControle.getSelectedItem().toString()));
-        txtVolumeAtualControle.setText(b.getVolumeAtual() + "");
-        txtVolumeTotalControle.setText(b.getVolumeTotal() + "");
-        txtVolumePorcento.setText((b.getVolumeAtual() / b.getVolumeTotal() * 100) + "%");
-        txtDtCheioControle.setText(b.getDtCheio() + "");
-        b.calcDtTipos();
-        txtDtArmazenadoControle.setText(b.getDtTipoArmazenado().toString());
-        txtDtEnvelhecidoControle.setText(b.getDtTipoEnvelhecido().toString());
-        txtDtExtraPremiumControle.setText(b.getDtTipoExtraPremium().toString());
+        if (cbxNumBarrilControle.getSelectedItem() != null) {
+            //inserir if
+            b = bDAO.BuscaBarril(Integer.parseInt(cbxNumBarrilControle.getSelectedItem().toString()));
+            txtVolumeAtualControle.setText(b.getVolumeAtual() + "");
+            txtVolumeTotalControle.setText(b.getVolumeTotal() + "");
+            txtVolumePorcento.setText((b.getVolumeAtual() / b.getVolumeTotal() * 100) + "%");
+            if (b.getDtCheio() != null) {
+                txtDtCheioControle.setText(b.getDtCheio() + "");
+                b.calcDtTipos();
+                txtDtArmazenadoControle.setText(b.getDtTipoArmazenado().toString());
+                txtDtEnvelhecidoControle.setText(b.getDtTipoEnvelhecido().toString());
+                txtDtExtraPremiumControle.setText(b.getDtTipoExtraPremium().toString());
+            } else{
+                txtDtCheioControle.setText("");
+                txtDtArmazenadoControle.setText("");
+                txtDtEnvelhecidoControle.setText("");
+                txtDtExtraPremiumControle.setText("");
+            }
+        } 
     }//GEN-LAST:event_cbxNumBarrilControleItemStateChanged
 
     private void cbxNumBarrilControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleActionPerformed
         // TODO add your handling code here:
-    
+
     }//GEN-LAST:event_cbxNumBarrilControleActionPerformed
 
     private void txtDtEnvelhecidoControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtEnvelhecidoControleActionPerformed
@@ -736,15 +746,18 @@ Barril b = new Barril();
         // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        Date dtCheio = null;
-        try {
-            dtCheio = new SimpleDateFormat("dd/MM/yyyy").parse(txtDtCheioControle.getText());
-        } catch (ParseException ex) {
-            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        if (cbxNumBarrilControle.getSelectedItem() != null) {
+            b.setNumBarril(Integer.parseInt(cbxNumBarrilControle.getSelectedItem().toString()));
+            Date dtCheio = null;
+            try {
+                dtCheio = new SimpleDateFormat("dd/MM/yyyy").parse(txtDtCheioControle.getText());
+            } catch (ParseException ex) {
+                Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            b.setDtCheio(dtCheio);
+            b.calcDtTipos();
+            bDAO.AtualizarDatasBarril(b);
         }
-        b.setDtCheio(dtCheio);
-        b.calcDtTipos();
-        bDAO.AtualizarDatasBarril(b);
     }//GEN-LAST:event_btnAtualizarControleActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -760,7 +773,7 @@ Barril b = new Barril();
         // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer) cbxNumBarrilControle.getSelectedItem());
+        b = bDAO.BuscaBarril(Integer.parseInt(cbxNumBarrilControle.getSelectedItem().toString()));
         b.setVolumeAtual(Double.parseDouble(txtVolumeAtualControle.getText()));
         b.setVolumeTotal(Double.parseDouble(txtVolumeTotalControle.getText()));
         bDAO.AtualizarVolumeBarril(b);

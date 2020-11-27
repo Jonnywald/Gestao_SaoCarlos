@@ -63,6 +63,7 @@ public class CachacaDAO {
             stmt.setInt(6, p.getLote());
 
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Enviado com sucesso!");
         } catch (SQLException ex) {
             // mensagem de erro
             JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
