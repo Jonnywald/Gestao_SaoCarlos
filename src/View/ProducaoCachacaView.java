@@ -611,7 +611,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ftxtDtMoagemActionPerformed
 
-    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {                                              
+   
+//
+    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
+        // TODO add your handling code here:
         try {
             // TODO add your handling code here:
             SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -621,25 +624,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             
             c.add(c.DATE, 2);
             dataFormatada = c.getTime();
-            ftxtDtAlarmeFerment.setText(formato.format(dataFormatada) );
+            ftxtDtAlarmeFerment.setText(formato.format(dataFormatada));
         } catch (ParseException ex) {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-//
-    private void ftxtDtInicioFermentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentFocusLost
-        // TODO add your handling code here:
-        ProducaoCachaca p = new ProducaoCachaca();
-        Date dtIn = null, dtAl = null;
-        try {
-            dtIn = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtInicioFerment.getText());
-        } catch (ParseException ex) {
-            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        p.setDtInicioFerment(dtIn);
-        dtAl = p.calcDtAlarmFerment(dtIn);
-        ftxtDtAlarmeFerment.setText(dtAl.toString());
-
     }//GEN-LAST:event_ftxtDtInicioFermentFocusLost
 
     private void ftxtDtInicioFermentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtDtInicioFermentActionPerformed

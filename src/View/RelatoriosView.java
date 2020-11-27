@@ -5,8 +5,9 @@
  */
 package View;
 
-import Model.DAO.Footer;
-import Model.DAO.Header;
+import Model.Bean.Footer;
+import Model.Bean.Header;
+import Model.DAO.CachacaDAO;
 import com.itextpdf.kernel.events.IEventHandler;
 import javax.swing.JFileChooser;
 import com.itextpdf.kernel.events.PdfDocumentEvent;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -202,6 +204,11 @@ public class RelatoriosView extends javax.swing.JPanel {
         });
 
         cbxProducao.setText("Produção");
+        cbxProducao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxProducaoActionPerformed(evt);
+            }
+        });
 
         cbxLote.setText("Lotes");
 
@@ -317,29 +324,44 @@ public class RelatoriosView extends javax.swing.JPanel {
             //Criando cabeçalho
             Header header = new Header("Listagem de Rendimento por Lote");
             Footer footer = new Footer();
-            
+
             pdf.addEventHandler(PdfDocumentEvent.START_PAGE, header);
             pdf.addEventHandler(PdfDocumentEvent.END_PAGE, footer);
-            
-            
-            
-             ///Criando a tabela
-         //   Table tbl = new Table(2).useAllAvailableWidth();
-          //  tbl.addCell("Login");
-          //  for (int i = 0; i < tblUsuario.getRowCount(); i++) {
-          //      tbl.addCell(tblUsuario.getValueAt(i, 0).toString());
-           //     tbl.addCell(tblUsuario.getValueAt(i, 1).toString());
-          //  }
-          //  doc.add(tbl);
-         //   footer.writeTotal(pdf);
-         //   doc.close();
-              
+
+            ///Criando a tabela
+            Table tbl = new Table(2).useAllAvailableWidth();
+            tbl.addCell("Lote");
+            tbl.addCell("Data");
+            tbl.addCell("Rendimento");
+
+            //chamar método do DAO que retorna resultset
+            ResultSet rs = new CachacaDAO().selecionarTabela();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                while (rs.next()) {
+                    tbl.addCell(rs.getString("lote"));
+                    tbl.addCell(formato.format(rs.getDate("dtAlambicagem")));
+                    tbl.addCell(rs.getDouble("rendimento") + "");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(RelatoriosView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //  for (int i = 0; i < cbxProducao.getRowCount(); i++) {
+            // tbl.addCell(cbxProducao.getValueAt(i, 0).toString());
+            // tbl.addCell(cbxProducao.getValueAt(i, 1).toString());
+            //  }
+            doc.add(tbl);
+            footer.writeTotal(pdf);
+            doc.close();
+
             //Abrir PDF
             File f = new File(path + "/Rendimento.pdf");
 
         } catch (FileNotFoundException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
         }
+
+
     }//GEN-LAST:event_btnGerarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
@@ -351,6 +373,10 @@ public class RelatoriosView extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnVoltarGerarActionPerformed
+
+    private void cbxProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProducaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxProducaoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

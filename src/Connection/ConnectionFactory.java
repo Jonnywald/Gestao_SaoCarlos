@@ -10,17 +10,17 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
     // Dados para se conectar com o BD
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/Gestao_SaoCarlos?zeroDateTimeBehavior=CONVERT_TO_NULL&useTimezone=true&serverTimezone=UTC";
+   // private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/gestao_saocarlos?zeroDateTimeBehavior=CONVERT_TO_NULL&useTimezone=true&serverTimezone=UTC";
     private static final String USER = "root";
     private static final String PASS = "senha123";
     
     //Metodo para iniciar a conexão com o Banco
     public static Connection getConnection(){
         try {
-            Class.forName(DRIVER);
+         //   Class.forName(DRIVER);
             return DriverManager.getConnection(URL, USER, PASS);
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch ( SQLException ex) {
             throw new RuntimeException("ERRO NA CONEXÃO: "+ex.getMessage(),ex);
         }
     }

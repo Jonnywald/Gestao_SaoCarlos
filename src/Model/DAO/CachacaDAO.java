@@ -174,8 +174,9 @@ public class CachacaDAO {
     
     public ResultSet selecionarTabela() {
         try {
+            Connection con = ConnectionFactory.getConnection();
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select lote, dtAlambicagem, rendimento from producaoCachaca");
+            ResultSet rs = stmt.executeQuery("select lote, dtAlambicagem, rendimento from producaoCachaca "); //where ..data é ????...
             return rs;
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);

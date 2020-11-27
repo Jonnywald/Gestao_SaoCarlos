@@ -594,12 +594,17 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
         // TODO add your handling code here:
-        Barril b = new Barril();
+        
+    }//GEN-LAST:event_cbxNumBarrilActionPerformed
+
+    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
+        // TODO add your handling code here:
+Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
         b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
         txtVolumeAtual.setText(b.getVolumeAtual().toString());
         txtEstado.setText(b.getTipoAtual());
-        if (b.getDtCheio() == null){
+        if (b.getDtCheio() != null){
         txtUltimaData.setText(b.getDtCheio().toString());
         }
         txtMaterial.setText(b.getMaterial());
@@ -617,16 +622,11 @@ public class ControleBarrilView extends javax.swing.JFrame {
                 txtProximaData.setText(b.getDtTipoExtraPremium().toString());
                 break;
             default:
-                if (b.getDtCheio() == null){
+                if (b.getDtCheio() != null){
                 txtProximaData.setText(b.getDtTipoArmazenado().toString());
                 }
                 break;
         }
-    }//GEN-LAST:event_cbxNumBarrilActionPerformed
-
-    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
-        // TODO add your handling code here:
-
 
     }//GEN-LAST:event_cbxNumBarrilItemStateChanged
 
@@ -651,8 +651,10 @@ public class ControleBarrilView extends javax.swing.JFrame {
         modelo.setNumRows(0);
         barris.forEach(b -> {
             cbxNumBarril.addItem(b.getNumBarril().toString());
+           
                     });
-        barris.forEach(b ->{cbxNumBarrilControle.addItem(b.getNumBarril().toString());
+        barris.forEach(b ->{
+            cbxNumBarrilControle.addItem(b.getNumBarril().toString());
             modelo.addRow(new Object[]{
                 b.getNumBarril(),
                 b.getDtCheio(),
@@ -681,22 +683,24 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
     private void cbxNumBarrilControleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleItemStateChanged
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_cbxNumBarrilControleItemStateChanged
-
-    private void cbxNumBarrilControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleActionPerformed
-        // TODO add your handling code here:
-        Barril b = new Barril();
+    Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer) cbxNumBarrilControle.getSelectedItem());
-        txtVolumeAtualControle.setText(b.getVolumeAtual().toString());
-        txtVolumeTotalControle.setText(b.getVolumeTotal().toString());
+        
+        //inserir if
+        b = bDAO.BuscaBarril(Integer.parseInt( cbxNumBarrilControle.getSelectedItem().toString()));
+        txtVolumeAtualControle.setText(b.getVolumeAtual() + "");
+        txtVolumeTotalControle.setText(b.getVolumeTotal() + "");
         txtVolumePorcento.setText((b.getVolumeAtual() / b.getVolumeTotal() * 100) + "%");
-        txtDtCheioControle.setText(b.getDtCheio().toString());
+        txtDtCheioControle.setText(b.getDtCheio() + "");
         b.calcDtTipos();
         txtDtArmazenadoControle.setText(b.getDtTipoArmazenado().toString());
         txtDtEnvelhecidoControle.setText(b.getDtTipoEnvelhecido().toString());
         txtDtExtraPremiumControle.setText(b.getDtTipoExtraPremium().toString());
+    }//GEN-LAST:event_cbxNumBarrilControleItemStateChanged
+
+    private void cbxNumBarrilControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleActionPerformed
+        // TODO add your handling code here:
+    
     }//GEN-LAST:event_cbxNumBarrilControleActionPerformed
 
     private void txtDtEnvelhecidoControleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDtEnvelhecidoControleActionPerformed
