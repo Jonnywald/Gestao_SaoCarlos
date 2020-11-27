@@ -87,11 +87,11 @@ public class BarrilDAO {
         try {
             stmt = con.prepareStatement("INSERT INTO barril (numBarril, dtCheio, dtTipoA, dtTipoE, dtTipoEP, dtTipoP, material, tipoAtual, volumeAtual, volumeTotal) VALUES(?,?,?,?,?,?,?,?,?,?)");
             stmt.setInt(1, b.getNumBarril());
-            stmt.setDate(2, (Date) b.getDtCheio());
-            stmt.setDate(3, (Date) b.getDtTipoArmazenado());
-            stmt.setDate(4, (Date) b.getDtTipoEnvelhecido());
-            stmt.setDate(5, (Date) b.getDtTipoExtraPremium());
-            stmt.setDate(6, (Date) b.getDtTipoPremium());
+            stmt.setDate(2, new java.sql.Date(b.getDtCheio().getTime()));
+            stmt.setDate(3, new java.sql.Date(b.getDtTipoArmazenado().getTime()));
+            stmt.setDate(4, new java.sql.Date(b.getDtTipoEnvelhecido().getTime()));
+            stmt.setDate(5, new java.sql.Date(b.getDtTipoExtraPremium().getTime()));
+            stmt.setDate(6, new java.sql.Date(b.getDtTipoPremium().getTime()));
             stmt.setString(7, b.getMaterial());
             stmt.setString(8, b.getTipoAtual());
             stmt.setDouble(9, b.getVolumeAtual());
@@ -132,11 +132,11 @@ public class BarrilDAO {
         try {
             stmt = con.prepareStatement("UPDATE barril set dtCheio=?, dtTipoA=?, dtTipoE=?, dtTipoEP=?, dtTipoP=? where numBarril = ?");
             
-            stmt.setDate(1, (Date) b.getDtCheio());
-            stmt.setDate(2, (Date) b.getDtTipoArmazenado());
-            stmt.setDate(3, (Date) b.getDtTipoEnvelhecido());
-            stmt.setDate(4, (Date) b.getDtTipoExtraPremium());
-            stmt.setDate(5, (Date) b.getDtTipoPremium());
+            stmt.setDate(1, new java.sql.Date(b.getDtCheio().getTime()));
+            stmt.setDate(2, new java.sql.Date(b.getDtTipoArmazenado().getTime()));
+            stmt.setDate(3, new java.sql.Date(b.getDtTipoEnvelhecido().getTime()));
+            stmt.setDate(4, new java.sql.Date(b.getDtTipoExtraPremium().getTime()));
+            stmt.setDate(5, new java.sql.Date(b.getDtTipoPremium().getTime()));
             stmt.setInt(6, b.getNumBarril());
             // executar a operacao no banco
             stmt.executeUpdate();

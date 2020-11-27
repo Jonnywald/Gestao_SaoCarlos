@@ -8,42 +8,26 @@ package View;
 import Model.Bean.Footer;
 import Model.Bean.Header;
 import Model.DAO.CachacaDAO;
-import com.itextpdf.kernel.events.IEventHandler;
-import javax.swing.JFileChooser;
-import com.itextpdf.kernel.events.PdfDocumentEvent;
-import com.itextpdf.kernel.geom.PageSize;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.layout.element.Table;
-import com.itextpdf.layout.property.TextAlignment;
-import java.awt.Desktop;
+import com.mysql.cj.xdevapi.Table;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.text.Document;
 
 /**
  *
- * @author anaco
+ * @author delri
  */
-public class RelatoriosView extends javax.swing.JPanel {
+public class RelatoriosView extends javax.swing.JFrame {
 
     /**
-     * Creates new form RelatoriosView
+     * Creates new form RelatoriosNeo
      */
     public RelatoriosView() {
         initComponents();
@@ -58,6 +42,7 @@ public class RelatoriosView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         painelDados = new javax.swing.JPanel();
         lblRendimento28d = new javax.swing.JLabel();
@@ -87,6 +72,13 @@ public class RelatoriosView extends javax.swing.JPanel {
         txtDtFinal = new javax.swing.JTextField();
         btnGerar = new javax.swing.JButton();
         btnVoltarGerar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         lblRendimento28d.setText("Rendimento dos últimos 28 dias:");
 
@@ -282,27 +274,59 @@ public class RelatoriosView extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Gerar Relatório", painelRelatorio);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 599, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addGap(0, 479, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void cbxVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxVendaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxVendaActionPerformed
+
+    private void cbxProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProducaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxProducaoActionPerformed
 
     private void btnGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarActionPerformed
         // TODO add your handling code here:
@@ -347,9 +371,9 @@ public class RelatoriosView extends javax.swing.JPanel {
                 Logger.getLogger(RelatoriosView.class.getName()).log(Level.SEVERE, null, ex);
             }
             //  for (int i = 0; i < cbxProducao.getRowCount(); i++) {
-            // tbl.addCell(cbxProducao.getValueAt(i, 0).toString());
-            // tbl.addCell(cbxProducao.getValueAt(i, 1).toString());
-            //  }
+                // tbl.addCell(cbxProducao.getValueAt(i, 0).toString());
+                // tbl.addCell(cbxProducao.getValueAt(i, 1).toString());
+                //  }
             doc.add(tbl);
             footer.writeTotal(pdf);
             doc.close();
@@ -361,23 +385,53 @@ public class RelatoriosView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
         }
 
-
     }//GEN-LAST:event_btnGerarActionPerformed
-
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnVoltarGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarGerarActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnVoltarGerarActionPerformed
 
-    private void cbxProducaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProducaoActionPerformed
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxProducaoActionPerformed
+        
+    }//GEN-LAST:event_formWindowActivated
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(RelatoriosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(RelatoriosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(RelatoriosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(RelatoriosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new RelatoriosView().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGerar;
@@ -386,6 +440,7 @@ public class RelatoriosView extends javax.swing.JPanel {
     private javax.swing.JCheckBox cbxLote;
     private javax.swing.JCheckBox cbxProducao;
     private javax.swing.JCheckBox cbxVenda;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -410,9 +465,4 @@ public class RelatoriosView extends javax.swing.JPanel {
     private javax.swing.JTextField txtRapadura28;
     private javax.swing.JTextField txtRapaduraGeral;
     // End of variables declaration//GEN-END:variables
-
-    private void dispose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
