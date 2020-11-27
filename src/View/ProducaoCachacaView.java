@@ -528,6 +528,9 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         CachacaDAO cDAO = new CachacaDAO();
+        Integer i = 0;
+        i = cDAO.ultimoLote() + 1;
+        txtLote.setText(i.toString());
         List<ProducaoCachaca> pc = new ArrayList<ProducaoCachaca>();
         cmbBarril.removeAllItems();
         BarrilDAO bDAO = new BarrilDAO();

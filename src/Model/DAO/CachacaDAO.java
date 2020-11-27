@@ -184,4 +184,26 @@ public class CachacaDAO {
         }
         return null;
     }
+    public Integer ultimoLote(){
+        // iniciar a conexao com o banco usando a classe connection factory
+        Connection con = ConnectionFactory.getConnection();
+        // gerar uma variavel de operacao com o banco
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int i = 0;
+        try {
+            stmt = con.prepareStatement("SELECT * FROM producaoCachaca ORDER BY lote DESC LIMIT 1");
+            rs = stmt.executeQuery();
+            while (rs.next()){
+            i = rs.getInt("lote");
+            }
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Ler " + ex);
+        }finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return i;
+    }
 }
