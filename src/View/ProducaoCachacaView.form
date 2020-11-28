@@ -638,6 +638,7 @@
                             <Column editable="true" title="Barril" type="java.lang.Object"/>
                           </Table>
                         </Property>
+                        <Property name="autoResizeMode" type="int" value="0"/>
                       </Properties>
                     </Component>
                   </SubComponents>

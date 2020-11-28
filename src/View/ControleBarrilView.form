@@ -54,7 +54,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="998" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1037" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -66,7 +66,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="650" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="654" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -118,9 +118,8 @@
                                           <Component id="txtUltimaData" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="lblNumGarrafas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="txtEstado" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -141,11 +140,11 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="lblLote" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="214" max="32767" attributes="0"/>
                                           <Component id="txtProximaData" min="-2" pref="175" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="164" max="32767" attributes="0"/>
+                                  <EmptySpace pref="254" max="32767" attributes="0"/>
                                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -160,7 +159,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="231" max="32767" attributes="0"/>
+                                  <EmptySpace pref="381" max="32767" attributes="0"/>
                                   <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -180,20 +179,20 @@
                                       <Component id="lblTipoGarrafa" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtUltimaData" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblNumGarrafas" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblNumGarrafas" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtProximaData" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLote" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -429,7 +428,7 @@
                                   <Component id="cbxNumBarrilControle" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="101" max="32767" attributes="0"/>
+                          <EmptySpace pref="321" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -717,7 +716,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" alignment="0" pref="909" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" pref="992" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>

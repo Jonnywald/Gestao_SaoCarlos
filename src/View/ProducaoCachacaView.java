@@ -395,6 +395,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 "Lote", "Data de Moagem", "Qtd Caldo", "Brix", "Qtd Agua", "Volume", "Data de Fermentação", "Data Maxima", "Dorna", "Data de Destilação", "Coração", "GL", "Rendimento", "Barril"
             }
         ));
+        tblHist.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPane2.setViewportView(tblHist);
 
         btnVoltarHist.setText("Voltar");

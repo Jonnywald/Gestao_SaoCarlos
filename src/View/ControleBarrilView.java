@@ -244,9 +244,8 @@ public class ControleBarrilView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtUltimaData, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(lblNumGarrafas)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
@@ -262,9 +261,9 @@ public class ControleBarrilView extends javax.swing.JFrame {
                                     .addComponent(cbxNumBarril, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblLote)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                                 .addComponent(txtProximaData, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -275,7 +274,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 381, Short.MAX_VALUE)
                         .addComponent(btnCancelar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtLabelControleBarril)
@@ -291,18 +290,18 @@ public class ControleBarrilView extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTipoGarrafa)
                             .addComponent(txtUltimaData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNumGarrafas)
-                            .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNumGarrafas))
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtProximaData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblLote))
-                        .addGap(26, 26, 26)
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(txtMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18))
         );
@@ -485,7 +484,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
                         .addComponent(lblBarril1)
                         .addGap(31, 31, 31)
                         .addComponent(cbxNumBarrilControle, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -536,7 +535,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 909, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnExcluir)
@@ -562,7 +561,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 998, Short.MAX_VALUE)
+            .addGap(0, 1037, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
                     .addContainerGap()
@@ -571,7 +570,7 @@ public class ControleBarrilView extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGap(0, 654, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel8Layout.createSequentialGroup()
                     .addContainerGap()
@@ -598,64 +597,6 @@ public class ControleBarrilView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtVolumeAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVolumeAtualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtVolumeAtualActionPerformed
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void txtUltimaDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUltimaDataActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUltimaDataActionPerformed
-
-    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstadoActionPerformed
-
-    private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_cbxNumBarrilActionPerformed
-
-    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
-        // TODO add your handling code here:
-        Barril b = new Barril();
-        BarrilDAO bDAO = new BarrilDAO();
-        if (cbxNumBarril.getSelectedItem() != null) {
-            b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
-            txtVolumeAtual.setText(b.getVolumeAtual().toString());
-            txtEstado.setText(b.getTipoAtual());
-            if (b.getDtCheio() != null) {
-                txtUltimaData.setText(b.getDtCheio().toString());
-            }
-            txtMaterial.setText(b.getMaterial());
-            switch (b.getTipoAtual()) {
-                case "Armazenado":
-                    txtProximaData.setText(b.getDtTipoEnvelhecido().toString());
-                    break;
-                case "Envelhecido":
-                    txtProximaData.setText(b.getDtTipoExtraPremium().toString());
-                    break;
-                case "Premium":
-                    txtProximaData.setText(b.getDtTipoExtraPremium().toString());
-                    break;
-                case "Extra Premium":
-                    txtProximaData.setText(b.getDtTipoExtraPremium().toString());
-                    break;
-                default:
-                    if (b.getDtCheio() != null) {
-                        txtProximaData.setText(b.getDtTipoArmazenado().toString());
-                    }
-                    break;
-            }
-        }
-
-    }//GEN-LAST:event_cbxNumBarrilItemStateChanged
 
     private void btnVoltarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarListaActionPerformed
         // TODO add your handling code here:
@@ -695,18 +636,6 @@ public class ControleBarrilView extends javax.swing.JFrame {
             });
         });
     }//GEN-LAST:event_formWindowActivated
-
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
-        Barril b = new Barril();
-        BarrilDAO bDAO = new BarrilDAO();
-        b.setNumBarril(Integer.parseInt(txtNumBarrilCadastro.getText()));
-        b.setMaterial(txtMaterialCadastro.getText());
-        b.setVolumeTotal(Double.parseDouble(txtVolumeCadastro.getText()));
-        b.setTipoAtual("Puro");
-        b.setVolumeAtual(0);
-        bDAO.CriarBarril(b);
-    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void cbxNumBarrilControleItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilControleItemStateChanged
         // TODO add your handling code here:
@@ -779,9 +708,76 @@ public class ControleBarrilView extends javax.swing.JFrame {
         bDAO.AtualizarVolumeBarril(b);
     }//GEN-LAST:event_btnAtualizarVolumeActionPerformed
 
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+        Barril b = new Barril();
+        BarrilDAO bDAO = new BarrilDAO();
+        b.setNumBarril(Integer.parseInt(txtNumBarrilCadastro.getText()));
+        b.setMaterial(txtMaterialCadastro.getText());
+        b.setVolumeTotal(Double.parseDouble(txtVolumeCadastro.getText()));
+        b.setTipoAtual("Puro");
+        b.setVolumeAtual(0);
+        bDAO.CriarBarril(b);
+    }//GEN-LAST:event_btnCadastrarActionPerformed
+
     private void txtMaterialCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaterialCadastroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaterialCadastroActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoActionPerformed
+
+    private void txtUltimaDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUltimaDataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUltimaDataActionPerformed
+
+    private void txtVolumeAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVolumeAtualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVolumeAtualActionPerformed
+
+    private void cbxNumBarrilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumBarrilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxNumBarrilActionPerformed
+
+    private void cbxNumBarrilItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxNumBarrilItemStateChanged
+        // TODO add your handling code here:
+        Barril b = new Barril();
+        BarrilDAO bDAO = new BarrilDAO();
+        if (cbxNumBarril.getSelectedItem() != null) {
+            b = bDAO.BuscaBarril((Integer.parseInt((String) cbxNumBarril.getSelectedItem())));
+            txtVolumeAtual.setText(b.getVolumeAtual().toString());
+            txtEstado.setText(b.getTipoAtual());
+            if (b.getDtCheio() != null) {
+                txtUltimaData.setText(b.getDtCheio().toString());
+            }
+            txtMaterial.setText(b.getMaterial());
+            switch (b.getTipoAtual()) {
+                case "Armazenado":
+                txtProximaData.setText(b.getDtTipoEnvelhecido().toString());
+                break;
+                case "Envelhecido":
+                txtProximaData.setText(b.getDtTipoExtraPremium().toString());
+                break;
+                case "Premium":
+                txtProximaData.setText(b.getDtTipoExtraPremium().toString());
+                break;
+                case "Extra Premium":
+                txtProximaData.setText(b.getDtTipoExtraPremium().toString());
+                break;
+                default:
+                if (b.getDtCheio() != null) {
+                    txtProximaData.setText(b.getDtTipoArmazenado().toString());
+                }
+                break;
+            }
+        }
+    }//GEN-LAST:event_cbxNumBarrilItemStateChanged
 
     /**
      * @param args the command line arguments

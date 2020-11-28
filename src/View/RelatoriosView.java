@@ -93,6 +93,12 @@ public class RelatoriosView extends javax.swing.JFrame {
         txtMediaLitrosGeral = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtSomaLitrosGeral = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         painelRelatorio = new javax.swing.JPanel();
         cbxVenda = new javax.swing.JCheckBox();
         cbxProducao = new javax.swing.JCheckBox();
@@ -138,6 +144,12 @@ public class RelatoriosView extends javax.swing.JFrame {
 
         lblMeladoGeral.setText("Melado:");
 
+        txtCachaca28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCachaca28ActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("Media de produção de Cachaça em Litros dos Ultimos 28 dias:");
 
         jLabel2.setText("Somatorio de produção em Litros dos ultimos 28 dias:");
@@ -145,6 +157,18 @@ public class RelatoriosView extends javax.swing.JFrame {
         jLabel3.setText("Media de produção de Cachaça em Litro Geral:");
 
         jLabel4.setText("Somatorio de produção em Litros Geral:");
+
+        jLabel5.setText("%");
+
+        jLabel6.setText("%");
+
+        jLabel7.setText("%");
+
+        jLabel8.setText("%");
+
+        jLabel9.setText("%");
+
+        jLabel10.setText("%");
 
         javax.swing.GroupLayout painelDadosLayout = new javax.swing.GroupLayout(painelDados);
         painelDados.setLayout(painelDadosLayout);
@@ -155,50 +179,61 @@ public class RelatoriosView extends javax.swing.JFrame {
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 759, Short.MAX_VALUE)
                         .addComponent(btnVoltar))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRendimentoGeral)
                             .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lblRendimento28d)
-                                    .addGroup(painelDadosLayout.createSequentialGroup()
-                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblCachaca28)
-                                            .addComponent(lblRapadura28)
-                                            .addComponent(lblMelado28))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtMelado28, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                                            .addComponent(txtRapadura28)
-                                            .addComponent(txtCachaca28))))
-                                .addGap(96, 96, 96)
                                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(txtMediaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblCachacaGeral)
+                                    .addComponent(lblRapaduraGeral)
+                                    .addComponent(lblMeladoGeral))
+                                .addGap(31, 31, 31)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCachacaGeral)
+                                    .addComponent(txtRapaduraGeral)
+                                    .addComponent(txtMeladoGeral, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))))
+                        .addGap(176, 176, 176)
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMediaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(txtSomaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblRendimento28d)
+                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCachaca28)
+                                    .addComponent(lblRapadura28)
+                                    .addComponent(lblMelado28))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtMelado28, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                    .addComponent(txtRapadura28)
+                                    .addComponent(txtCachaca28))))
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(174, 174, 174)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
+                                    .addComponent(txtMediaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtSomaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblRendimentoGeral)
-                                    .addGroup(painelDadosLayout.createSequentialGroup()
-                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblCachacaGeral)
-                                            .addComponent(lblRapaduraGeral)
-                                            .addComponent(lblMeladoGeral))
-                                        .addGap(31, 31, 31)
-                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtCachacaGeral)
-                                            .addComponent(txtRapaduraGeral)
-                                            .addComponent(txtMeladoGeral, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))))
-                                .addGap(101, 101, 101)
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(txtMediaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(txtSomaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 270, Short.MAX_VALUE)))
+                                .addGap(191, 191, 191)
+                                .addComponent(jLabel1)))))
                 .addContainerGap())
         );
         painelDadosLayout.setVerticalGroup(
@@ -212,12 +247,18 @@ public class RelatoriosView extends javax.swing.JFrame {
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCachaca28)
                     .addComponent(txtCachaca28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMediaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRapadura28)
-                    .addComponent(txtRapadura28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(txtMediaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblRapadura28)
+                            .addComponent(txtRapadura28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)))
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -226,28 +267,32 @@ public class RelatoriosView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtMelado28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSomaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtSomaLitros28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))))
                 .addGap(35, 35, 35)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblRendimentoGeral)
-                    .addComponent(jLabel3))
+                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(lblRendimentoGeral))
                 .addGap(20, 20, 20)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCachacaGeral)
                     .addComponent(txtCachacaGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMediaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMediaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGap(20, 20, 20)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRapaduraGeral)
                     .addComponent(txtRapaduraGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel9))
                 .addGap(24, 24, 24)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMeladoGeral)
                     .addComponent(txtMeladoGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSomaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSomaLitrosGeral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -309,7 +354,7 @@ public class RelatoriosView extends javax.swing.JFrame {
                         .addGroup(painelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDtFinal)
                             .addComponent(txtDtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(582, Short.MAX_VALUE))
+                .addContainerGap(588, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelRelatorioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVoltarGerar)
@@ -364,7 +409,7 @@ public class RelatoriosView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 865, Short.MAX_VALUE)
+            .addGap(0, 871, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -467,8 +512,8 @@ public class RelatoriosView extends javax.swing.JFrame {
         ProducaoCachaca pCachaca = new ProducaoCachaca();
         pCachaca = rDAO.buscarDadosCachaca28();
         txtCachaca28.setText(pCachaca.getRendimento().toString());
-        pCachaca = rDAO.buscarDadosCachacaGeral();
-        txtCachacaGeral.setText(pCachaca.getRendimento().toString());
+        //pCachaca = rDAO.buscarDadosCachacaGeral();
+        txtCachacaGeral.setText(rDAO.buscarDadosCachacaGeral().toString());
         txtMelado28.setText(rDAO.BuscarDadosMelado28().toString());
         txtMeladoGeral.setText(rDAO.BuscarDadosMeladoGeral().toString());
         txtRapadura28.setText(rDAO.BuscarDadosRapadura28().toString());
@@ -477,7 +522,12 @@ public class RelatoriosView extends javax.swing.JFrame {
         txtSomaLitrosGeral.setText(rDAO.SomatorioLitrosGeral().toString());
         txtMediaLitros28.setText(rDAO.MediaLitros28().toString());
         txtMediaLitrosGeral.setText(rDAO.MediaLitrosGeral().toString());
+       
     }//GEN-LAST:event_formWindowActivated
+
+    private void txtCachaca28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCachaca28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCachaca28ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -523,9 +573,15 @@ public class RelatoriosView extends javax.swing.JFrame {
     private javax.swing.JCheckBox cbxProducao;
     private javax.swing.JCheckBox cbxVenda;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

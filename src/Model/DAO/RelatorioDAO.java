@@ -46,18 +46,19 @@ public class RelatorioDAO {
 
     }
 
-    public ProducaoCachaca buscarDadosCachacaGeral() {
+    public Double buscarDadosCachacaGeral() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        ProducaoCachaca pCachaca = new ProducaoCachaca();
-
+        
+        Double resultado = 0.00;
+        
         try {
             stmt = con.prepareStatement("SELECT AVG (rendimento) FROM producaoCachaca");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                pCachaca.setRendimento(rs.getDouble(1));
+               resultado = rs.getDouble(1);
 
             }
         } catch (SQLException ex) {
@@ -67,14 +68,15 @@ public class RelatorioDAO {
             // sempre finalizar encerrando a conexão com o banco
             ConnectionFactory.closeConnection(con, stmt);
         }
-        return pCachaca;
+        return resultado;
 
     }
-    public Double BuscarDadosRapaduraGeral(){
+
+    public Double BuscarDadosRapaduraGeral() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT AVG (rendimentoR) FROM producaoRapadura");
@@ -93,11 +95,12 @@ public class RelatorioDAO {
         }
         return resultado;
     }
-    public Double BuscarDadosRapadura28(){
+
+    public Double BuscarDadosRapadura28() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT AVG (rendimentoR) FROM producaoRapadura WHERE dtProducaoR BETWEEN current_date()-28 AND current_date()");
@@ -116,11 +119,12 @@ public class RelatorioDAO {
         }
         return resultado;
     }
-    public Double BuscarDadosMelado28(){
+
+    public Double BuscarDadosMelado28() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT AVG (rendimentoM) FROM producaoMelado WHERE dtProducaoM BETWEEN current_date()-28 AND current_date()");
@@ -139,11 +143,12 @@ public class RelatorioDAO {
         }
         return resultado;
     }
-    public Double BuscarDadosMeladoGeral(){
+
+    public Double BuscarDadosMeladoGeral() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT AVG (rendimentoM) FROM producaoMelado");
@@ -162,11 +167,12 @@ public class RelatorioDAO {
         }
         return resultado;
     }
-    public Double SomatorioLitros28(){
+
+    public Double SomatorioLitros28() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT sum(qtdCoracao) AS soma FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AND current_date()");
@@ -185,11 +191,12 @@ public class RelatorioDAO {
         }
         return resultado;
     }
-    public Double SomatorioLitrosGeral(){
+
+    public Double SomatorioLitrosGeral() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT sum(qtdCoracao) AS soma FROM producaoCachaca");
@@ -208,11 +215,12 @@ public class RelatorioDAO {
         }
         return resultado;
     }
+
     public Double MediaLitrosGeral() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
         try {
             stmt = con.prepareStatement("SELECT AVG (qtdCoracao) FROM producaoCachaca");
             rs = stmt.executeQuery();
@@ -231,11 +239,12 @@ public class RelatorioDAO {
         return resultado;
 
     }
+
     public Double MediaLitros28() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Double resultado = 0.0;
+        Double resultado = 0.00;
         try {
             stmt = con.prepareStatement("SELECT AVG (qtdCoracao) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AND current_date()");
             rs = stmt.executeQuery();
