@@ -38,7 +38,7 @@ public class Header implements IEventHandler {
 
     @Override
     public void handleEvent(com.itextpdf.kernel.events.Event event) {
-        try {
+     //   try {
             PdfDocumentEvent docEvent = (PdfDocumentEvent) event;
             PdfDocument pdf = docEvent.getDocument();
             PdfPage page = docEvent.getPage();
@@ -59,19 +59,19 @@ public class Header implements IEventHandler {
              
            // } catch (UnsupportedEncodingException ex) {
           //      Logger.getLogger(Header.class.getName()).log(Level.SEVERE, null, ex);
-         //   }
+         // }
             //Construindo o título
             canvas.setFontSize(18);
             canvas.showTextAligned(titulo, pageSize.getWidth() / 2, pageSize.getTop() - 60, TextAlignment.CENTER);
             canvas.close();
 
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(Header.class.getName()).log(Level.SEVERE, null, ex);
+      //  } catch (MalformedURLException ex) {
+     //       Logger.getLogger(Header.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-}
+
 
     
 

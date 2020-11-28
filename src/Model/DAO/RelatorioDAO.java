@@ -47,7 +47,7 @@ public class RelatorioDAO {
 
     }
 
-    public ProducaoCachaca buscarDadosCachaca() {
+    public ProducaoCachaca buscarDadosCachacaGeral() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;

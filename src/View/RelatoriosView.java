@@ -374,7 +374,7 @@ public class RelatoriosView extends javax.swing.JFrame {
             pdf.addEventHandler(PdfDocumentEvent.END_PAGE, footer);
 
             ///Criando a tabela
-            Table tbl = new Table(2).useAllAvailableWidth();
+            Table tbl = new Table(3).useAllAvailableWidth();
             tbl.addCell("Lote");
             tbl.addCell("Data");
             tbl.addCell("Rendimento");

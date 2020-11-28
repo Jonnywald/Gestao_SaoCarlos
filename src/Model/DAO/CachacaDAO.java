@@ -23,7 +23,6 @@ public class CachacaDAO {
     public void IniciarProducao(ProducaoCachaca p) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
-        
 
         try {
             stmt = con.prepareStatement("INSERT INTO producaoCachaca (lote, dtMoagem, qtdCaldo, qtdAgua, totalCaldo, brix, dtInicioFerment, dtAlarmFerment, numDorna) VALUES(?,?,?,?,?,?,?,?,?)");
@@ -33,8 +32,8 @@ public class CachacaDAO {
             stmt.setInt(4, p.getQtdAgua());
             stmt.setInt(5, p.getTotalCaldo());
             stmt.setDouble(6, p.getBrix());
-            stmt.setDate(7, new java.sql.Date( p.getDtInicioFerment().getTime()));
-            stmt.setDate(8, new java.sql.Date( p.getDtAlarmFerment().getTime()));
+            stmt.setDate(7, new java.sql.Date(p.getDtInicioFerment().getTime()));
+            stmt.setDate(8, new java.sql.Date(p.getDtAlarmFerment().getTime()));
             stmt.setInt(9, p.getNumDorna());
             // executar a operacao no banco
             stmt.executeUpdate();
@@ -55,7 +54,7 @@ public class CachacaDAO {
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement("UPDATE producaoCachaca set dtAlambicagem=?, qtdCoracao= ?, rendimento=?, gl=?, numBarril=? where lote=?");
-            stmt.setDate(1,new java.sql.Date(p.getDtAlambicagem().getTime()));
+            stmt.setDate(1, new java.sql.Date(p.getDtAlambicagem().getTime()));
             stmt.setDouble(2, p.getQtdCoracao());
             stmt.setDouble(3, p.getRendimento());
             stmt.setDouble(4, p.getGl());
@@ -114,17 +113,18 @@ public class CachacaDAO {
         }
         return pCachaca;
     }
-    public ProducaoCachaca BuscaLote(Integer L){
+
+    public ProducaoCachaca BuscaLote(Integer L) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         ProducaoCachaca pCachaca = new ProducaoCachaca();
         try {
             stmt = con.prepareStatement("SELECT * FROM producaoCachaca where lote=?");
-            stmt.setInt(1,L);
+            stmt.setInt(1, L);
             rs = stmt.executeQuery();
-            while(rs.next()){
-                
+            while (rs.next()) {
+
                 pCachaca.setLote(rs.getInt("lote"));
                 pCachaca.setDtMoagem(rs.getDate("dtMoagem"));
                 pCachaca.setQtdCaldo(rs.getInt("qtdCaldo"));
@@ -139,19 +139,20 @@ public class CachacaDAO {
                 pCachaca.setRendimento(rs.getDouble("rendimento"));
                 pCachaca.setGl(rs.getDouble("gl"));
                 pCachaca.setNumBarril(rs.getInt("numBarril"));
-                
+
             }
-            
+
         } catch (SQLException ex) {
             // mensagem de erro
             JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
-        }finally {
+        } finally {
             // sempre finalizar encerrando a conexão com o banco
             ConnectionFactory.closeConnection(con, stmt);
         }
         return pCachaca;
     }
-    public void Delete(ProducaoCachaca p){
+
+    public void Delete(ProducaoCachaca p) {
         // iniciar a conexao com o banco usando a classe connection factory
         Connection con = ConnectionFactory.getConnection();
         // gerar uma variavel de operacao com o banco
@@ -159,32 +160,36 @@ public class CachacaDAO {
         try {
             stmt = con.prepareStatement("DELETE FROM producaoCachaca WHERE lote = ?");
             stmt.setInt(1, p.getLote());
-             // executar a operacao no banco
+            // executar a operacao no banco
             stmt.executeUpdate();
             // mensagem de sucesso
             JOptionPane.showMessageDialog(null, "Excluido com sucesso!");
-            
+
         } catch (SQLException ex) {
             // mensagem de erro
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
-        }finally {
+        } finally {
             // sempre finalizar encerrando a conexão com o banco
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
-    
+
     public ResultSet selecionarTabela() {
+
         try {
             Connection con = ConnectionFactory.getConnection();
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select lote, dtAlambicagem, rendimento from producaoCachaca "); //where ..data é ????...
+            ResultSet rs = stmt.executeQuery("select lote, dtAlambicagem, rendimento from producaoCachaca" /* where dtAlambicagem between ? and ?"*/);
             return rs;
+
         } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
         }
+
         return null;
     }
-    public Integer ultimoLote(){
+
+    public Integer ultimoLote() {
         // iniciar a conexao com o banco usando a classe connection factory
         Connection con = ConnectionFactory.getConnection();
         // gerar uma variavel de operacao com o banco
@@ -194,13 +199,13 @@ public class CachacaDAO {
         try {
             stmt = con.prepareStatement("SELECT * FROM producaoCachaca ORDER BY lote DESC LIMIT 1");
             rs = stmt.executeQuery();
-            while (rs.next()){
-            i = rs.getInt("lote");
+            while (rs.next()) {
+                i = rs.getInt("lote");
             }
         } catch (SQLException ex) {
             // mensagem de erro
             JOptionPane.showMessageDialog(null, "Erro ao Ler " + ex);
-        }finally {
+        } finally {
             // sempre finalizar encerrando a conexão com o banco
             ConnectionFactory.closeConnection(con, stmt);
         }
