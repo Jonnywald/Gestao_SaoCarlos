@@ -509,10 +509,7 @@ public class RelatoriosView extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         RelatorioDAO rDAO = new RelatorioDAO();
-        ProducaoCachaca pCachaca = new ProducaoCachaca();
-        pCachaca = rDAO.buscarDadosCachaca28();
-        txtCachaca28.setText(pCachaca.getRendimento().toString());
-        //pCachaca = rDAO.buscarDadosCachacaGeral();
+        txtCachaca28.setText(rDAO.buscarDadosCachaca28().toString());
         txtCachacaGeral.setText(rDAO.buscarDadosCachacaGeral().toString());
         txtMelado28.setText(rDAO.BuscarDadosMelado28().toString());
         txtMeladoGeral.setText(rDAO.BuscarDadosMeladoGeral().toString());

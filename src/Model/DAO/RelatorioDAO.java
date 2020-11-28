@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -20,20 +21,22 @@ import javax.swing.JOptionPane;
  * @author Débora
  */
 public class RelatorioDAO {
+    
+    DecimalFormat formato = new DecimalFormat("#.##");
 
-    public ProducaoCachaca buscarDadosCachaca28() {
+    public Double buscarDadosCachaca28() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        ProducaoCachaca pCachaca = new ProducaoCachaca();
+        Double resultado = 0.00;
 
         try {
             stmt = con.prepareStatement("SELECT AVG (rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AND current_date()");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                pCachaca.setRendimento(rs.getDouble(1));
-
+                resultado = rs.getDouble(1);
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -42,7 +45,7 @@ public class RelatorioDAO {
             // sempre finalizar encerrando a conexão com o banco
             ConnectionFactory.closeConnection(con, stmt);
         }
-        return pCachaca;
+        return resultado;
 
     }
 
@@ -59,7 +62,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                resultado = rs.getDouble(1);
-
+               resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -84,7 +87,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -108,7 +111,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -132,7 +135,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -156,7 +159,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -180,7 +183,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -204,7 +207,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -227,7 +230,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
@@ -251,7 +254,7 @@ public class RelatorioDAO {
 
             while (rs.next()) {
                 resultado = rs.getDouble(1);
-
+                resultado = Double.valueOf(formato.format(resultado));
             }
         } catch (SQLException ex) {
             // mensagem de erro
