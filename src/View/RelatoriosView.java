@@ -30,7 +30,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import Model.Bean.Footer;
 import Model.Bean.Header;
+import Model.Bean.ProducaoCachaca;
 import Model.DAO.CachacaDAO;
+import Model.DAO.RelatorioDAO;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.ResultSet;
@@ -100,6 +102,10 @@ public class RelatoriosView extends javax.swing.JFrame {
                 formWindowActivated(evt);
             }
         });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblRendimento28d.setText("Rendimento dos últimos 28 dias:");
 
@@ -316,7 +322,7 @@ public class RelatoriosView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 599, Short.MAX_VALUE)
+            .addGap(0, 605, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -325,7 +331,7 @@ public class RelatoriosView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 479, Short.MAX_VALUE)
+            .addGap(0, 485, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -415,7 +421,16 @@ public class RelatoriosView extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-
+        RelatorioDAO rDAO = new RelatorioDAO();
+        ProducaoCachaca pCachaca = new ProducaoCachaca();
+        pCachaca = rDAO.buscarDadosCachaca28();
+        txtCachaca28.setText(pCachaca.getRendimento().toString());
+        pCachaca = rDAO.buscarDadosCachacaGeral();
+        txtCachacaGeral.setText(pCachaca.getRendimento().toString());
+        txtMelado28.setText(rDAO.BuscarDadosMelado28().toString());
+        txtMeladoGeral.setText(rDAO.BuscarDadosMeladoGeral().toString());
+        txtRapadura28.setText(rDAO.BuscarDadosRapadura28().toString());
+        txtRapaduraGeral.setText(rDAO.BuscarDadosRapaduraGeral().toString());
     }//GEN-LAST:event_formWindowActivated
 
     /**

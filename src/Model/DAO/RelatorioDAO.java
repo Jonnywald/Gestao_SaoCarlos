@@ -28,12 +28,11 @@ public class RelatorioDAO {
         ProducaoCachaca pCachaca = new ProducaoCachaca();
 
         try {
-            stmt = con.prepareStatement("SELECT AVG (rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AN D currente_date()");
+            stmt = con.prepareStatement("SELECT AVG (rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AND current_date()");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                pCachaca.setRendimento(rs.getDouble("rendimento"));
-                pCachaca.setDtMoagem(rs.getDate("dtMoagem"));
+                pCachaca.setRendimento(rs.getDouble(1));
 
             }
         } catch (SQLException ex) {
@@ -58,8 +57,7 @@ public class RelatorioDAO {
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                pCachaca.setRendimento(rs.getDouble("rendimento"));
-                pCachaca.setDtMoagem(rs.getDate("dtMoagem"));
+                pCachaca.setRendimento(rs.getDouble(1));
 
             }
         } catch (SQLException ex) {
@@ -71,5 +69,97 @@ public class RelatorioDAO {
         }
         return pCachaca;
 
+    }
+    public Double BuscarDadosRapaduraGeral(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Double resultado = 0.0;
+
+        try {
+            stmt = con.prepareStatement("SELECT AVG (rendimentoR) FROM producaoRapadura");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                resultado = rs.getDouble(1);
+
+            }
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return resultado;
+    }
+    public Double BuscarDadosRapadura28(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Double resultado = 0.0;
+
+        try {
+            stmt = con.prepareStatement("SELECT AVG (rendimentoR) FROM producaoRapadura WHERE dtProducaoR BETWEEN current_date()-28 AND current_date()");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                resultado = rs.getDouble(1);
+
+            }
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return resultado;
+    }
+    public Double BuscarDadosMelado28(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Double resultado = 0.0;
+
+        try {
+            stmt = con.prepareStatement("SELECT AVG (rendimentoM) FROM producaoMelado WHERE dtProducaoM BETWEEN current_date()-28 AND current_date()");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                resultado = rs.getDouble(1);
+
+            }
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return resultado;
+    }
+    public Double BuscarDadosMeladoGeral(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Double resultado = 0.0;
+
+        try {
+            stmt = con.prepareStatement("SELECT AVG (rendimentoM) FROM producaoMelado");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                resultado = rs.getDouble(1);
+
+            }
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return resultado;
     }
 }
