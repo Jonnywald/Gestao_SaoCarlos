@@ -133,12 +133,10 @@
                                   </Group>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="txtPesoMelado" pref="118" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtQtdMelado" max="32767" attributes="0"/>
-                                          <Component id="ftxtDtProdMelado" max="32767" attributes="0"/>
-                                          <Component id="txtLoteMelado" alignment="1" pref="118" max="32767" attributes="0"/>
-                                          <Component id="txtQtdCaldoMelado" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="txtQtdMelado" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="ftxtDtProdMelado" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtLoteMelado" alignment="1" pref="118" max="32767" attributes="0"/>
+                                      <Component id="txtQtdCaldoMelado" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -308,6 +306,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddMeladoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnSalvarMelado">
                   <Properties>
@@ -329,6 +330,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Remover"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverMeladoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtLabelEngarrafamento">
                   <Properties>
@@ -366,6 +370,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Atualizar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarMeladoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnExcluirMelado">
                   <Properties>
@@ -544,6 +551,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Adicionar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddRapaduraActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblPesoRapadura">
                   <Properties>
@@ -625,6 +635,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Remover"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverRapaduraActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtLabelEngarrafamento1">
                   <Properties>
@@ -662,6 +675,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Atualizar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarRapaduraActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnExcluirRapadura">
                   <Properties>

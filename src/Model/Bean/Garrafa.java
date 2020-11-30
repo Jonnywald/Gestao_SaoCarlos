@@ -8,6 +8,7 @@ import java.util.Date;
  * @author Guilherme Bertola
  */
 public class Garrafa {
+    private Integer Lote;
     private String tipoBebida; // tipo da bebida na garrafa
     private String tipoGarrafa; // tipo de garrafa que foi utilizada
     private Date dtEngarrafamento; // data de engarrafamento

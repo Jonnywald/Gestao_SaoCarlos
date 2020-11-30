@@ -5,6 +5,14 @@
  */
 package View;
 
+import Model.Bean.ProducaoMelado;
+import Model.Bean.ProducaoRapadura;
+import Model.DAO.MeladoDAO;
+import Model.DAO.RapaduraDAO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author guilherme.bertola
@@ -40,18 +48,20 @@ public class EstoqueView extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(111, 148, 148));
 
         tblGarrafa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nome", "Tipo Garrafa", "Tipo Bebida", "Quantidade"
+                "Nome", "Volume da Garrafa", "Tipo Bebida", "Quantidade"
             }
         ));
         jScrollPane1.setViewportView(tblGarrafa);
@@ -60,13 +70,10 @@ public class EstoqueView extends javax.swing.JFrame {
 
         tblRapadura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nome", "Peso", "Data Produção", "Quantidade"
+                "Lote", "Peso", "Data Produção", "Quantidade"
             }
         ));
         jScrollPane2.setViewportView(tblRapadura);
@@ -75,13 +82,10 @@ public class EstoqueView extends javax.swing.JFrame {
 
         tblMelado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nome", "Peso", "Data Produção", "Quantidade"
+                "Lote", "Peso", "Data Produção", "Quantidade"
             }
         ));
         jScrollPane3.setViewportView(tblMelado);
@@ -168,6 +172,33 @@ public class EstoqueView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        AtualizarTabelas();
+    }//GEN-LAST:event_formWindowActivated
+
+    private void AtualizarTabelas() {
+        RapaduraDAO rDAO = new RapaduraDAO();
+        MeladoDAO mDAO = new MeladoDAO();
+        List<ProducaoRapadura> r = new ArrayList<ProducaoRapadura>();
+        List<ProducaoMelado> m = new ArrayList<ProducaoMelado>();
+        DefaultTableModel modeloR = (DefaultTableModel) tblRapadura.getModel();
+        DefaultTableModel modeloM = (DefaultTableModel) tblMelado.getModel();
+        modeloR.setNumRows(0);
+        modeloM.setNumRows(0);
+        r = rDAO.ListarRapaduras();
+        m = mDAO.ListarMelado();
+        r.forEach(i -> {
+            modeloR.addRow(new Object[]{
+                i.getLote(), i.getDtProducao(), i.getQtdCaldo(), i.getQtdRapaduras(), i.getPesoTotal(), i.getRendimento(), i.getValidade()
+            });
+        });
+        m.forEach(i -> {
+            modeloM.addRow(new Object[]{
+                i.getLote(), i.getDtProducao(), i.getQtdCaldo(), i.getQtdMelado(), i.getPesoTotal(), i.getRendimento(), i.getValidade()
+            });
+        });
+    }
     /**
      * @param args the command line arguments
      */

@@ -9,8 +9,10 @@ package View;
  *
  * @author delri
  */
+import Model.Bean.Melado;
 import Model.Bean.ProducaoMelado;
 import Model.Bean.ProducaoRapadura;
+import Model.Bean.Rapadura;
 import Model.DAO.MeladoDAO;
 import Model.DAO.RapaduraDAO;
 import java.text.ParseException;
@@ -20,6 +22,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
@@ -133,6 +136,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         lblPesoMelado.setText("Peso (g):");
 
         btnAddMelado.setText("Adicionar");
+        btnAddMelado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddMeladoActionPerformed(evt);
+            }
+        });
 
         btnSalvarMelado.setText("Salvar Lote");
         btnSalvarMelado.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +157,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         });
 
         btnRemoverMelado.setText("Remover");
+        btnRemoverMelado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverMeladoActionPerformed(evt);
+            }
+        });
 
         txtLabelEngarrafamento.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtLabelEngarrafamento.setText("Produção Melado");
@@ -164,6 +177,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblMelado);
 
         btnAtualizarMelado.setText("Atualizar");
+        btnAtualizarMelado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarMeladoActionPerformed(evt);
+            }
+        });
 
         btnExcluirMelado.setText("Excluir");
         btnExcluirMelado.addActionListener(new java.awt.event.ActionListener() {
@@ -207,11 +225,10 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
                                 .addGap(126, 126, 126)))
                         .addGroup(painelMeladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtPesoMelado, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                            .addGroup(painelMeladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtQtdMelado)
-                                .addComponent(ftxtDtProdMelado)
-                                .addComponent(txtLoteMelado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                .addComponent(txtQtdCaldoMelado, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(txtQtdMelado, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ftxtDtProdMelado, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtLoteMelado, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                            .addComponent(txtQtdCaldoMelado))
                         .addGap(44, 44, 44)
                         .addGroup(painelMeladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblPesoTotalMelado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -293,6 +310,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         lblAddRapadura.setText("Adição de Rapadura");
 
         btnAddRapadura.setText("Adicionar");
+        btnAddRapadura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddRapaduraActionPerformed(evt);
+            }
+        });
 
         lblPesoRapadura.setText("Peso (g):");
 
@@ -328,6 +350,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         });
 
         btnRemoverRapadura.setText("Remover");
+        btnRemoverRapadura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverRapaduraActionPerformed(evt);
+            }
+        });
 
         txtLabelEngarrafamento1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtLabelEngarrafamento1.setText("Produção Rapadura");
@@ -343,6 +370,11 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblRapadura);
 
         btnAtualizarRapadura.setText("Atualizar");
+        btnAtualizarRapadura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarRapaduraActionPerformed(evt);
+            }
+        });
 
         btnExcluirRapadura.setText("Excluir");
         btnExcluirRapadura.addActionListener(new java.awt.event.ActionListener() {
@@ -503,6 +535,8 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Melado melado = new Melado();
+    Rapadura rapadura = new Rapadura();
     private void btnMeladoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeladoVoltarActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -606,6 +640,98 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         Integer lote = (Integer) tblMelado.getValueAt(tblMelado.getSelectedRow(), 0);
         mDAO.excluirLote(lote);
     }//GEN-LAST:event_btnExcluirMeladoActionPerformed
+
+    private void btnAddMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMeladoActionPerformed
+        // TODO add your handling code here:
+
+        this.melado.setPeso(Double.parseDouble(txtPesoMelado.getText()));
+        Date dtProducao = null;
+        try {
+            dtProducao = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtProdMelado.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.melado.setDtProducao(dtProducao);
+        
+        Double pesoTotal = Double.parseDouble(txtPesoTotalMelado.getText());
+        pesoTotal += this.melado.getPeso();
+        txtPesoTotalMelado.setText(pesoTotal.toString());
+        JOptionPane.showMessageDialog(null, "Melado Adicionado");
+        
+    }//GEN-LAST:event_btnAddMeladoActionPerformed
+
+    private void btnRemoverMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverMeladoActionPerformed
+        // TODO add your handling code here:
+        Double pesoTotal = Double.parseDouble(txtPesoTotalMelado.getText());
+        pesoTotal -= this.melado.getPeso();
+        txtPesoTotalMelado.setText(pesoTotal.toString());
+        JOptionPane.showMessageDialog(null, "Ultimo melado removido");
+    }//GEN-LAST:event_btnRemoverMeladoActionPerformed
+
+    private void btnAddRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRapaduraActionPerformed
+        // TODO add your handling code here:
+        this.rapadura.setPeso(Double.parseDouble(txtPesoRapadura.getText()));
+        Date dtProducao = null;
+        try {
+            dtProducao = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtProdRapadura.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.rapadura.setDtProducao(dtProducao);
+        
+        Double pesoTotal = Double.parseDouble(txtPesoTotalRapadura.getText());
+        pesoTotal += this.rapadura.getPeso();
+        txtPesoTotalRapadura.setText(pesoTotal.toString());
+        JOptionPane.showMessageDialog(null, "Rapadura Adicionada");
+    }//GEN-LAST:event_btnAddRapaduraActionPerformed
+
+    private void btnRemoverRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverRapaduraActionPerformed
+        // TODO add your handling code here:
+        Double pesoTotal = Double.parseDouble(txtPesoTotalRapadura.getText());
+        pesoTotal -= this.rapadura.getPeso();
+        txtPesoTotalRapadura.setText(pesoTotal.toString());
+        JOptionPane.showMessageDialog(null, "Ultima Rapadura removida");
+    }//GEN-LAST:event_btnRemoverRapaduraActionPerformed
+
+    private void btnAtualizarRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarRapaduraActionPerformed
+        // TODO add your handling code here:
+        ProducaoRapadura p = new ProducaoRapadura();
+        RapaduraDAO rDAO = new RapaduraDAO();
+        Integer linha = tblRapadura.getSelectedRow();
+        if (linha != -1){
+            p.setLote((Integer)tblRapadura.getValueAt(linha, 0));
+            p.setDtProducao((Date)tblRapadura.getValueAt(linha, 1));
+            p.setQtdCaldo((Integer)tblRapadura.getValueAt(linha, 2));
+            p.setQtdRapaduras((Integer)tblRapadura.getValueAt(linha, 3));
+            p.setPesoTotal((Double)tblRapadura.getValueAt(linha, 4));
+            p.setRendimento((Double)tblRapadura.getValueAt(linha, 5));
+            p.setValidade((Date)tblRapadura.getValueAt(linha, 6));
+            
+            rDAO.Atualizar(p);
+        }else{
+            JOptionPane.showMessageDialog(null,"Selecione uma linha/lote!");
+        }
+    }//GEN-LAST:event_btnAtualizarRapaduraActionPerformed
+
+    private void btnAtualizarMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarMeladoActionPerformed
+        // TODO add your handling code here:
+        ProducaoMelado p = new ProducaoMelado();
+        MeladoDAO mDAO = new MeladoDAO();
+        Integer linha = tblMelado.getSelectedRow();
+        if (linha != -1){
+            p.setLote((Integer)tblMelado.getValueAt(linha, 0));
+            p.setDtProducao((Date)tblMelado.getValueAt(linha, 1));
+            p.setQtdCaldo((Integer)tblMelado.getValueAt(linha, 2));
+            p.setQtdMelado((Integer)tblMelado.getValueAt(linha, 3));
+            p.setPesoTotal((Double)tblMelado.getValueAt(linha, 4));
+            p.setRendimento((Double)tblMelado.getValueAt(linha, 5));
+            p.setValidade((Date)tblMelado.getValueAt(linha, 6));
+            
+            mDAO.Atualizar(p);
+        }else{
+            JOptionPane.showMessageDialog(null,"Selecione uma linha/lote!");
+        }
+    }//GEN-LAST:event_btnAtualizarMeladoActionPerformed
 
     /**
      * @param args the command line arguments

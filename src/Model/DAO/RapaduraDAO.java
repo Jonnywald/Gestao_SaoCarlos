@@ -150,4 +150,31 @@ public class RapaduraDAO {
         }
         return p;
     }
+    public void Atualizar(ProducaoRapadura p){
+        // iniciar a conexao com o banco usando a classe connection factory
+        Connection con = ConnectionFactory.getConnection();
+        // gerar uma variavel de operacao com o banco
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE producaoRapadura SET dtProducaoR = ?, qtdCaldoR=?, qtdRapadura=?, pesoTotalR=?, rendimentoR=?, validadeR=? WHERE lote=?");
+            stmt.setInt(7, p.getLote());
+            stmt.setDate(1, new java.sql.Date(p.getDtProducao().getTime()));
+            stmt.setInt(2, p.getQtdCaldo());
+            stmt.setInt(3, p.getQtdRapaduras());
+            stmt.setDouble(4, p.getPesoTotal());
+            stmt.setDouble(5, p.getRendimento());
+            stmt.setDate(6, new java.sql.Date(p.getValidade().getTime()));
+            // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+            
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Atualizar " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
 }
