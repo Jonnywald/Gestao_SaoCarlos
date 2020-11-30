@@ -98,6 +98,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(111, 148, 148));
 
+        painelNovoLote.setBackground(new java.awt.Color(255, 255, 255));
+
         lblLote.setText("Lote:");
 
         txtLote.setText("0001");
@@ -185,41 +187,37 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         painelNovoLoteLayout.setHorizontalGroup(
             painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelNovoLoteLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelNovoLoteLayout.createSequentialGroup()
-                        .addContainerGap(474, Short.MAX_VALUE)
-                        .addComponent(btnLancarLote)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVoltarLote))
+                    .addComponent(txtLabeProduçãoCachaça)
                     .addGroup(painelNovoLoteLayout.createSequentialGroup()
-                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelNovoLoteLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblNumDorna)
-                                    .addComponent(lblDtAlarmeFerment)
-                                    .addComponent(lblDtInicioFerment)
-                                    .addComponent(lblTotalCaldo)
-                                    .addComponent(lblAgua)
-                                    .addComponent(lblBrix)
-                                    .addComponent(lblQtdCaldo)
-                                    .addComponent(lblDtMoagem)
-                                    .addComponent(lblLote))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ftxtDtMoagem)
-                                    .addComponent(txtQtdCaldo)
-                                    .addComponent(txtBrix)
-                                    .addComponent(txtQtdAgua)
-                                    .addComponent(txtTotalCaldo)
-                                    .addComponent(ftxtDtInicioFerment)
-                                    .addComponent(ftxtDtAlarmeFerment)
-                                    .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtLote, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)))
-                            .addGroup(painelNovoLoteLayout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(txtLabeProduçãoCachaça)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNumDorna)
+                            .addComponent(lblDtAlarmeFerment)
+                            .addComponent(lblDtInicioFerment)
+                            .addComponent(lblTotalCaldo)
+                            .addComponent(lblAgua)
+                            .addComponent(lblBrix)
+                            .addComponent(lblQtdCaldo)
+                            .addComponent(lblDtMoagem)
+                            .addComponent(lblLote))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ftxtDtMoagem)
+                            .addComponent(txtQtdCaldo)
+                            .addComponent(txtBrix)
+                            .addComponent(txtQtdAgua)
+                            .addComponent(txtTotalCaldo)
+                            .addComponent(ftxtDtInicioFerment)
+                            .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ftxtDtAlarmeFerment)
+                            .addComponent(txtLote, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelNovoLoteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLancarLote)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVoltarLote)
                 .addContainerGap())
         );
         painelNovoLoteLayout.setVerticalGroup(
@@ -227,7 +225,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             .addGroup(painelNovoLoteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtLabeProduçãoCachaça)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLote)
                     .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,7 +261,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumDorna)
                     .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarLote)
                     .addComponent(btnLancarLote))
@@ -271,6 +269,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Novo Lote", painelNovoLote);
+
+        painelEmAndamento.setBackground(new java.awt.Color(255, 255, 255));
 
         tblLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -325,7 +325,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelEmAndamentoLayout.createSequentialGroup()
                         .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
                             .addComponent(jSeparator1))
                         .addContainerGap())
                     .addGroup(painelEmAndamentoLayout.createSequentialGroup()
@@ -378,7 +378,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumBarril)
                     .addComponent(cmbBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarAndamento)
                     .addComponent(btnLacarDestilacao))
@@ -386,6 +386,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Em andamento", painelEmAndamento);
+
+        painelHistorico.setBackground(new java.awt.Color(255, 255, 255));
 
         tblHist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -425,7 +427,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelHistoricoLayout.createSequentialGroup()
                 .addGroup(painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelHistoricoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnExcluir)
@@ -440,11 +442,12 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             .addGroup(painelHistoricoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltarHist)
                     .addComponent(btnAtualizar)
-                    .addComponent(btnExcluir)))
+                    .addComponent(btnExcluir))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Historico", painelHistorico);
@@ -462,12 +465,12 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 642, Short.MAX_VALUE)
+            .addGap(0, 490, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jTabbedPane1)
-                    .addContainerGap()))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(24, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -481,8 +484,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );

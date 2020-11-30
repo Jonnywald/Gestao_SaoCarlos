@@ -58,6 +58,8 @@ public class LancamentoDeVendasView extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(111, 148, 148));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setText("Item");
 
         cbxItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Item", "Cachaça", "Rapadura", "Melado" }));
@@ -198,6 +200,8 @@ public class LancamentoDeVendasView extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Venda", jPanel2);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         tblHist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
