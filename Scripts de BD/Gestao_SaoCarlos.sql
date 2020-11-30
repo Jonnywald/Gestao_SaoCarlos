@@ -30,8 +30,7 @@ numBarril	int
 )engine=InnoDB;
 
 create table producaoMelado( 
- id_producaoM int auto_increment	primary key,
- lote		int,
+ lote		int primary key,
  dtProducaoM date NOT NULL,
  qtdCaldoM 	int NOT NULL,
  qtdMelado	int NOT NULL,
@@ -42,8 +41,7 @@ create table producaoMelado(
 )engine=InnoDB;
 
 create table producaoRapadura( 
- id_producaoR int auto_increment	primary key,
- lote		int,
+ lote		int primary key,
  dtProducaoR date NOT NULL,
  qtdCaldoR 	int NOT NULL,
  qtdRapadura	int NOT NULL,

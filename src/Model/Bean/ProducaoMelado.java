@@ -1,5 +1,6 @@
 package Model.Bean;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class ProducaoMelado {
     private List<Melado> melados = new ArrayList<>(); // lista de melados produzidos nesse lote
     private double pesoTotal; // peso total dos melados
     private double rendimento; // rendimento (em porcentagem) da producao
+    private Date validade;
     // metodo construtor para a classe producao de melado
     public ProducaoMelado(Integer lote, Date dtProducao, Integer qtdCaldo) {
         this.lote = lote;
@@ -73,6 +75,14 @@ public class ProducaoMelado {
     public void setRendimento(double rendimento) {
         this.rendimento = rendimento;
     }
+
+    public Date getValidade() {
+        return validade;
+    }
+
+    public void setValidade(Date validade) {
+        this.validade = validade;
+    }
     
     // adiciona um objeto Melado para a lista de melados
     public void addMelado(Melado m){
@@ -102,5 +112,10 @@ public class ProducaoMelado {
     public void calcQtdMelado(){
         this.qtdMelado = melados.size();
     }
-    
+    public void calcValidade(){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(this.dtProducao);
+        cal.add(Calendar.MONDAY,6);
+        this.validade = cal.getTime();
+    }
 }

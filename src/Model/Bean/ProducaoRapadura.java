@@ -6,6 +6,7 @@
 package Model.Bean;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class ProducaoRapadura {
     private List<Rapadura> rapaduras = new ArrayList<>(); // lista de rapaduras produzidas nesse lote
     private double pesoTotal; // peso total das rapaduras
     private double rendimento; // rendimento (em porcentagem) da producao
+    private Date validade; // validade da rapadura
     // construtor da classe de producao de rapadura
     public ProducaoRapadura(Integer lote, Date dtProducao, Integer qtdCaldo) {
         this.lote = lote;
@@ -78,6 +80,15 @@ public class ProducaoRapadura {
     public void setRendimento(double rendimento) {
         this.rendimento = rendimento;
     }
+    // getter da validade
+    public Date getValidade() {
+        return validade;
+    }
+    // Setter da Validade
+    public void setValidade(Date validade) {
+        this.validade = validade;
+    }
+    
     // adiciona uma rapadura na lista de rapaduras produzidas
     public void addRapadura(Rapadura r){
         rapaduras.add(r);
@@ -105,5 +116,11 @@ public class ProducaoRapadura {
     // calculo da quantidade de rapaduras produzidas
     public void calcQtdRapaduras(){
         this.qtdRapaduras = rapaduras.size();
+    }
+    public void calcValidade(){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(this.dtProducao);
+        cal.add(Calendar.MONDAY,6);
+        this.validade = cal.getTime();
     }
 }
