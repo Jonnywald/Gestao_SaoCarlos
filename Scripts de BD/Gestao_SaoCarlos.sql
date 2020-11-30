@@ -53,9 +53,10 @@ create table producaoRapadura(
 
 create table garrafa (
 
-id_garrafa int auto_increment	primary key,
+lote int	primary key,
 tpBebida	varchar (50),
-tpGarrafa	varchar(10),
+volumeGarrafa	double,
+qtdGarrafas int,
 dtEngarrafamento date
 
 )engine=InnoDB;

@@ -10,16 +10,17 @@ import java.util.Date;
 public class Garrafa {
     private Integer Lote;
     private String tipoBebida; // tipo da bebida na garrafa
-    private String tipoGarrafa; // tipo de garrafa que foi utilizada
+    private Double volumeGarrafa;
     private Date dtEngarrafamento; // data de engarrafamento
+    private Integer qtdGarrfas;
     
     // metodo construtor vazio
     public Garrafa() {
     }
     // metodo construtor da classe garrafa
-    public Garrafa(String tipoBebida, String tipoGarrafa, Date dtEngarrafamento) {
+    public Garrafa(String tipoBebida, Double volumeGarrafa, Date dtEngarrafamento) {
         this.tipoBebida = tipoBebida;
-        this.tipoGarrafa = tipoGarrafa;
+        this.volumeGarrafa = volumeGarrafa;
         this.dtEngarrafamento = dtEngarrafamento;
     }
 
@@ -31,14 +32,7 @@ public class Garrafa {
     public void setTipoBebida(String tipoBebida) {
         this.tipoBebida = tipoBebida;
     }
-    // getter do tipo de garrafa
-    public String getTipoGarrafa() {
-        return tipoGarrafa;
-    }
-    // setter do tipo de garrafa
-    public void setTipoGarrafa(String tipoGarrafa) {
-        this.tipoGarrafa = tipoGarrafa;
-    }
+
     // getter da data de engarrafamento
     public Date getDtEngarrafamento() {
         return dtEngarrafamento;
@@ -47,6 +41,31 @@ public class Garrafa {
     public void setDtEngarrafamento(Date dtEngarrafamento) {
         this.dtEngarrafamento = dtEngarrafamento;
     }
+
+    public Integer getLote() {
+        return Lote;
+    }
+
+    public void setLote(Integer Lote) {
+        this.Lote = Lote;
+    }
+
+    public Integer getQtdGarrfas() {
+        return qtdGarrfas;
+    }
+
+    public void setQtdGarrfas(Integer qtdGarrfas) {
+        this.qtdGarrfas = qtdGarrfas;
+    }
+
+    public Double getVolumeGarrafa() {
+        return volumeGarrafa;
+    }
+
+    public void setVolumeGarrafa(Double volumeGarrafa) {
+        this.volumeGarrafa = volumeGarrafa;
+    }
+    
     
     
 }

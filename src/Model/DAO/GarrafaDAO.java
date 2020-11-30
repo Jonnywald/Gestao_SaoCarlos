@@ -31,8 +31,10 @@ public class GarrafaDAO {
             while (rs.next()) {
                 Garrafa g = new Garrafa();
                 g.setTipoBebida(rs.getString("tpBebida"));
-                g.setTipoGarrafa(rs.getString("tpGarrafa"));
+                g.setVolumeGarrafa(rs.getDouble("VolumeGarrafa"));
                 g.setDtEngarrafamento(rs.getDate("dtEngarrafamento"));
+                g.setLote(rs.getInt("lote"));
+                g.setQtdGarrfas(rs.getInt("qtdGarrafas"));
                 garrafas.add(g);
             }
         } catch (SQLException ex) {
@@ -43,5 +45,29 @@ public class GarrafaDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
         return garrafas;
+    }
+    public void LancarGarrafas(Garrafa g){
+         Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        try{
+            stmt = con.prepareStatement("INSERT INTO garrafa(lote, tpBebida, volumeGarrafa, qtdGarrafas, dtEngarrafamento) VALUES (?,?,?,?,?)");
+            stmt.setInt(1, g.getLote());
+            stmt.setString(2, g.getTipoBebida());
+            stmt.setDouble(3, g.getVolumeGarrafa());
+            stmt.setInt(4, g.getQtdGarrfas());
+            stmt.setDate(5, new java.sql.Date(g.getDtEngarrafamento().getTime()));
+            
+            // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+        }
+        catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Salvar: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
     }
 }

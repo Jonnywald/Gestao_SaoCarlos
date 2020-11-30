@@ -5,8 +5,10 @@
  */
 package View;
 
+import Model.Bean.Garrafa;
 import Model.Bean.ProducaoMelado;
 import Model.Bean.ProducaoRapadura;
+import Model.DAO.GarrafaDAO;
 import Model.DAO.MeladoDAO;
 import Model.DAO.RapaduraDAO;
 import java.util.ArrayList;
@@ -61,7 +63,7 @@ public class EstoqueView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Volume da Garrafa", "Tipo Bebida", "Quantidade"
+                "Lote", "Volume da Garrafa", "Tipo Bebida", "Quantidade"
             }
         ));
         jScrollPane1.setViewportView(tblGarrafa);
@@ -180,22 +182,32 @@ public class EstoqueView extends javax.swing.JFrame {
     private void AtualizarTabelas() {
         RapaduraDAO rDAO = new RapaduraDAO();
         MeladoDAO mDAO = new MeladoDAO();
+        GarrafaDAO gDAO = new GarrafaDAO();
         List<ProducaoRapadura> r = new ArrayList<ProducaoRapadura>();
         List<ProducaoMelado> m = new ArrayList<ProducaoMelado>();
+        List<Garrafa> g = new ArrayList<Garrafa>();
         DefaultTableModel modeloR = (DefaultTableModel) tblRapadura.getModel();
         DefaultTableModel modeloM = (DefaultTableModel) tblMelado.getModel();
+        DefaultTableModel modeloG = (DefaultTableModel) tblGarrafa.getModel();
         modeloR.setNumRows(0);
         modeloM.setNumRows(0);
+        modeloG.setNumRows(0);
         r = rDAO.ListarRapaduras();
         m = mDAO.ListarMelado();
+        g = gDAO.ListarGarrafas();
         r.forEach(i -> {
             modeloR.addRow(new Object[]{
-                i.getLote(), i.getDtProducao(), i.getQtdCaldo(), i.getQtdRapaduras(), i.getPesoTotal(), i.getRendimento(), i.getValidade()
+                i.getLote(), i.getPesoTotal(), i.getDtProducao(), i.getQtdRapaduras()
             });
         });
         m.forEach(i -> {
             modeloM.addRow(new Object[]{
-                i.getLote(), i.getDtProducao(), i.getQtdCaldo(), i.getQtdMelado(), i.getPesoTotal(), i.getRendimento(), i.getValidade()
+                i.getLote(),i.getPesoTotal(), i.getDtProducao(), i.getQtdMelado()
+            });
+        });
+        g.forEach(i -> {
+            modeloG.addRow(new Object[]{
+                i.getLote(),i.getVolumeGarrafa(),i.getTipoBebida(),i.getQtdGarrfas()
             });
         });
     }
