@@ -326,7 +326,9 @@ public class MenuAdmView extends javax.swing.JFrame {
 
     private void btnMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeladoActionPerformed
         // TODO add your handling code here:
-        new ProducaoRapaduraMeladoView().setVisible(true);
+        ProducaoRapaduraMeladoView tela = new ProducaoRapaduraMeladoView();
+        tela.SelecionaPainel(0);
+        tela.setVisible(true);
     }//GEN-LAST:event_btnMeladoActionPerformed
 
     private void btnBebidasMistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBebidasMistasActionPerformed
@@ -351,7 +353,9 @@ public class MenuAdmView extends javax.swing.JFrame {
 
     private void btnRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRapaduraActionPerformed
         // TODO add your handling code here:
-        new ProducaoRapaduraMeladoView().setVisible(true);
+        ProducaoRapaduraMeladoView tela = new ProducaoRapaduraMeladoView();
+        tela.SelecionaPainel(1);
+        tela.setVisible(true);
     }//GEN-LAST:event_btnRapaduraActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed

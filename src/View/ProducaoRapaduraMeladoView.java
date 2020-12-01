@@ -68,6 +68,8 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         btnRemoverMelado = new javax.swing.JButton();
         txtLabelEngarrafamento = new javax.swing.JLabel();
         btnAtualizarMelado = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblMelado = new javax.swing.JTable();
         btnExcluirMelado = new javax.swing.JButton();
         painelRapadura = new javax.swing.JPanel();
         btnRapaduraVoltar = new javax.swing.JButton();
@@ -95,8 +97,6 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         tblRapadura = new javax.swing.JTable();
         btnAtualizarRapadura = new javax.swing.JButton();
         btnExcluirRapadura = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblMelado = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -178,6 +178,16 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
             }
         });
 
+        tblMelado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Lote", "Data de Produção", "Qtd Caldo", "Qtd Melado", "Peso Total", "Rendimento", "Validade"
+            }
+        ));
+        jScrollPane2.setViewportView(tblMelado);
+
         btnExcluirMelado.setText("Excluir");
         btnExcluirMelado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,7 +246,10 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
                             .addGroup(painelMeladoLayout.createSequentialGroup()
                                 .addComponent(btnRemoverMelado)
                                 .addGap(0, 53, Short.MAX_VALUE))
-                            .addComponent(btnSalvarMelado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnSalvarMelado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(painelMeladoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2)))
                 .addContainerGap())
         );
         painelMeladoLayout.setVerticalGroup(
@@ -281,7 +294,9 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
                 .addComponent(btnSalvarMelado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(painelMeladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMeladoVoltar)
                     .addComponent(btnAtualizarMelado)
@@ -479,7 +494,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
                         .addComponent(btnAddRapadura)
                         .addComponent(txtPesoRapadura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnRemoverRapadura)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSalvarRapadura)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -495,41 +510,21 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         Abas.addTab("Rapadura", painelRapadura);
 
-        tblMelado.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Lote", "Data de Produção", "Qtd Caldo", "Qtd Melado", "Peso Total", "Rendimento", "Validade"
-            }
-        ));
-        jScrollPane2.setViewportView(tblMelado);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Abas, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(227, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Abas, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(Abas, javax.swing.GroupLayout.PREFERRED_SIZE, 550, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Abas, javax.swing.GroupLayout.PREFERRED_SIZE, 550, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -564,6 +559,10 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRapaduraVoltarActionPerformed
 
+    public void SelecionaPainel(int i){
+        Abas.setSelectedIndex(i);
+    }
+    
     private void AtualizarTabelas() {
         RapaduraDAO rDAO = new RapaduraDAO();
         MeladoDAO mDAO = new MeladoDAO();
@@ -606,7 +605,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         MeladoDAO mDAO = new MeladoDAO();
         p.setLote(Integer.parseInt(txtLoteMelado.getText()));
         Date dtProducao = null;
-        
+
         try {
             dtProducao = new SimpleDateFormat("dd/MM/yyyy").parse(ftxtDtProdMelado.getText());
         } catch (ParseException ex) {
@@ -618,9 +617,10 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         p.setQtdMelado(Integer.parseInt(txtQtdMelado.getText()));
         p.setRendimento(Double.parseDouble(txtRendimentoMelado.getText()));
         p.calcValidade();
-        
+
         mDAO.CriarMelado(p);
-        
+        AtualizarTabelas();
+
     }//GEN-LAST:event_btnSalvarMeladoActionPerformed
 
     private void btnSalvarRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarRapaduraActionPerformed
@@ -640,8 +640,9 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         p.setQtdRapaduras(Integer.parseInt(txtQtdRapadura.getText()));
         p.setRendimento(Double.parseDouble(txtRendimentoRapadura.getText()));
         p.calcValidade();
-        
+
         rDAO.CriarRapadura(p);
+        AtualizarTabelas();
     }//GEN-LAST:event_btnSalvarRapaduraActionPerformed
 
     private void btnExcluirRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirRapaduraActionPerformed
@@ -649,6 +650,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         RapaduraDAO rDAO = new RapaduraDAO();
         Integer lote = (Integer) tblRapadura.getValueAt(tblRapadura.getSelectedRow(), 0);
         rDAO.excluirLote(lote);
+        AtualizarTabelas();
     }//GEN-LAST:event_btnExcluirRapaduraActionPerformed
 
     private void btnExcluirMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirMeladoActionPerformed
@@ -656,6 +658,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         MeladoDAO mDAO = new MeladoDAO();
         Integer lote = (Integer) tblMelado.getValueAt(tblMelado.getSelectedRow(), 0);
         mDAO.excluirLote(lote);
+        AtualizarTabelas();
     }//GEN-LAST:event_btnExcluirMeladoActionPerformed
 
     private void btnAddMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMeladoActionPerformed
@@ -669,19 +672,39 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.melado.setDtProducao(dtProducao);
-        
+
         Double pesoTotal = Double.parseDouble(txtPesoTotalMelado.getText());
         pesoTotal += this.melado.getPeso();
         txtPesoTotalMelado.setText(pesoTotal.toString());
+        Integer numMelado = Integer.parseInt(txtQtdMelado.getText());
+        numMelado++;
+        txtQtdMelado.setText(numMelado.toString());
+        Double Rendimento = Double.parseDouble(txtQtdCaldoMelado.getText());
+        Rendimento = pesoTotal / Rendimento;
+        txtRendimentoMelado.setText(Rendimento.toString());
         JOptionPane.showMessageDialog(null, "Melado Adicionado");
-        
+
     }//GEN-LAST:event_btnAddMeladoActionPerformed
 
     private void btnRemoverMeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverMeladoActionPerformed
         // TODO add your handling code here:
+        Integer numMelado = Integer.parseInt(txtQtdMelado.getText());
         Double pesoTotal = Double.parseDouble(txtPesoTotalMelado.getText());
-        pesoTotal -= this.melado.getPeso();
-        txtPesoTotalMelado.setText(pesoTotal.toString());
+        if (pesoTotal >= this.melado.getPeso()) {
+            pesoTotal -= this.melado.getPeso();
+            txtPesoTotalMelado.setText(pesoTotal.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "Não é possivel remover mais melados");
+        }
+        if (numMelado > 0) {
+            numMelado++;
+            txtQtdMelado.setText(numMelado.toString());
+            Double Rendimento = Double.parseDouble(txtQtdCaldoMelado.getText());
+            Rendimento = pesoTotal / Rendimento;
+            txtRendimentoMelado.setText(Rendimento.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "Não é possivel remover esse melado");
+        }
         JOptionPane.showMessageDialog(null, "Ultimo melado removido");
     }//GEN-LAST:event_btnRemoverMeladoActionPerformed
 
@@ -695,18 +718,33 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.rapadura.setDtProducao(dtProducao);
-        
+        Integer numRapadura = Integer.parseInt(txtQtdRapadura.getText());
+        numRapadura++;
+        txtQtdRapadura.setText(numRapadura.toString());
         Double pesoTotal = Double.parseDouble(txtPesoTotalRapadura.getText());
         pesoTotal += this.rapadura.getPeso();
         txtPesoTotalRapadura.setText(pesoTotal.toString());
+        Double Rendimento = Double.parseDouble(txtQtdCaldoRapadura.getText());
+        Rendimento = pesoTotal / Rendimento;
+        txtRendimentoRapadura.setText(Rendimento.toString());
         JOptionPane.showMessageDialog(null, "Rapadura Adicionada");
     }//GEN-LAST:event_btnAddRapaduraActionPerformed
 
     private void btnRemoverRapaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverRapaduraActionPerformed
         // TODO add your handling code here:
+        Integer numRapadura = Integer.parseInt(txtQtdRapadura.getText());
         Double pesoTotal = Double.parseDouble(txtPesoTotalRapadura.getText());
-        pesoTotal -= this.rapadura.getPeso();
-        txtPesoTotalRapadura.setText(pesoTotal.toString());
+        if (pesoTotal >= this.rapadura.getPeso() && numRapadura > 0) {
+            pesoTotal -= this.rapadura.getPeso();
+            txtPesoTotalRapadura.setText(pesoTotal.toString());
+            numRapadura++;
+            txtQtdRapadura.setText(numRapadura.toString());
+            Double Rendimento = Double.parseDouble(txtQtdCaldoRapadura.getText());
+            Rendimento = pesoTotal / Rendimento;
+            txtRendimentoRapadura.setText(Rendimento.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "Não é possivel remover a rapadura");
+        }
         JOptionPane.showMessageDialog(null, "Ultima Rapadura removida");
     }//GEN-LAST:event_btnRemoverRapaduraActionPerformed
 
@@ -715,18 +753,19 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         ProducaoRapadura p = new ProducaoRapadura();
         RapaduraDAO rDAO = new RapaduraDAO();
         Integer linha = tblRapadura.getSelectedRow();
-        if (linha != -1){
-            p.setLote((Integer)tblRapadura.getValueAt(linha, 0));
-            p.setDtProducao((Date)tblRapadura.getValueAt(linha, 1));
-            p.setQtdCaldo((Integer)tblRapadura.getValueAt(linha, 2));
-            p.setQtdRapaduras((Integer)tblRapadura.getValueAt(linha, 3));
-            p.setPesoTotal((Double)tblRapadura.getValueAt(linha, 4));
-            p.setRendimento((Double)tblRapadura.getValueAt(linha, 5));
-            p.setValidade((Date)tblRapadura.getValueAt(linha, 6));
-            
+        if (linha != -1) {
+            p.setLote((Integer) tblRapadura.getValueAt(linha, 0));
+            p.setDtProducao((Date) tblRapadura.getValueAt(linha, 1));
+            p.setQtdCaldo((Integer) tblRapadura.getValueAt(linha, 2));
+            p.setQtdRapaduras((Integer) tblRapadura.getValueAt(linha, 3));
+            p.setPesoTotal((Double) tblRapadura.getValueAt(linha, 4));
+            p.setRendimento((Double) tblRapadura.getValueAt(linha, 5));
+            p.setValidade((Date) tblRapadura.getValueAt(linha, 6));
+
             rDAO.Atualizar(p);
-        }else{
-            JOptionPane.showMessageDialog(null,"Selecione uma linha/lote!");
+            AtualizarTabelas();
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha/lote!");
         }
     }//GEN-LAST:event_btnAtualizarRapaduraActionPerformed
 
@@ -735,18 +774,19 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
         ProducaoMelado p = new ProducaoMelado();
         MeladoDAO mDAO = new MeladoDAO();
         Integer linha = tblMelado.getSelectedRow();
-        if (linha != -1){
-            p.setLote((Integer)tblMelado.getValueAt(linha, 0));
-            p.setDtProducao((Date)tblMelado.getValueAt(linha, 1));
-            p.setQtdCaldo((Integer)tblMelado.getValueAt(linha, 2));
-            p.setQtdMelado((Integer)tblMelado.getValueAt(linha, 3));
-            p.setPesoTotal((Double)tblMelado.getValueAt(linha, 4));
-            p.setRendimento((Double)tblMelado.getValueAt(linha, 5));
-            p.setValidade((Date)tblMelado.getValueAt(linha, 6));
-            
+        if (linha != -1) {
+            p.setLote((Integer) tblMelado.getValueAt(linha, 0));
+            p.setDtProducao((Date) tblMelado.getValueAt(linha, 1));
+            p.setQtdCaldo((Integer) tblMelado.getValueAt(linha, 2));
+            p.setQtdMelado((Integer) tblMelado.getValueAt(linha, 3));
+            p.setPesoTotal((Double) tblMelado.getValueAt(linha, 4));
+            p.setRendimento((Double) tblMelado.getValueAt(linha, 5));
+            p.setValidade((Date) tblMelado.getValueAt(linha, 6));
+
             mDAO.Atualizar(p);
-        }else{
-            JOptionPane.showMessageDialog(null,"Selecione uma linha/lote!");
+            AtualizarTabelas();
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha/lote!");
         }
     }//GEN-LAST:event_btnAtualizarMeladoActionPerformed
 

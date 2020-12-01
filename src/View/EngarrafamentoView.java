@@ -98,7 +98,6 @@ public class EngarrafamentoView extends javax.swing.JDialog {
             }
         });
 
-        txtTipoCachaça.setEditable(false);
         txtTipoCachaça.setBackground(new java.awt.Color(255, 255, 255));
         txtTipoCachaça.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
