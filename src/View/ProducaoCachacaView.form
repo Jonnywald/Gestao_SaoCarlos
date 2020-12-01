@@ -26,20 +26,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" pref="742" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -54,25 +46,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="835" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTabbedPane1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" min="-2" pref="718" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="490" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTabbedPane1" min="-2" pref="455" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
-                  </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -99,11 +85,17 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnLancarLote" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnVoltarLote" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="lblNumDorna" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblDtAlarmeFerment" min="-2" max="-2" attributes="0"/>
@@ -115,37 +107,43 @@
                                       <Component id="lblDtMoagem" min="-2" max="-2" attributes="0"/>
                                       <Component id="lblLote" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="ftxtDtMoagem" max="32767" attributes="0"/>
-                                      <Component id="txtQtdCaldo" max="32767" attributes="0"/>
-                                      <Component id="txtBrix" max="32767" attributes="0"/>
-                                      <Component id="txtQtdAgua" max="32767" attributes="0"/>
-                                      <Component id="txtTotalCaldo" max="32767" attributes="0"/>
-                                      <Component id="ftxtDtInicioFerment" max="32767" attributes="0"/>
-                                      <Component id="cmbDorna" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <Component id="ftxtDtAlarmeFerment" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtLote" alignment="0" pref="615" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="txtLote" min="-2" pref="365" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="cmbDorna" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="ftxtDtAlarmeFerment" alignment="1" pref="365" max="32767" attributes="0"/>
+                                                  <Component id="ftxtDtInicioFerment" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="txtTotalCaldo" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="txtQtdAgua" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="txtBrix" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="txtQtdCaldo" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="ftxtDtMoagem" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnLancarLote" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnVoltarLote" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="130" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblLote" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtLote" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -190,10 +188,10 @@
                               <Component id="lblNumDorna" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cmbDorna" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="94" max="32767" attributes="0"/>
+                          <EmptySpace pref="51" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnVoltarLote" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnLancarLote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVoltarLote" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -360,7 +358,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane1" pref="790" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="693" max="32767" attributes="0"/>
                                       <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -427,7 +425,7 @@
                               <Component id="lblNumBarril" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cmbBarril" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="105" max="32767" attributes="0"/>
+                          <EmptySpace pref="62" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnVoltarAndamento" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnLacarDestilacao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -589,14 +587,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" alignment="0" pref="800" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="498" max="32767" attributes="0"/>
                                   <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAtualizar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnVoltarHist" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -607,8 +608,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="327" max="-2" attributes="0"/>
-                          <EmptySpace pref="55" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="321" max="-2" attributes="0"/>
+                          <EmptySpace pref="18" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnVoltarHist" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>

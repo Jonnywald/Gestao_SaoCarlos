@@ -26,19 +26,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="646" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,7 +51,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Abas" min="-2" pref="632" max="-2" attributes="0"/>
+                  <Component id="Abas" min="-2" pref="595" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -65,7 +60,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Abas" pref="550" max="32767" attributes="0"/>
+                  <Component id="Abas" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -95,7 +90,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
@@ -107,56 +102,60 @@
                                           <Component id="btnMeladoVoltar" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane2" alignment="0" pref="570" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="txtLabelEngarrafamento" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblQtdCaldoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblLoteMelado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtLabelEngarrafamento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblDtProdMelado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblQtdMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="lblLoteMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblQtdCaldoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblDtProdMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lblQtdMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="lblPesoMelado" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblAddMelado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblPesoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtPesoMelado" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Component id="txtQtdMelado" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Component id="ftxtDtProdMelado" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Component id="txtQtdCaldoMelado" min="-2" pref="118" max="-2" attributes="0"/>
+                                              <Component id="txtLoteMelado" min="-2" pref="118" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txtPesoMelado" pref="118" max="32767" attributes="0"/>
-                                      <Component id="txtQtdMelado" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="ftxtDtProdMelado" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtLoteMelado" alignment="1" pref="118" max="32767" attributes="0"/>
-                                      <Component id="txtQtdCaldoMelado" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblPesoTotalMelado" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtPesoTotalMelado" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblRendimentoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtRendimentoMelado" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btnAddMelado" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnRemoverMelado" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="lblPesoTotalMelado" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="lblRendimentoMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnAddMelado" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="btnRemoverMelado" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtPesoTotalMelado" min="-2" pref="77" max="-2" attributes="0"/>
+                                              <Component id="txtRendimentoMelado" min="-2" pref="77" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Component id="btnSalvarMelado" max="32767" attributes="0"/>
+                                      <Component id="lblAddMelado" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSalvarMelado" min="-2" pref="170" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -166,63 +165,71 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="txtLabelEngarrafamento" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblLoteMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtLoteMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblPesoTotalMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="lblQtdCaldoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtQtdCaldoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="txtLabelEngarrafamento" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblLoteMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtLoteMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblPesoTotalMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPesoTotalMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblQtdCaldoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtQtdCaldoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="txtPesoTotalMelado" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblRendimentoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtRendimentoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblDtProdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="ftxtDtProdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblRendimentoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblQtdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtQtdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtRendimentoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                  <Component id="lblAddMelado" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                  <Component id="lblPesoMelado" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblQtdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtQtdMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtPesoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblPesoMelado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="lblAddMelado" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnAddMelado" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnRemoverMelado" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="btnSalvarMelado" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="181" max="-2" attributes="0"/>
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnMeladoVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnAtualizarMelado" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnExcluirMelado" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -237,6 +244,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0001"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLoteMeladoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblPesoTotalMelado">
                   <Properties>
@@ -412,144 +422,138 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jSeparator1" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="txtLabelEngarrafamento1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="lblAddRapadura" min="-2" pref="117" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
-                                                  <Component id="btnAddRapadura" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="lblQtdCaldoRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="lblLoteRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="lblDtProdRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                              <Component id="ftxtDtProdRapadura" max="32767" attributes="0"/>
-                                                              <Component id="txtLoteRapadura" alignment="1" pref="118" max="32767" attributes="0"/>
-                                                              <Component id="txtQtdCaldoRapadura" alignment="1" max="32767" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Component id="txtLabelEngarrafamento1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="lblQtdRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="lblPesoRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="txtPesoRapadura" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                                                              <Component id="txtQtdRapadura" max="32767" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                              <Component id="lblPesoTotalRapadura" max="32767" attributes="0"/>
-                                                              <Component id="txtPesoTotalRapadura" max="32767" attributes="0"/>
-                                                              <Component id="lblRendimentoRapadura" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="txtRendimentoRapadura" alignment="0" max="32767" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                                                          <Component id="btnRemoverRapadura" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="btnSalvarRapadura" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="btnExcluirRapadura" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="btnAtualizarRapadura" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="btnRapaduraVoltar" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="lblQtdCaldoRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblLoteRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDtProdRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblQtdRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblPesoRapadura" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtQtdRapadura" max="32767" attributes="0"/>
+                                      <Component id="ftxtDtProdRapadura" max="32767" attributes="0"/>
+                                      <Component id="txtLoteRapadura" alignment="1" pref="118" max="32767" attributes="0"/>
+                                      <Component id="txtQtdCaldoRapadura" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="txtPesoRapadura" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="81" pref="81" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblAddRapadura" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblPesoTotalRapadura" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblRendimentoRapadura" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtRendimentoRapadura" max="32767" attributes="0"/>
+                                      <Component id="txtPesoTotalRapadura" pref="77" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="596" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnAddRapadura" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnRemoverRapadura" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="btnSalvarRapadura" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="14" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btnExcluirRapadura" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnAtualizarRapadura" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnRapaduraVoltar" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jSeparator1" alignment="1" min="-2" pref="570" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="1" min="-2" pref="570" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="txtLabelEngarrafamento1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblLoteRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtLoteRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblPesoTotalRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="lblQtdCaldoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtQtdCaldoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblLoteRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtLoteRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="txtPesoTotalRapadura" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblDtProdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ftxtDtProdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblRendimentoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblQtdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtQtdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtRendimentoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="lblAddRapadura" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPesoRapadura" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="btnAddRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtPesoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnRemoverRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblPesoTotalRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPesoTotalRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblQtdCaldoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtQtdCaldoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblDtProdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ftxtDtProdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lblQtdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtQtdRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblAddRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="txtRendimentoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblRendimentoRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblPesoRapadura" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPesoRapadura" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnRemoverRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAddRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="23" max="32767" attributes="0"/>
                           <Component id="btnSalvarRapadura" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="181" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnRapaduraVoltar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="btnAtualizarRapadura" alignment="3" min="-2" max="-2" attributes="0"/>
