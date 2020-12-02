@@ -491,7 +491,7 @@ public class RelatoriosView extends javax.swing.JFrame {
             doc.close();
 
             //Abrir PDF
-            File f = new File(path + "/Rendimento.pdf");
+            File f = new File(path + "/RelatorioRendimento.pdf");
 
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex);

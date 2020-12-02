@@ -249,8 +249,10 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer) cbxNumBarril.getSelectedItem());
+        if (cbxNumBarril.getSelectedItem().toString() != null){
+        b = bDAO.BuscaBarril(Integer.parseInt(cbxNumBarril.getSelectedItem().toString()));
         txtTipoCachaça.setText(b.getMaterial() + " " + b.getTipoAtual());
+        }
 
     }//GEN-LAST:event_cbxNumBarrilItemStateChanged
 
@@ -273,7 +275,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         volumeUsado = (g.getQtdGarrfas() * g.getVolumeGarrafa()) / 1000;
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        b = bDAO.BuscaBarril((Integer) cbxNumBarril.getSelectedItem());
+        b = bDAO.BuscaBarril(Integer.parseInt(cbxNumBarril.getSelectedItem().toString()));
         VolumeBarril = b.getVolumeAtual();
         if (volumeUsado < VolumeBarril) {
             VolumeBarril -= volumeUsado;

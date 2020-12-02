@@ -585,6 +585,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         ProducaoCachaca pCachaca = new ProducaoCachaca();
         CachacaDAO cDAO = new CachacaDAO();
         Integer bLote = (int) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
+        if (bLote != -1){
         pCachaca = cDAO.BuscaLote(bLote);
         Date alam = null;
         try {
@@ -607,7 +608,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Volume ultrapassa o limite do barril selecionado!");
         }
-        
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Selecione um lote em andamento!");
+        }
     }//GEN-LAST:event_btnLacarDestilacaoActionPerformed
 
     private void btnVoltarHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarHistActionPerformed

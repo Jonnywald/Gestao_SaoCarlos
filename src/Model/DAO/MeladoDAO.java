@@ -104,7 +104,7 @@ public class MeladoDAO {
         ResultSet rs = null;
         int i = 0;
         try {
-            stmt = con.prepareStatement("SELECT * FROM producaoRapadura ORDER BY lote DESC LIMIT 1");
+            stmt = con.prepareStatement("SELECT * FROM producaoMelado ORDER BY lote DESC LIMIT 1");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 i = rs.getInt("lote");
