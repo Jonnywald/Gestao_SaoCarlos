@@ -277,7 +277,7 @@
                 <Component class="javax.swing.JFormattedTextField" name="ftxtDtProdMelado">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                      <Format format="d/M/yy" subtype="-1" type="1"/>
+                      <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -620,7 +620,7 @@
                 <Component class="javax.swing.JFormattedTextField" name="ftxtDtProdRapadura">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                      <Format format="d/M/yy" subtype="-1" type="1"/>
+                      <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
                     </Property>
                   </Properties>
                 </Component>

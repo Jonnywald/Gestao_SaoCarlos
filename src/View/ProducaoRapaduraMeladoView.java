@@ -128,7 +128,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         lblDtProdMelado.setText("Data de Produção:");
 
-        ftxtDtProdMelado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
+        ftxtDtProdMelado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         lblRendimentoMelado.setText("Rendimento");
 
@@ -345,7 +345,7 @@ public class ProducaoRapaduraMeladoView extends javax.swing.JFrame {
 
         lblDtProdRapadura.setText("Data de Produção:");
 
-        ftxtDtProdRapadura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
+        ftxtDtProdRapadura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         lblQtdRapadura.setText("Quantidade de Rapaduras:");
 
