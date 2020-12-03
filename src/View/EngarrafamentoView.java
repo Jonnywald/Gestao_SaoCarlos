@@ -238,6 +238,8 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         // TODO add your handling code here:
         BarrilDAO bDAO = new BarrilDAO();
         List<Barril> barris = new ArrayList<Barril>();
+        GarrafaDAO g = new GarrafaDAO();
+        txtLote.setText(g.ultimoLote().toString());
         barris = bDAO.ListarBarril();
         cbxNumBarril.removeAllItems();
         barris.forEach(b -> {

@@ -190,11 +190,10 @@
                 <Component class="javax.swing.JComboBox" name="cbxItem">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Tipo de Item"/>
-                        <StringItem index="1" value="Cacha&#xe7;a"/>
-                        <StringItem index="2" value="Rapadura"/>
-                        <StringItem index="3" value="Melado"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Cacha&#xe7;a"/>
+                        <StringItem index="1" value="Rapadura"/>
+                        <StringItem index="2" value="Melado"/>
                       </StringArray>
                     </Property>
                   </Properties>

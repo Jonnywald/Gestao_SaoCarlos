@@ -62,7 +62,7 @@ public class LancamentoDeVendasView extends javax.swing.JFrame {
 
         jLabel1.setText("Item");
 
-        cbxItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Item", "Cachaça", "Rapadura", "Melado" }));
+        cbxItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachaça", "Rapadura", "Melado" }));
         cbxItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxItemActionPerformed(evt);

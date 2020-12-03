@@ -70,4 +70,25 @@ public class GarrafaDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+    public Integer ultimoLote(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Integer lote = 0;
+        try{
+            stmt = con.prepareStatement("SELECT * FROM garrafa ORDER BY lote DESC LIMIT 1");
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                lote = rs.getInt("lote");
+            }
+            
+        }catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao Ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return lote;
+    }
 }
