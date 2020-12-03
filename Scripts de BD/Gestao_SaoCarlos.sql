@@ -50,6 +50,17 @@ create table producaoRapadura(
  validadeR	date
     
 )engine=InnoDB;
+create table venda( 
+ id		int primary key NOT NULL,
+ valor double NOT NULL,
+ descricao 	varchar(255),
+ dtVenda	date NOT NULL,
+ qtdMelado	int ,
+ qtdRapadura int,
+ qtdGarrafa	int
+    
+)engine=InnoDB;
+
 
 create table garrafa (
 
@@ -86,8 +97,3 @@ volumeTotal double
 
 insert into Users values ("ADM", "ADM", "ADM", TRUE);
 insert into Users values ("AGT", "AGT", "AGT", FALSE);
-
-select * from barril;
-select * from producaoCachaca;
-
-select avg(rendimento) FROM producaoCachaca WHERE dtAlambicagem BETWEEN current_date()-28 AND current_date();
