@@ -66,6 +66,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         btnVoltarLote = new javax.swing.JButton();
         btnLancarLote = new javax.swing.JButton();
         txtLabeProduçãoCachaça = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         painelEmAndamento = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLista = new javax.swing.JTable();
@@ -82,6 +84,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         cmbBarril = new javax.swing.JComboBox<>();
         btnVoltarAndamento = new javax.swing.JButton();
         btnLacarDestilacao = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         painelHistorico = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblHist = new javax.swing.JTable();
@@ -140,7 +143,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblDtInicioFerment.setText("Data de Inicio da fermentação:");
 
-        ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        ftxtDtInicioFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm"))));
         ftxtDtInicioFerment.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ftxtDtInicioFermentFocusLost(evt);
@@ -154,7 +157,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         lblDtAlarmeFerment.setText("Data maxima de fermentação:");
 
-        ftxtDtAlarmeFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        ftxtDtAlarmeFerment.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm"))));
         ftxtDtAlarmeFerment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftxtDtAlarmeFermentActionPerformed(evt);
@@ -181,6 +184,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         txtLabeProduçãoCachaça.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtLabeProduçãoCachaça.setText("Produção de Cachaça");
+
+        jLabel1.setText("(dd/MM/yyyy hh:mm)");
+
+        jLabel2.setText("(dd/MM/yyyy hh:mm)");
 
         javax.swing.GroupLayout painelNovoLoteLayout = new javax.swing.GroupLayout(painelNovoLote);
         painelNovoLote.setLayout(painelNovoLoteLayout);
@@ -221,11 +228,15 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                                         .addComponent(txtQtdAgua, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(txtBrix, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(txtQtdCaldo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(ftxtDtMoagem, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                        .addComponent(ftxtDtMoagem, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)))
                     .addGroup(painelNovoLoteLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(txtLabeProduçãoCachaça)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         painelNovoLoteLayout.setVerticalGroup(
             painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,11 +270,13 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDtInicioFerment)
-                    .addComponent(ftxtDtInicioFerment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ftxtDtInicioFerment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDtAlarmeFerment)
-                    .addComponent(ftxtDtAlarmeFerment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ftxtDtAlarmeFerment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumDorna)
@@ -299,7 +312,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
             }
         });
 
-        ftxtDtAlambicagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        ftxtDtAlambicagem.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy hh:mm"))));
 
         lblRendimento.setText("Rendimento (%):");
 
@@ -322,6 +335,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 btnLacarDestilacaoActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("(dd/MM/yyyy hh:mm)");
 
         javax.swing.GroupLayout painelEmAndamentoLayout = new javax.swing.GroupLayout(painelEmAndamento);
         painelEmAndamento.setLayout(painelEmAndamentoLayout);
@@ -350,6 +365,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                             .addComponent(txtRendimento)
                             .addComponent(txtGL)
                             .addComponent(cmbBarril, 0, 125, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelEmAndamentoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -368,7 +385,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDtAlambicagem)
-                    .addComponent(ftxtDtAlambicagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ftxtDtAlambicagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelEmAndamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblQtdCoracao)
@@ -766,6 +784,9 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField ftxtDtAlarmeFerment;
     private javax.swing.JFormattedTextField ftxtDtInicioFerment;
     private javax.swing.JFormattedTextField ftxtDtMoagem;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

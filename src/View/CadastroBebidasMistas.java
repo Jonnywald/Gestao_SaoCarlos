@@ -249,7 +249,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         // TODO add your handling code here:
         BebidaMista bMista = new BebidaMista();
         
-        Integer bLote = (Integer) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
+        Integer bLote = (int) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
                 
         bMista.setNome(txtRecebeNomeBebidaMista.getText());
         bMista.setTempoCura(Integer.parseInt(numberRecebeTempoCura.getText()));
