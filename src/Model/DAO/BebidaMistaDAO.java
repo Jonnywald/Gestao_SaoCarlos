@@ -25,9 +25,8 @@ public class BebidaMistaDAO {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            // operacao de inserção de dados (login, Nome, Senha, Adm)
             stmt = con.prepareStatement("INSERT INTO bebidaMista VALUES(?,?,?,?)");
-            stmt.setInt(1, bm.getLote());
+            stmt.setInt(1, bm.getId());
             stmt.setString(2, bm.getNome());
             stmt.setInt(3, bm.getTempoCura());
             stmt.setString(4, bm.getMateriaPrima());
@@ -60,6 +59,7 @@ public class BebidaMistaDAO {
             while (rs.next()) {
 
                 BebidaMista bm = new BebidaMista();
+                bm.setId(rs.getInt("id"));
                 bm.setNome(rs.getString("nomeBM"));
                 bm.setTempoCura(rs.getInt("tpCura"));
                 bm.setMateriaPrima(rs.getString("materiaPrima"));
@@ -76,6 +76,54 @@ public class BebidaMistaDAO {
         }
         return bMista;
     }
+    public BebidaMista BuscaID(Integer id){
+        // iniciar a conexao com o banco usando a classe connection factory
+        Connection con = ConnectionFactory.getConnection();
+        // gerar uma variavel de operacao com o banco
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        BebidaMista bm = new BebidaMista();
+        try{
+            stmt = con.prepareStatement("SELECT * FROM bebidaMista where id=?");
+            stmt.setInt(1,id);
+            rs = stmt.executeQuery();
+            while (rs.next()){
+                bm.setId(rs.getInt("id"));
+                bm.setNome(rs.getString("nomeBM"));
+                bm.setTempoCura(rs.getInt("tpCura"));
+                bm.setMateriaPrima(rs.getString("materiaPrima"));
+            }
+        }catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return bm;
+    }
+    public Integer UltimoID(){
+        // iniciar a conexao com o banco usando a classe connection factory
+        Connection con = ConnectionFactory.getConnection();
+        // gerar uma variavel de operacao com o banco
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Integer i = 0;
+        try{
+            stmt = con.prepareStatement("SELECT * FROM bebidaMista ORDER BY id DESC LIMIT 1");
+            rs = stmt.executeQuery();
+            while (rs.next()){
+                i = rs.getInt("id");
+            }
+        }catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao ler: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        return i;
+    }
 
     public void Deletar(BebidaMista bm) {
         // iniciar a conexao com o banco usando a classe connection factory
@@ -83,8 +131,8 @@ public class BebidaMistaDAO {
         // gerar uma variavel de operacao com o banco
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("DELETE FROM bebidaMista WHERE lote = ?");
-            stmt.setInt(1, bm.getLote());
+            stmt = con.prepareStatement("DELETE FROM bebidaMista WHERE id = ?");
+            stmt.setInt(1, bm.getId());
             // executar a operacao no banco
             stmt.executeUpdate();
             // mensagem de sucesso

@@ -73,7 +73,7 @@ dtEngarrafamento date
 )engine=InnoDB;
  
 create table bebidaMista(
-id_bedidaMista int auto_increment	primary key,
+id int UNIQUE	primary key,
 nomeBM	varchar (50),
 tpCura	int NOT NULL,
 materiaPrima	varchar (50)

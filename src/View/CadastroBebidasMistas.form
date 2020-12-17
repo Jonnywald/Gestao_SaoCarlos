@@ -8,6 +8,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowActivated"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -100,10 +103,6 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtRecebeMateriaPrima" min="-2" pref="292" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="txtLabelBebidaMista" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="182" max="32767" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="btnVoltarBebidaMista" min="-2" max="-2" attributes="0"/>
@@ -112,7 +111,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="lblTempoCura" pref="77" max="32767" attributes="0"/>
+                                      <Component id="lblTempoCura" max="32767" attributes="0"/>
                                       <Component id="lblNomeBebidaMista" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -120,6 +119,15 @@
                                       <Component id="numberRecebeTempoCura" alignment="1" min="-2" pref="294" max="-2" attributes="0"/>
                                       <Component id="txtRecebeNomeBebidaMista" alignment="1" min="-2" pref="294" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtLabelBebidaMista" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                                  <Component id="txtID" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -131,7 +139,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txtLabelBebidaMista" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblNomeBebidaMista" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtRecebeNomeBebidaMista" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -146,7 +159,7 @@
                               <Component id="lblMAteriaPrima" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtRecebeMateriaPrima" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="165" max="32767" attributes="0"/>
+                          <EmptySpace pref="162" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnVoltarBebidaMista" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnSalvarBebidaMista" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -174,7 +187,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTempoCura">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Tempo de cura"/>
+                    <Property name="text" type="java.lang.String" value="Tempo de cura (dias):"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="numberRecebeTempoCura">
@@ -204,6 +217,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarBebidaMistaActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="ID:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtID">
                 </Component>
               </SubComponents>
             </Container>
@@ -263,20 +283,9 @@
                     <Component class="javax.swing.JTable" name="tblLista">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="10">
-                            <Column editable="true" title="Lote" type="java.lang.Object"/>
-                            <Column editable="true" title="Nome" type="java.lang.Object">
-                              <Data value=""/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
+                          <Table columnCount="4" rowCount="0">
+                            <Column editable="true" title="ID" type="java.lang.Object"/>
+                            <Column editable="true" title="Nome" type="java.lang.Object"/>
                             <Column editable="true" title="Tempo de cura" type="java.lang.Object"/>
                             <Column editable="true" title="Mat&#xe9;ria Prima" type="java.lang.Object"/>
                           </Table>

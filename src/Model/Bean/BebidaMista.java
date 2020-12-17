@@ -5,7 +5,7 @@ package Model.Bean;
  * @author Guilherme Bertola
  */
 public class BebidaMista {
-    private Integer lote;
+    private Integer id;
     private String nome; // nome da bebida mista
     private Integer TempoCura; // tempo de cura necessario (em dias)
     private String materiaPrima; // Materia prima utlizada para para fazer a bebida mista
@@ -45,17 +45,17 @@ public class BebidaMista {
     }
 
     /**
-     * @return the lote
+     * @return the id
      */
-    public Integer getLote() {
-        return lote;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * @param lote the lote to set
+     * @param id the id to set
      */
-    public void setLote(Integer lote) {
-        this.lote = lote;
+    public void setId(Integer id) {
+        this.id = id;
     }
     
 }
