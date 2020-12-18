@@ -299,7 +299,7 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         // TODO add your handling code here:
         BebidaMistaDAO bDAO = new BebidaMistaDAO();
         List<BebidaMista> lista = new ArrayList<BebidaMista>();
-        lista = bDAO.ListarProducao();
+        lista = bDAO.ListarBebidas();
         Integer i;
         i = bDAO.UltimoID();
         i++;

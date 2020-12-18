@@ -6,8 +6,10 @@
 package View;
 
 import Model.Bean.Barril;
+import Model.Bean.BebidaMista;
 import Model.Bean.Garrafa;
 import Model.DAO.BarrilDAO;
+import Model.DAO.BebidaMistaDAO;
 import Model.DAO.GarrafaDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -58,6 +60,10 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         txtVolumeGarrafa = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtDtEngarrafamento = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        cbxBebidaMista = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        checkBebida = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(111, 148, 148));
@@ -87,7 +93,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
             }
         });
 
-        lblTipoGarrafa.setText("Volume da Garrafa (mL)");
+        lblTipoGarrafa.setText("Volume da Garrafa (mL):");
 
         lblNumGarrafas.setText("Número de garrafas:");
 
@@ -104,13 +110,32 @@ public class EngarrafamentoView extends javax.swing.JDialog {
             }
         });
 
-        lblTipoCachaça.setText("Tipo de cachaça");
+        lblTipoCachaça.setText("Tipo de cachaça:");
 
         lblLote.setText("Lote:");
 
         lblBarril.setText("Barril:");
 
         jLabel1.setText("Data de Engarrafamento:");
+
+        jLabel2.setText("Bebida Mista:");
+
+        cbxBebidaMista.setEnabled(false);
+        cbxBebidaMista.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxBebidaMistaItemStateChanged(evt);
+            }
+        });
+
+        jLabel3.setText("É Bebida Mista?:");
+
+        checkBebida.setBackground(new java.awt.Color(255, 255, 255));
+        checkBebida.setText("Sim, é Bebida Mista");
+        checkBebida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBebidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -125,26 +150,29 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                         .addComponent(btnSalvar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNumGarrafas, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLote, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTipoGarrafa, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTipoCachaça, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblBarril, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNumGarrafas)
+                                    .addComponent(lblLote)
+                                    .addComponent(lblTipoGarrafa)
+                                    .addComponent(jLabel1)
+                                    .addComponent(lblTipoCachaça)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtVolumeGarrafa, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cbxNumBarril, 0, 469, Short.MAX_VALUE)
-                                    .addComponent(txtTipoCachaça)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtDtEngarrafamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
-                                    .addComponent(txtNumGarrafas, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtLote, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                    .addComponent(txtDtEngarrafamento, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtLote, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                                    .addComponent(txtNumGarrafas, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                                    .addComponent(txtVolumeGarrafa)
+                                    .addComponent(txtTipoCachaça)
+                                    .addComponent(cbxBebidaMista, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(checkBebida, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblBarril)
+                                .addGap(124, 124, 124)
+                                .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(48, 48, 48))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -159,7 +187,15 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBarril)
                     .addComponent(cbxNumBarril, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(checkBebida))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cbxBebidaMista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTipoCachaça)
                     .addComponent(txtTipoCachaça, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,7 +215,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtDtEngarrafamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(59, 59, 59)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar))
@@ -188,7 +224,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(txtLabelEngarrafamento)
-                    .addContainerGap(418, Short.MAX_VALUE)))
+                    .addContainerGap(497, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -204,8 +240,8 @@ public class EngarrafamentoView extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -216,10 +252,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -237,13 +270,20 @@ public class EngarrafamentoView extends javax.swing.JDialog {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         BarrilDAO bDAO = new BarrilDAO();
+        BebidaMistaDAO bmDAO = new BebidaMistaDAO();
         List<Barril> barris = new ArrayList<Barril>();
+        List<BebidaMista> bebidas = new ArrayList<BebidaMista>();
         GarrafaDAO g = new GarrafaDAO();
         txtLote.setText(g.ultimoLote().toString());
         barris = bDAO.ListarBarril();
+        bebidas = bmDAO.ListarBebidas();
+        cbxBebidaMista.removeAllItems();
         cbxNumBarril.removeAllItems();
         barris.forEach(b -> {
             cbxNumBarril.addItem(b.getNumBarril().toString());
+        });
+        bebidas.forEach(bm -> {
+            cbxBebidaMista.addItem(bm.getId().toString());
         });
     }//GEN-LAST:event_formWindowActivated
 
@@ -251,7 +291,7 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         // TODO add your handling code here:
         Barril b = new Barril();
         BarrilDAO bDAO = new BarrilDAO();
-        if (cbxNumBarril.getSelectedItem().toString() != null){
+        if (cbxNumBarril.getSelectedItem().toString() != null && !(checkBebida.isSelected())){
         b = bDAO.BuscaBarril(Integer.parseInt(cbxNumBarril.getSelectedItem().toString()));
         txtTipoCachaça.setText(b.getMaterial() + " " + b.getTipoAtual());
         }
@@ -289,6 +329,25 @@ public class EngarrafamentoView extends javax.swing.JDialog {
         }
 
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void checkBebidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBebidaActionPerformed
+        // TODO add your handling code here:
+        if (checkBebida.isSelected()){
+            cbxBebidaMista.setEnabled(true);
+        } else{
+            cbxBebidaMista.setEnabled(false);
+        }
+    }//GEN-LAST:event_checkBebidaActionPerformed
+
+    private void cbxBebidaMistaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxBebidaMistaItemStateChanged
+        // TODO add your handling code here:
+        BebidaMistaDAO bmDAO = new BebidaMistaDAO();
+        BebidaMista bm = new BebidaMista();
+        if (cbxBebidaMista.getSelectedItem().toString() != null && checkBebida.isSelected()){
+            bm = bmDAO.BuscaID(Integer.parseInt(cbxBebidaMista.getSelectedItem().toString()));
+            txtTipoCachaça.setText(bm.getNome());
+        }
+    }//GEN-LAST:event_cbxBebidaMistaItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -335,8 +394,12 @@ public class EngarrafamentoView extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<String> cbxBebidaMista;
     private javax.swing.JComboBox<String> cbxNumBarril;
+    private javax.swing.JCheckBox checkBebida;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblBarril;

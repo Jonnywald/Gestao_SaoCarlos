@@ -67,7 +67,7 @@ public class BebidaMistaDAO {
         }
     }
 
-    public List<BebidaMista> ListarProducao() {
+    public List<BebidaMista> ListarBebidas() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
