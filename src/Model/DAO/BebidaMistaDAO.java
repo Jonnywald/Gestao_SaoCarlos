@@ -44,6 +44,28 @@ public class BebidaMistaDAO {
         }
 
     }
+    public void AtualizaBebida(BebidaMista bm){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement("UPDATE bebidaMista SET nomeBM = ?, tpCura = ?, materiaPrima = ? WHERE id = ?");
+            stmt.setInt(4, bm.getId());
+            stmt.setString(1, bm.getNome());
+            stmt.setInt(2, bm.getTempoCura());
+            stmt.setString(3, bm.getMateriaPrima());
+            // executar a operacao no banco
+            stmt.executeUpdate();
+            // mensagem de sucesso
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
+            // caso ocorra uma excecao tratar ela
+        } catch (SQLException ex) {
+            // mensagem de erro
+            JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
+        } finally {
+            // sempre finalizar encerrando a conexão com o banco
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
 
     public List<BebidaMista> ListarProducao() {
         Connection con = ConnectionFactory.getConnection();
@@ -125,14 +147,14 @@ public class BebidaMistaDAO {
         return i;
     }
 
-    public void Deletar(BebidaMista bm) {
+    public void Deletar(Integer id) {
         // iniciar a conexao com o banco usando a classe connection factory
         Connection con = ConnectionFactory.getConnection();
         // gerar uma variavel de operacao com o banco
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement("DELETE FROM bebidaMista WHERE id = ?");
-            stmt.setInt(1, bm.getId());
+            stmt.setInt(1, id);
             // executar a operacao no banco
             stmt.executeUpdate();
             // mensagem de sucesso

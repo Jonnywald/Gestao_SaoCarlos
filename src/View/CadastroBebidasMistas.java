@@ -9,7 +9,8 @@ import Model.Bean.BebidaMista;
 import Model.DAO.BebidaMistaDAO;
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -170,8 +171,18 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblLista);
 
         btnEditarVoltarBM.setText("Voltar");
+        btnEditarVoltarBM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarVoltarBMActionPerformed(evt);
+            }
+        });
 
         btnEditarSalvarBM.setText("Salvar");
+        btnEditarSalvarBM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarSalvarBMActionPerformed(evt);
+            }
+        });
 
         btnEditarExcluirBM.setText("Excluir");
         btnEditarExcluirBM.addActionListener(new java.awt.event.ActionListener() {
@@ -258,24 +269,26 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
     private void btnSalvarBebidaMistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarBebidaMistaActionPerformed
         // TODO add your handling code here:
         BebidaMista bMista = new BebidaMista();
-        
+
         bMista.setId(Integer.parseInt(txtID.getText()));
         bMista.setNome(txtRecebeNomeBebidaMista.getText());
         bMista.setTempoCura(Integer.parseInt(numberRecebeTempoCura.getText()));
         bMista.setMateriaPrima(txtRecebeMateriaPrima.getText());
 
-        
-            BebidaMistaDAO bmDAO = new BebidaMistaDAO();
-            bmDAO.CadastrarBebidaMista(bMista);
+        BebidaMistaDAO bmDAO = new BebidaMistaDAO();
+        bmDAO.CadastrarBebidaMista(bMista);
     }//GEN-LAST:event_btnSalvarBebidaMistaActionPerformed
 
     private void btnEditarExcluirBMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarExcluirBMActionPerformed
         // TODO add your handling code here:
 
-        BebidaMista bMista = new BebidaMista();
         BebidaMistaDAO bmDAO = new BebidaMistaDAO();
-       // Integer bLote = (Integer) tblEditar.getValueAt(tblEditar.getSelectedRow, 0);
-        bmDAO.Deletar(bMista);
+        if (tblLista.getSelectedRow() != -1) {
+            Integer id = (int) tblLista.getValueAt(tblLista.getSelectedRow(), 0);
+            bmDAO.Deletar(id);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha/Bebida!");
+        }
     }//GEN-LAST:event_btnEditarExcluirBMActionPerformed
 
     private void numberRecebeTempoCuraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberRecebeTempoCuraActionPerformed
@@ -288,11 +301,40 @@ public class CadastroBebidasMistas extends javax.swing.JFrame {
         List<BebidaMista> lista = new ArrayList<BebidaMista>();
         lista = bDAO.ListarProducao();
         Integer i;
-        i=bDAO.UltimoID();
+        i = bDAO.UltimoID();
         i++;
         txtID.setText(i.toString());
-        
+        DefaultTableModel modelo = (DefaultTableModel) tblLista.getModel();
+        modelo.setNumRows(0);
+        lista.forEach(bm -> {
+            modelo.addRow(new Object[]{
+                bm.getId(),
+                bm.getNome(),
+                bm.getTempoCura(),
+                bm.getMateriaPrima()
+            });
+        });
     }//GEN-LAST:event_formWindowActivated
+
+    private void btnEditarSalvarBMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarSalvarBMActionPerformed
+        // TODO add your handling code here:
+        BebidaMistaDAO bmDAO = new BebidaMistaDAO();
+        BebidaMista bMista = new BebidaMista();
+        if (tblLista.getSelectedRow() != -1) {
+            bMista.setId((int) tblLista.getValueAt(tblLista.getSelectedRow(), 0));
+            bMista.setNome((String)tblLista.getValueAt(tblLista.getSelectedRow(), 1));
+            bMista.setTempoCura((int)tblLista.getValueAt(tblLista.getSelectedRow(), 2));
+            bMista.setMateriaPrima((String)tblLista.getValueAt(tblLista.getSelectedRow(), 3));
+            bmDAO.AtualizaBebida(bMista);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma linha/Bebida!");
+        }
+    }//GEN-LAST:event_btnEditarSalvarBMActionPerformed
+
+    private void btnEditarVoltarBMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarVoltarBMActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnEditarVoltarBMActionPerformed
 
     /**
      * @param args the command line arguments

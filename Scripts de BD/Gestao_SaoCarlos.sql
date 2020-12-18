@@ -96,4 +96,3 @@ volumeTotal double
 
 
 insert into Users values ("ADM", "ADM", "ADM", TRUE);
-insert into Users values ("AGT", "AGT", "AGT", FALSE);
