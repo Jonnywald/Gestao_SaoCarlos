@@ -11,6 +11,7 @@ import Model.DAO.BarrilDAO;
 import Model.DAO.CachacaDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -70,6 +71,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         ftxtHora = new javax.swing.JFormattedTextField();
+        jLabel5 = new javax.swing.JLabel();
         painelEmAndamento = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblLista = new javax.swing.JTable();
@@ -193,6 +195,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
         jLabel4.setText("Horario de Inicio de Fermentação:");
 
+        ftxtHora.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+
+        jLabel5.setText("(HH:mm)");
+
         javax.swing.GroupLayout painelNovoLoteLayout = new javax.swing.GroupLayout(painelNovoLote);
         painelNovoLote.setLayout(painelNovoLoteLayout);
         painelNovoLoteLayout.setHorizontalGroup(
@@ -245,7 +251,8 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2))))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5))))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
         painelNovoLoteLayout.setVerticalGroup(
@@ -290,9 +297,10 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(ftxtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ftxtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(painelNovoLoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNumDorna)
                     .addComponent(cmbDorna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
@@ -433,7 +441,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Lote", "Data de Moagem", "Qtd Caldo", "Brix", "Qtd Agua", "Volume", "Data de Fermentação", "Data Maxima", "Dorna", "Data de Destilação", "Coração", "GL", "Rendimento", "Barril"
+                "Lote", "Data de Moagem", "Qtd Caldo", "Brix", "Qtd Agua", "Volume", "Data de Fermentação", "Data Maxima", "Horário de Fementação", "Dorna", "Data de Destilação", "Coração", "GL", "Rendimento", "Barril"
             }
         ));
         tblHist.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
@@ -548,6 +556,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(ProducaoCachacaView.class.getName()).log(Level.SEVERE, null, ex);
         }
+        pCachaca.setHoraFerment(LocalTime.parse(ftxtHora.getText()));
         pCachaca.setDtMoagem(dtMoag);
         pCachaca.setQtdCaldo((int)Double.parseDouble(txtQtdCaldo.getText()));
         pCachaca.setQtdAgua((int)Double.parseDouble(txtQtdAgua.getText()));
@@ -600,6 +609,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 p.getTotalCaldo(),
                 p.getDtInicioFerment(),
                 p.getDtAlarmFerment(),
+                p.getHoraFerment(),
                 p.getNumDorna(),
                 p.getDtAlambicagem(),
                 p.getQtdCoracao(),
@@ -673,6 +683,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
                 p.getTotalCaldo(),
                 p.getDtInicioFerment(),
                 p.getDtAlarmFerment(),
+                p.getHoraFerment(),
                 p.getNumDorna(),
                 p.getDtAlambicagem(),
                 p.getQtdCoracao(),
@@ -803,6 +814,7 @@ public class ProducaoCachacaView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

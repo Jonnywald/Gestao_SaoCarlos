@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,7 +26,7 @@ public class CachacaDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO producaoCachaca (lote, dtMoagem, qtdCaldo, qtdAgua, totalCaldo, brix, dtInicioFerment, dtAlarmFerment, numDorna) VALUES(?,?,?,?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO producaoCachaca (lote, dtMoagem, qtdCaldo, qtdAgua, totalCaldo, brix, dtInicioFerment, dtAlarmFerment, horaFerment, numDorna) VALUES(?,?,?,?,?,?,?,?,?,?)");
             stmt.setInt(1, p.getLote());
             stmt.setDate(2, new java.sql.Date(p.getDtMoagem().getTime()));
             stmt.setInt(3, p.getQtdCaldo());
@@ -34,7 +35,9 @@ public class CachacaDAO {
             stmt.setDouble(6, p.getBrix());
             stmt.setDate(7, new java.sql.Date(p.getDtInicioFerment().getTime()));
             stmt.setDate(8, new java.sql.Date(p.getDtAlarmFerment().getTime()));
-            stmt.setInt(9, p.getNumDorna());
+            Time time = Time.valueOf(p.getHoraFerment());
+            stmt.setTime(9, time);
+            stmt.setInt(10, p.getNumDorna());
             // executar a operacao no banco
             stmt.executeUpdate();
             // mensagem de sucesso
@@ -94,6 +97,7 @@ public class CachacaDAO {
                 pc.setBrix(rs.getDouble("brix"));
                 pc.setDtInicioFerment(rs.getDate("dtInicioFerment"));
                 pc.setDtAlarmFerment(rs.getDate("dtAlarmFerment"));
+                pc.setHoraFerment(rs.getTime("horaFerment").toLocalTime());
                 pc.setNumDorna(rs.getInt("numDorna"));
                 pc.setDtAlambicagem(rs.getDate("dtAlambicagem"));
                 pc.setQtdCoracao(rs.getDouble("qtdCoracao"));
@@ -133,6 +137,7 @@ public class CachacaDAO {
                 pCachaca.setBrix(rs.getDouble("brix"));
                 pCachaca.setDtInicioFerment(rs.getDate("dtInicioFerment"));
                 pCachaca.setDtAlarmFerment(rs.getDate("dtAlarmFerment"));
+                pCachaca.setHoraFerment(rs.getTime("horaFerment").toLocalTime());
                 pCachaca.setNumDorna(rs.getInt("numDorna"));
                 pCachaca.setDtAlambicagem(rs.getDate("dtAlambicagem"));
                 pCachaca.setQtdCoracao(rs.getDouble("qtdCoracao"));

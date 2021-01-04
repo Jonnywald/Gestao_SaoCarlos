@@ -6,7 +6,6 @@
 package View;
 
 import Model.DAO.UsersDAO;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author guilherme.bertola
  */
 public class LoginView extends javax.swing.JFrame {
-
+    
     
     private String usuario = "";
     
@@ -94,6 +93,11 @@ public class LoginView extends javax.swing.JFrame {
         btn_entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_entrarActionPerformed(evt);
+            }
+        });
+        btn_entrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btn_entrarKeyPressed(evt);
             }
         });
 
@@ -195,6 +199,10 @@ public class LoginView extends javax.swing.JFrame {
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void btn_entrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn_entrarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_entrarKeyPressed
 
     /**
      * @param args the command line arguments

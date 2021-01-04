@@ -1,5 +1,6 @@
 package Model.Bean;
 
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,6 +17,7 @@ public class ProducaoCachaca {
     private Double brix; // grau brix do caldo
     private Date dtInicioFerment; // data de inicio da fermentacao
     private Date dtAlarmFerment; // data maxima de fermentacao
+    private LocalTime horaFerment;
     private Integer numDorna; // numero da dorna onde está sendo feita a fermentacao
     private Date dtAlambicagem; // data da destilacao (alabicagem)
     private Double qtdCoracao; // quantidade de coracao produzido
@@ -171,4 +173,13 @@ public class ProducaoCachaca {
     public Boolean isDone(){
         return (this.dtAlambicagem == null);
     }
+
+    public LocalTime getHoraFerment() {
+        return horaFerment;
+    }
+
+    public void setHoraFerment(LocalTime horaFerment) {
+        this.horaFerment = horaFerment;
+    }
+    
 }

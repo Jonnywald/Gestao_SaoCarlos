@@ -5,6 +5,9 @@
  */
 package View;
 
+import Model.Bean.Venda;
+import Model.DAO.VendaDAO;
+
 /**
  *
  * @author delri
@@ -103,6 +106,11 @@ public class LancamentoDeVendasView extends javax.swing.JFrame {
         });
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -297,6 +305,14 @@ public class LancamentoDeVendasView extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnVoltar1ActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+        VendaDAO vDAO = new VendaDAO();
+        Venda v = new Venda();
+        v.setDesc(txtDescricao.getText());
+        v.setValor(Double.parseDouble(txtValorTotal.getText()));
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments

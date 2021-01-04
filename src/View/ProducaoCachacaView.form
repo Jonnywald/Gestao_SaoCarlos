@@ -145,6 +145,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -203,11 +204,12 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="ftxtHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="12" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblNumDorna" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cmbDorna" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbDorna" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -371,6 +373,16 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="ftxtHora">
+                  <Properties>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                      <Format subtype="1" type="2"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="(HH:mm)"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -677,7 +689,7 @@
                     <Component class="javax.swing.JTable" name="tblHist">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="14" rowCount="0">
+                          <Table columnCount="15" rowCount="0">
                             <Column editable="true" title="Lote" type="java.lang.Object"/>
                             <Column editable="true" title="Data de Moagem" type="java.lang.Object"/>
                             <Column editable="true" title="Qtd Caldo" type="java.lang.Object"/>
@@ -686,6 +698,7 @@
                             <Column editable="true" title="Volume" type="java.lang.Object"/>
                             <Column editable="true" title="Data de Fermenta&#xe7;&#xe3;o" type="java.lang.Object"/>
                             <Column editable="true" title="Data Maxima" type="java.lang.Object"/>
+                            <Column editable="true" title="Hor&#xe1;rio de Fementa&#xe7;&#xe3;o" type="java.lang.Object"/>
                             <Column editable="true" title="Dorna" type="java.lang.Object"/>
                             <Column editable="true" title="Data de Destila&#xe7;&#xe3;o" type="java.lang.Object"/>
                             <Column editable="true" title="Cora&#xe7;&#xe3;o" type="java.lang.Object"/>
