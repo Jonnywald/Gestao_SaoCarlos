@@ -94,18 +94,32 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="lblNumDorna" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblDtAlarmeFerment" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblDtInicioFerment" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblTotalCaldo" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblAgua" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblBrix" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblQtdCaldo" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblDtMoagem" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblLote" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="lblDtAlarmeFerment" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblDtInicioFerment" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblTotalCaldo" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblAgua" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblBrix" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblQtdCaldo" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblDtMoagem" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblLote" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="lblNumDorna" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -114,17 +128,16 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="cmbDorna" min="-2" pref="125" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="ftxtDtAlarmeFerment" alignment="1" pref="365" max="32767" attributes="0"/>
-                                                  <Component id="ftxtDtInicioFerment" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="txtTotalCaldo" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="txtQtdAgua" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="txtBrix" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="txtQtdCaldo" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="ftxtDtMoagem" alignment="1" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="ftxtDtAlarmeFerment" alignment="1" pref="365" max="32767" attributes="0"/>
+                                              <Component id="ftxtDtInicioFerment" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtTotalCaldo" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtQtdAgua" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtBrix" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtQtdCaldo" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="ftxtDtMoagem" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="ftxtHora" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -134,12 +147,8 @@
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="txtLabeProduçãoCachaça" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                          <EmptySpace pref="17" max="32767" attributes="0"/>
+                          <EmptySpace pref="52" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -192,10 +201,15 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblNumDorna" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ftxtHora" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblNumDorna" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="cmbDorna" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="51" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnLancarLote" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnVoltarLote" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -276,7 +290,7 @@
                 <Component class="javax.swing.JFormattedTextField" name="ftxtDtInicioFerment">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                      <Format format="dd/MM/yyyy hh:mm" subtype="-1" type="1"/>
+                      <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -292,7 +306,7 @@
                 <Component class="javax.swing.JFormattedTextField" name="ftxtDtAlarmeFerment">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                      <Format format="dd/MM/yyyy hh:mm" subtype="-1" type="1"/>
+                      <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -343,13 +357,20 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="(dd/MM/yyyy hh:mm)"/>
+                    <Property name="text" type="java.lang.String" value="(dd/MM/yyyy)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="(dd/MM/yyyy hh:mm)"/>
+                    <Property name="text" type="java.lang.String" value="(dd/MM/yyyy)"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Horario de Inicio de Fermenta&#xe7;&#xe3;o:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="ftxtHora">
                 </Component>
               </SubComponents>
             </Container>
@@ -445,7 +466,7 @@
                               <Component id="lblNumBarril" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cmbBarril" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="62" max="32767" attributes="0"/>
+                          <EmptySpace pref="68" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnVoltarAndamento" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnLacarDestilacao" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -524,7 +545,7 @@
                 <Component class="javax.swing.JFormattedTextField" name="ftxtDtAlambicagem">
                   <Properties>
                     <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-                      <Format format="dd/MM/yyyy hh:mm" subtype="-1" type="1"/>
+                      <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -588,7 +609,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="(dd/MM/yyyy hh:mm)"/>
+                    <Property name="text" type="java.lang.String" value="(dd/MM/yyyy)"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -634,7 +655,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="321" max="-2" attributes="0"/>
-                          <EmptySpace pref="18" max="32767" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnVoltarHist" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>
